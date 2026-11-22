@@ -49,3 +49,15 @@ applied in module 3 and recorded in `docs/versions.md`.
 
 The pipeline reads only the cache; `task data:rates` refreshes it (network). Rates are
 stored as decimals.
+
+## Synthetic default history (`data/synthetic/default_history.parquet`)
+
+Input for the Bayesian PD module. One row per segment and year, 2014-2025; years up to 2022
+are the training sample, 2023-2025 the held-out test years (time split).
+
+| Column | Generator assumption |
+|---|---|
+| `obligors` | Rated obligors observed in that segment-year: 110/180/380/280 for grades 1-4, scaled by 1.0/0.8/0.5 for manufacturing/trade/real estate. Small grade-1 and grade-2 cohorts create low-default segments (0-3 defaults over the training years). |
+| `defaults` | Binomial(obligors, p_t) with the Vasicek conditional PD p_t = N((N^-1(PD) − √ρ·z_t)/√(1−ρ)), ρ = 0.08, z_t ~ N(0,1) shared by all segments in year t. E[p_t] = PD exactly (test `test_vasicek_year_pd_averages_to_ttc`). |
+| `true_pd` | The through-the-cycle PD of the grade from the loan book, the truth the Bayesian model is scored against. |
+| `macro` | Observable macro index m_t = −0.8·z_t + 0.6·noise, so bad years show low m_t. Used only by the conformal counterpart model. |

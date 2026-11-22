@@ -16,3 +16,15 @@ credit:
     trade: 0.14
     real_estate: 0.20
   global_weight: 0.55
+
+bayes:
+  # Sector-level prior centres for the average-grade PD (logit scale). Destatis publishes
+  # insolvency counts but no sector rates were retrievable (decision 16): these centres are
+  # stated assumptions with a wide prior sd.
+  sector_prior_pd: {manufacturing: 0.008, trade: 0.010, real_estate: 0.005}
+  sector_prior_sd: 0.75
+  chains: 2
+  warmup: 1000
+  samples: 1000
+  credible: 0.90                 # two-sided interval; conservative PD = upper bound
+  conformal_confidence: 0.90

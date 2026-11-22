@@ -1,0 +1,81 @@
+{
+  "comparison": {
+    "bayes_mean": {
+      "mean_abs_error_bp_low_default": 7.072618103,
+      "mean_abs_log_error_all": 0.2393436186,
+      "mean_abs_log_error_low_default": 0.3425792559,
+      "test_years_log_score": -48.94990398,
+      "zero_pd_segments": 0
+    },
+    "naive": {
+      "mean_abs_error_bp_low_default": 15.12766554,
+      "mean_abs_log_error_all": null,
+      "mean_abs_log_error_low_default": null,
+      "test_years_log_score": -Infinity,
+      "zero_pd_segments": 2
+    },
+    "pooled_by_grade": {
+      "mean_abs_error_bp_low_default": 13.7465842,
+      "mean_abs_log_error_all": 0.6157621613,
+      "mean_abs_log_error_low_default": 1.076789944,
+      "test_years_log_score": -65.89218297,
+      "zero_pd_segments": 0
+    }
+  },
+  "conformal": {
+    "confidence": 0.9,
+    "coverage": 0.8888888889,
+    "coverage_by_grade": {
+      "1": 0.7777777778,
+      "2": 0.7777777778,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "lower_bound_zero_share": 0.4166666667,
+    "mean_width": 0.04221829439,
+    "method": "MAPIE CrossConformalRegressor (CV+, 10 folds), Ridge on arcsin(sqrt(rate)), absolute score, bounds back-transformed",
+    "n_test": 36,
+    "width_by_grade": {
+      "1": 0.009262740456,
+      "2": 0.02562066393,
+      "3": 0.04758366058,
+      "4": 0.08640611259
+    }
+  },
+  "credible": 0.9,
+  "low_default_segments": 4,
+  "mcmc": {
+    "chains": 2,
+    "divergences": 0,
+    "samples": 1000,
+    "sigma_t_mean": 0.6685733299,
+    "tau_mean": 0.1369581898,
+    "warmup": 1000
+  },
+  "ppc": {
+    "n_segments": 12,
+    "p_value_max_segment_year": 0.5855,
+    "p_value_var_annual_total": 0.467,
+    "segments_inside_90pct_predictive": 12
+  },
+  "prior": {
+    "sector_prior_pd": {
+      "manufacturing": 0.008,
+      "real_estate": 0.005,
+      "trade": 0.01
+    },
+    "sector_prior_sd_logit": 0.75,
+    "source": "stated assumption (Destatis sector rates not retrievable, decision 16)"
+  },
+  "test_years": [
+    2023,
+    2025
+  ],
+  "train_years": [
+    2014,
+    2022
+  ],
+  "truth_covered": 12,
+  "truth_covered_low_default": 4,
+  "zero_default_segments": 2
+}

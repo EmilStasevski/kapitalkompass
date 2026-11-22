@@ -13,3 +13,10 @@
 3. Cross-checks pass: homogeneous MC vs ASRF (CPU 6%, GPU 1.5% tolerance), Vasicek body quantiles, t-copula preserves marginal PD; one-factor real-book UL / ASRF = 1.022 (granularity add-on).
 4. Benchmark (results/credit/benchmark.json): CUDA 177x numpy, 26x numba-parallel; energy per million scenarios recorded (RAPL + nvidia-smi).
 5. CRE31.5 formulas and BCBS 368 shocks read from the BIS primary texts (EUR-Lex unreachable, decision 10); task test 21 passed, task lint clean.
+
+## Day 3 (2026-11-23): module 2, Bayesian PD calibration — done
+1. Seeded default history 2014-2025 (Vasicek year factor, macro index); time split train <= 2022, test 2023-2025; 4 low-default segments (2 with zero defaults).
+2. NumPyro hierarchical model (sector prior, ordered grades, segment shrinkage, common year effect; 0 divergences): low-default mean |log error| 0.34 vs pooled 1.08; naive gives 2 zero PDs.
+3. Truth recovery over 40 replications: coverage 0.57/0.86/0.94 at nominal 0.5/0.8/0.9; PPC p-values 0.47 and 0.59.
+4. MAPIE CV+ conformal intervals for annual default rates (arcsine-sqrt scale): test coverage 0.89 at nominal 0.9.
+5. Sector prior centres are assumptions (Destatis sector rates not retrievable, decision 16); task test 25 passed, task lint clean.

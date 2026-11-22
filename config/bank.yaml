@@ -54,3 +54,12 @@ rates:
   source: ecb_aaa_spot           # ECB Data Portal, dataset YC, Svensson AAA spot curve
   start: "2020-01-01"
   tenors: [3M, 6M, 1Y, 2Y, 3Y, 5Y, 7Y, 10Y, 15Y, 20Y, 30Y]
+
+default_history:                 # observed rating-grade default history for PD calibration
+  years: [2014, 2025]
+  train_until: 2022              # time split: fit <= 2022, evaluate 2023-2025
+  cohort_size_by_grade: {"1": 110, "2": 180, "3": 380, "4": 280}   # obligors per segment-year
+  sector_size_factor: {manufacturing: 1.0, trade: 0.8, real_estate: 0.5}
+  cycle_rho: 0.08                # Vasicek one-factor across segments within a year
+  macro_loading: -0.8            # observable macro index = loading * z_t + noise
+  macro_noise_sd: 0.6

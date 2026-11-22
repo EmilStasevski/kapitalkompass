@@ -42,6 +42,7 @@ tasks:
     cmds:
       - task: data:synth
       - "{{.PY}} -m kapitalkompass.credit.run"
+      - "{{.PY}} -m kapitalkompass.bayes.run"
       # module steps are appended as they are built
 
   bench:

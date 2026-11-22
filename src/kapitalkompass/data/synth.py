@@ -154,7 +154,13 @@ def build(seed: int | None = None, write: bool = True) -> dict[str, pl.DataFrame
     seed = int(cfg["seed"]) if seed is None else seed
     loans = generate_loan_book(cfg, seed)
     bs = generate_balance_sheet(cfg, loans)
-    out = {"loan_book": loans, "balance_sheet": bs}
+    from kapitalkompass.data.history import generate_history
+
+    out = {
+        "loan_book": loans,
+        "balance_sheet": bs,
+        "default_history": generate_history(cfg, seed),
+    }
     if write:
         SYNTH_DIR.mkdir(parents=True, exist_ok=True)
         lines = []
