@@ -1,0 +1,49 @@
+version: "3"
+
+vars:
+  PY: uv run python
+
+tasks:
+  setup:
+    desc: Install deps and git hooks
+    cmds:
+      - uv sync
+      - uv run pre-commit install
+
+  data:rates:
+    desc: Refresh the ECB rate-curve cache (network)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.data.rates"
+
+  data:synth:
+    desc: Generate the seeded synthetic bank
+    cmds:
+      - "{{.PY}} -m kapitalkompass.data.synth"
+
+  lint:
+    desc: ruff + mypy
+    cmds:
+      - uv run ruff check .
+      - uv run ruff format --check .
+      - uv run mypy
+
+  format:
+    cmds:
+      - uv run ruff check --fix .
+      - uv run ruff format .
+
+  test:
+    desc: Unit and analytic cross-check tests (CPU subset unless GPU present)
+    cmds:
+      - uv run pytest -q -m "not llm" {{.CLI_ARGS}}
+
+  pipeline:
+    desc: Modules 1-5, writes results/
+    cmds:
+      - task: data:synth
+      # module steps are appended as they are built
+
+  report:
+    desc: Rebuild reports/ and README tables from results/
+    cmds:
+      - "echo 'report generator arrives on day 7'"

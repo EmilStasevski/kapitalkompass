@@ -1,0 +1,56 @@
+# Stylised bank: all generator assumptions. Documented in docs/data.md.
+seed: 20261122
+reporting_date: "2026-11-20"   # as-of date for curves and balance sheet
+
+loan_book:
+  n_obligors: 50000
+  sectors:            # share of obligors, mean LGD, mean maturity (years), opex in % of EAD
+    manufacturing: {share: 0.40, lgd_mean: 0.40, maturity_mean: 4.0, opex_rate: 0.0060}
+    trade:         {share: 0.35, lgd_mean: 0.45, maturity_mean: 3.0, opex_rate: 0.0070}
+    real_estate:   {share: 0.25, lgd_mean: 0.25, maturity_mean: 7.0, opex_rate: 0.0040}
+  grades:             # through-the-cycle PD, share of obligors, client margin over base rate
+    "1": {pd: 0.0015, share: 0.25, margin: 0.0100}
+    "2": {pd: 0.0050, share: 0.35, margin: 0.0150}
+    "3": {pd: 0.0150, share: 0.28, margin: 0.0230}
+    "4": {pd: 0.0500, share: 0.12, margin: 0.0350}
+  exposure:
+    lognormal_median_eur: 50000     # median EAD of a granular loan
+    lognormal_sigma: 1.2
+    n_large: 25                     # large corporate names (name concentration)
+    large_pareto_min_eur: 10000000
+    large_pareto_alpha: 1.6
+    large_cap_eur: 120000000
+    large_sectors: [manufacturing, real_estate]
+  lgd_concentration: 10.0           # beta(a, b) with a + b = concentration
+  lgd_bounds: [0.05, 0.95]
+  maturity_bounds: [0.25, 15.0]
+  fixed_rate_share: 0.60            # share of loans with fixed rate (rest float, reprice <= 3M)
+  margin_noise_sd: 0.0025
+  fee_rate_mean: 0.0020             # fee income in % of EAD
+
+balance_sheet:                       # shares of total assets (TA); loans fix TA via loans_share
+  loans_share: 0.65
+  assets:
+    hqla_l1_cash_cb:       {share: 0.05, maturity: 0.0}
+    hqla_l1_gov_bonds:     {share: 0.10, maturity: 5.0}
+    hqla_l2a_covered:      {share: 0.04, maturity: 4.0}
+    hqla_l2b_corp:         {share: 0.01, maturity: 3.0}
+    bonds_non_hqla:        {share: 0.08, maturity: 4.0}
+    other_assets:          {share: 0.07, maturity: 0.0}
+  liabilities:
+    retail_deposits_stable:      {share: 0.30, maturity: 0.0}
+    retail_deposits_less_stable: {share: 0.15, maturity: 0.0}
+    corp_deposits_operational:   {share: 0.10, maturity: 0.0}
+    corp_deposits_non_operational: {share: 0.08, maturity: 0.0}
+    wholesale_unsecured_lt1y:    {share: 0.05, maturity: 0.5}
+    covered_bonds_issued:        {share: 0.10, maturity: 6.0}
+    other_liabilities:           {share: 0.03, maturity: 0.0}
+    # wholesale_unsecured_gt1y is the residual so that the identity holds exactly
+    wholesale_unsecured_gt1y:    {share: null, maturity: 3.0}
+  equity:
+    cet1_equity: {share: 0.08, maturity: null}
+
+rates:
+  source: ecb_aaa_spot           # ECB Data Portal, dataset YC, Svensson AAA spot curve
+  start: "2020-01-01"
+  tenors: [3M, 6M, 1Y, 2Y, 3Y, 5Y, 7Y, 10Y, 15Y, 20Y, 30Y]
