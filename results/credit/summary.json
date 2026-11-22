@@ -1,0 +1,46 @@
+{
+  "asrf_ul_eur": 228716113.8,
+  "concentration": {
+    "effective_number_names": 881.6017432,
+    "hhi_name": 0.001134299028,
+    "hhi_sector": 0.3530748826,
+    "large_names_share": 0.1211261646,
+    "n_large_names": 25,
+    "top10_share": 0.08300941664
+  },
+  "confidence": 0.999,
+  "copula": "gaussian",
+  "device": "cuda",
+  "economic_capital_definition": "ES_99.9 - EL (Euler ES contributions minus segment EL)",
+  "economic_capital_eur": 214719314.1,
+  "el_analytic_eur": 27567395.65,
+  "el_simulated_eur": 27589356.49,
+  "es_eur": 242286709.7,
+  "euler_es_sum_eur": 242286709.7,
+  "irb_capital_requirement_eur": 353862218.5,
+  "multifactor_diversification": 0.2459684883,
+  "n_obligors": 50000,
+  "n_sectors": 3,
+  "n_segments": 12,
+  "one_factor": {
+    "es_eur": 316660769.7,
+    "note": "one-factor UL above ASRF UL = name-concentration (granularity) add-on",
+    "scenarios": 1000000,
+    "ul_over_asrf_ul": 1.022196588,
+    "ul_var_eur": 233792831.1,
+    "var_eur": 261360226.8
+  },
+  "scenarios": 2000000,
+  "sim_ul_over_asrf_ul": 0.7707684382,
+  "t_copula": {
+    "el_simulated_eur": 27588921.55,
+    "es_eur": 736375360.2,
+    "es_ratio_t_over_gaussian": 3.039272608,
+    "nu": 6,
+    "scenarios": 1000000,
+    "var_eur": 597234264.0
+  },
+  "total_ead_eur": 5806362604.0,
+  "unexpected_loss_var_eur": 176287161.8,
+  "var_eur": 203854557.5
+}

@@ -41,7 +41,13 @@ tasks:
     desc: Modules 1-5, writes results/
     cmds:
       - task: data:synth
+      - "{{.PY}} -m kapitalkompass.credit.run"
       # module steps are appended as they are built
+
+  bench:
+    desc: Module 1 benchmark numpy vs numba vs torch CPU vs CUDA (stop LLM server first)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.credit.bench"
 
   report:
     desc: Rebuild reports/ and README tables from results/

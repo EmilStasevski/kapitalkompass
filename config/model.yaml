@@ -1,0 +1,18 @@
+# Model parameters (not data-generation). Documented in reports and docs/decisions.md.
+seed: 7
+
+credit:
+  scenarios: 2000000          # pipeline run; benchmark uses its own sizes
+  chunk_scenarios: 16384      # per GPU chunk
+  obligor_block: 12000        # obligors per inner block (bounds memory < 6 GB)
+  confidence: 0.999
+  copula: gaussian            # main run
+  t_nu: 6                     # t-copula sensitivity run
+  t_scenarios: 1000000
+  # Asset correlation: obligor X_i = sqrt(rho_s) Z_s + sqrt(1 - rho_s) eps_i,
+  # Z_s = sqrt(w) G + sqrt(1 - w) S_s  => corr(Z_s, Z_t) = w for s != t.
+  sector_rho:
+    manufacturing: 0.16
+    trade: 0.14
+    real_estate: 0.20
+  global_weight: 0.55

@@ -1,0 +1,60 @@
+{
+  "hardware": {
+    "cpu": "x86_64",
+    "cpu_model": "Intel(R) Core(TM) i5-14400F",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "numba": "0.68.1",
+    "torch": "2.11.0+cu128"
+  },
+  "note": "energy = CPU package (RAPL) + GPU board (nvidia-smi mean power x time), idle draw included; timings exclude JIT/CUDA warm-up",
+  "runs": [
+    {
+      "cpu_package_j": 156.257107,
+      "engine": "numpy_1core",
+      "gpu_board_j": 89.08149675,
+      "joules_per_million_scenarios": 49067.72075,
+      "obligors": 50000,
+      "pairs_per_second": 50911246.06,
+      "scenarios": 5000,
+      "seconds": 4.910506408,
+      "seconds_per_million_scenarios": 982.1012816,
+      "speedup_vs_numpy": 1.0
+    },
+    {
+      "cpu_package_j": 456.844229,
+      "engine": "numba_parallel",
+      "gpu_board_j": 113.5007313,
+      "joules_per_million_scenarios": 14258.62401,
+      "obligors": 50000,
+      "pairs_per_second": 352220121.5,
+      "scenarios": 40000,
+      "seconds": 5.678267305,
+      "seconds_per_million_scenarios": 141.9566826,
+      "speedup_vs_numpy": 6.918316654
+    },
+    {
+      "cpu_package_j": 339.925216,
+      "engine": "torch_cpu",
+      "gpu_board_j": 162.9920637,
+      "joules_per_million_scenarios": 12572.93199,
+      "obligors": 50000,
+      "pairs_per_second": 184953002.5,
+      "scenarios": 40000,
+      "seconds": 10.81355789,
+      "seconds_per_million_scenarios": 270.3389473,
+      "speedup_vs_numpy": 3.632851615
+    },
+    {
+      "cpu_package_j": 121.036861,
+      "engine": "torch_cuda",
+      "gpu_board_j": 542.7842463,
+      "joules_per_million_scenarios": 663.8211073,
+      "obligors": 50000,
+      "pairs_per_second": 9007624045.0,
+      "scenarios": 1000000,
+      "seconds": 5.550853338,
+      "seconds_per_million_scenarios": 5.550853338,
+      "speedup_vs_numpy": 176.9279824
+    }
+  ]
+}

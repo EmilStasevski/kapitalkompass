@@ -11,6 +11,16 @@ dependencies = [
     "pyarrow>=18",
     "httpx>=0.28",
     "pyyaml>=6",
+    "torch>=2.7",
+    "scipy>=1.18.1",
+    "numba>=0.68.1",
+    "numpyro>=0.22.0",
+    "jax>=0.12.1",
+    "mapie>=1.6.0",
+    "scikit-learn>=1.9.1",
+    "lifelines>=0.30.3",
+    "cvxpy>=1.9.3",
+    "matplotlib>=3.11.2",
 ]
 
 [dependency-groups]
@@ -54,3 +64,11 @@ markers = [
     "llm: needs local LLM server",
 ]
 addopts = "-ra"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
