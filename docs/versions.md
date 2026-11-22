@@ -27,3 +27,19 @@ known to differ or could not be confirmed, the row says so. See decision 10 in
 | 3 | EVE outlier test | max ΔEVE over the six scenarios compared with 15% of Tier 1 | BCBS 368 | para 88 (Principle 12) | 2026-11-23 | module 3 |
 | 3 | NII / additional outlier tests | at least as stringent as 15% of Tier 1; the EU NII threshold (RTS 2024/856) could not be read | BCBS 368 | para 89 | 2026-11-23 | module 3 |
 | 3 | LCR inflow cap | 75% of total expected outflows | BCBS LCR40 | LCR40.1, LCR40.77 | 2026-11-23 | module 3 |
+| 3 | Level 1 assets: no haircut, unlimited share | 0% | BCBS LCR30 (effective 15 Dec 2019, chapter PDF) | LCR30.40–30.41 | 2026-11-23 | `config/alm.yaml` lcr.hqla |
+| 3 | Level 2A haircut | 15% | BCBS LCR30 | LCR30.43 | 2026-11-23 | same |
+| 3 | Level 2B corporate debt haircut | 50% | BCBS LCR30 | LCR30.45(2) | 2026-11-23 | same |
+| 3 | Level 2 cap 40%, Level 2B cap 15% | caps after haircuts | BCBS LCR30 | LCR30.33, 30.34, 30.42 | 2026-11-23 | `alm/liquidity.py::hqla_stock` |
+| 3 | Cap adjustments | Adj15 = max(L2B − 15/85·(L1+L2A), L2B − 15/60·L1, 0); Adj40 = max(L2A + L2B − Adj15 − 2/3·L1, 0); HQLA = L1 + L2A + L2B − Adj15 − Adj40 (the 30.38 total-stock formula is an image on the preceding page; the adjustments were read from the page image) | BCBS LCR30 | LCR30.38–30.39 | 2026-11-23 | same |
+| 3 | Stable retail deposit run-off | 5% (3% national option not used) | BCBS LCR40 (chapter PDF) | LCR40.7, 40.11 | 2026-11-23 | `config/alm.yaml` lcr.outflow_rates |
+| 3 | Less stable retail run-off | 10% minimum | BCBS LCR40 | LCR40.13 | 2026-11-23 | same |
+| 3 | Operational deposits run-off | 25% | BCBS LCR40 | LCR40.26 | 2026-11-23 | same |
+| 3 | Non-financial corporate non-operational run-off | 40% | BCBS LCR40 | LCR40.40 | 2026-11-23 | same |
+| 3 | Unsecured wholesale from other legal entities (financial) | 100% | BCBS LCR40 | LCR40.42 | 2026-11-23 | same |
+| 3 | Inflows from performing non-financial wholesale loans | 50% | BCBS LCR40 | LCR40.87(2) | 2026-11-23 | same |
+| 3 | ASF factors | 100% capital and ≥1y liabilities; 95% stable retail; 90% less stable retail; 50% operational and non-financial corporate < 1y, other 6–12m funding; 0% other (< 6m from financials) | BCBS NSF30 (chapter PDF) | NSF30.10–30.14 | 2026-11-23 | `config/alm.yaml` nsfr.asf |
+| 3 | RSF factors | 0% cash/central bank reserves; 5% Level 1 securities; 15% Level 2A; 50% Level 2B and non-HQLA < 1y; 65% ≥1y with RW ≤ 35%; 85% other performing loans ≥1y and non-HQLA securities ≥1y; 100% other assets | BCBS NSF30 | NSF30.25, 30.26, 30.28–30.32 | 2026-11-23 | `config/alm.yaml` nsfr.rsf |
+| 3 | NMD core caps and average maturity | retail transactional 90% / 5y; retail non-transactional 70% / 4.5y; wholesale 50% / 4y; non-core overnight | BCBS 368 | paras 110–115, Table 2 | 2026-11-23 | `config/alm.yaml` deposits.bcbs_caps |
+| 3 | EU NII large-decline threshold | 5% of Tier 1 used as the NII flag; **not verified** (RTS 2024/856 unreadable) | Delegated Regulation (EU) 2024/856 | — | not verified | `config/alm.yaml` irrbb.nii_outlier_tier1 |
+| 3 | EU deviations to note | EU treats extremely high-quality covered bonds as Level 1 with a 7% haircut; this project follows the Basel Level 2A treatment (15%). Not verified against the EU text | — | — | not verified | — |

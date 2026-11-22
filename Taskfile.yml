@@ -43,6 +43,7 @@ tasks:
       - task: data:synth
       - "{{.PY}} -m kapitalkompass.credit.run"
       - "{{.PY}} -m kapitalkompass.bayes.run"
+      - "{{.PY}} -m kapitalkompass.alm.run"
       # module steps are appended as they are built
 
   bench:

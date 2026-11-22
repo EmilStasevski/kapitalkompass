@@ -1,0 +1,5 @@
+category,balance_eur,stable_share_model,core_share,core_cap,avg_maturity_core_uncapped,avg_maturity_core,avg_maturity_cap
+retail_deposits_stable,2679859664.0,0.8736912403,0.8736912403,0.9,10.94203848,5.0,5.0
+retail_deposits_less_stable,1339929832.0,0.7546813419,0.7,0.7,7.704897933,4.5,4.5
+corp_deposits_operational,893286554.0,0.766456061,0.5,0.5,5.601711945,4.0,4.0
+corp_deposits_non_operational,714629244.0,0.5198548359,0.5,0.5,3.04047522,3.04047522,4.0

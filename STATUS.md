@@ -20,3 +20,10 @@
 3. Truth recovery over 40 replications: coverage 0.57/0.86/0.94 at nominal 0.5/0.8/0.9; PPC p-values 0.47 and 0.59.
 4. MAPIE CV+ conformal intervals for annual default rates (arcsine-sqrt scale): test coverage 0.89 at nominal 0.9.
 5. Sector prior centres are assumptions (Destatis sector rates not retrievable, decision 16); task test 25 passed, task lint clean.
+
+## Day 4 (2026-11-23): module 3, ALM, liquidity, IRRBB — done
+1. Behavioural deposits: Weibull AFT (lifelines) on 24,000 simulated accounts, max |KM - model| 0.010; weighted core share 73% after BCBS 368 caps; 1y cumulative gap contractual -3.37bn vs behavioural 0.29bn EUR.
+2. LCR 239%, NSFR 119%, with factors read from BCBS LCR30/LCR40/NSF30 (EU texts unreachable, decision 10).
+3. Six BCBS 368 shocks: worst dEVE parallel_down -152.5m EUR = -21.3% of Tier 1 (EVE outlier: True); worst dNII parallel_down -13.1m EUR.
+4. FTP curve (base + liquidity premium) with per-segment FTP charge and NIM after FTP in results/alm/ftp_segments.csv, the input for RAROC.
+5. Tests: BCBS 368 worked examples reproduced exactly, zero shock gives zero delta, LCR/NSFR hand cases, ladders tie to the balance sheet; task test passes, task lint clean.

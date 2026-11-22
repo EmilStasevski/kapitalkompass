@@ -1,0 +1,112 @@
+{
+  "curve_date": "2026-11-19",
+  "deposits": {
+    "accounts": 24000,
+    "aft_coef_log_balance": -0.1036757074,
+    "closed_share": 0.491,
+    "core_share_weighted": 0.7255672573,
+    "max_abs_km_vs_model": 0.01029751842
+  },
+  "ftp": {
+    "avg_ftp_rate": 0.03294605876,
+    "total_ftp_charge_eur": 191296763.5,
+    "total_nim_after_ftp_eur": 84328033.36
+  },
+  "irrbb": {
+    "eve_outlier": true,
+    "eve_threshold_pct_tier1": 0.15,
+    "nii_flag": false,
+    "nii_threshold_pct_tier1": 0.05,
+    "nii_threshold_verified": false,
+    "scenarios": {
+      "flattener": {
+        "delta_eve": -37830426.35,
+        "delta_nii": 6622445.787
+      },
+      "none": {
+        "delta_eve": 0.0,
+        "delta_nii": 0.0
+      },
+      "parallel_down": {
+        "delta_eve": -152483994.8,
+        "delta_nii": -13059516.73
+      },
+      "parallel_up": {
+        "delta_eve": 124455710.9,
+        "delta_nii": 13059516.73
+      },
+      "short_down": {
+        "delta_eve": -3802783.662,
+        "delta_nii": -10134904.62
+      },
+      "short_up": {
+        "delta_eve": 3459607.916,
+        "delta_nii": 10134904.62
+      },
+      "steepener": {
+        "delta_eve": 56911285.8,
+        "delta_nii": -4359471.138
+      }
+    },
+    "worst_delta_eve_eur": -152483994.8,
+    "worst_delta_eve_pct_tier1": -0.2133749718,
+    "worst_delta_nii_eur": -13059516.73,
+    "worst_delta_nii_pct_tier1": -0.01827453444,
+    "worst_eve_scenario": "parallel_down",
+    "worst_nii_scenario": "parallel_down"
+  },
+  "ladder": {
+    "cum_gap_1m_behavioural_eur": -1135003595.0,
+    "cum_gap_1m_contractual_eur": -5218282290.0,
+    "cum_gap_1y_behavioural_eur": 294533906.4,
+    "cum_gap_1y_contractual_eur": -3368142281.0
+  },
+  "lcr": {
+    "adj15": 0.0,
+    "adj40": 0.0,
+    "hqla": 1688311587.0,
+    "inflow_cap_binding": false,
+    "inflows": 108844215.6,
+    "inflows_before_cap": 108844215.6,
+    "l1": 1339929831.0,
+    "l2a": 303717428.7,
+    "l2b": 44664327.5,
+    "lcr": 2.393001556,
+    "net_outflows": 705520471.9,
+    "outflows": 814364687.5,
+    "outflows_by_item": {
+      "corp_deposits_non_operational": 285851697.6,
+      "corp_deposits_operational": 223321638.5,
+      "retail_deposits_less_stable": 133992983.2,
+      "retail_deposits_stable": 133992983.2,
+      "wholesale_unsecured_lt1y": 37205384.97
+    }
+  },
+  "nsfr": {
+    "asf": 7257953255.0,
+    "asf_by_item": {
+      "cet1_equity": 714629244.0,
+      "corp_deposits_non_operational": 357314622.0,
+      "corp_deposits_operational": 446643277.0,
+      "covered_bonds_issued": 893286554.0,
+      "other_liabilities": 0.0,
+      "retail_deposits_less_stable": 1205936849.0,
+      "retail_deposits_stable": 2545866681.0,
+      "wholesale_unsecured_gt1y": 982615209.0,
+      "wholesale_unsecured_lt1y": 111660819.2
+    },
+    "nsfr": 1.190629094,
+    "rsf": 6095897783.0,
+    "rsf_by_item": {
+      "bonds_non_hqla": 607434857.4,
+      "hqla_l1_cash_cb": 0.0,
+      "hqla_l1_gov_bonds": 44664327.7,
+      "hqla_l2a_covered": 53597193.3,
+      "hqla_l2b_corp": 44664327.5,
+      "loans_ge1y": 4412848311.0,
+      "loans_lt1y": 307388177.9,
+      "other_assets": 625300588.0
+    }
+  },
+  "tier1_eur": 714629244.0
+}

@@ -1,0 +1,78 @@
+# ALM, liquidity and IRRBB parameters. Every regulatory factor cites the primary text read
+# in this project (docs/versions.md). Non-regulatory items are labelled "assumption".
+
+lcr:   # BCBS LCR30 / LCR40 (EU: Delegated Regulation 2015/61 not readable, decision 10)
+  hqla:
+    hqla_l1_cash_cb:   {level: L1,  haircut: 0.00}   # LCR30.40-30.41
+    hqla_l1_gov_bonds: {level: L1,  haircut: 0.00}   # LCR30.40-30.41
+    hqla_l2a_covered:  {level: L2A, haircut: 0.15}   # LCR30.43
+    hqla_l2b_corp:     {level: L2B, haircut: 0.50}   # LCR30.45(2)
+  outflow_rates:
+    retail_deposits_stable: 0.05          # LCR40.7
+    retail_deposits_less_stable: 0.10     # LCR40.13 (minimum)
+    corp_deposits_operational: 0.25       # LCR40.26
+    corp_deposits_non_operational: 0.40   # LCR40.40
+    wholesale_unsecured_lt1y: 1.00        # LCR40.42 (financial counterparties), on the 30-day maturing part
+  wholesale_lt1y_maturing_30d_share: 0.0833   # assumption: maturities spread evenly over 12 months
+  inflow_rate_nonfinancial: 0.50          # LCR40.87(2)
+  inflow_cap: 0.75                        # LCR40.1, LCR40.77
+  minimum: 1.00
+
+nsfr:  # BCBS NSF30
+  asf:
+    cet1_equity: 1.00                     # NSF30.10(1)
+    covered_bonds_issued: 1.00            # NSF30.10(3), residual maturity >= 1y
+    wholesale_unsecured_gt1y: 1.00        # NSF30.10(3)
+    retail_deposits_stable: 0.95          # NSF30.11
+    retail_deposits_less_stable: 0.90     # NSF30.12
+    corp_deposits_operational: 0.50       # NSF30.13(2)
+    corp_deposits_non_operational: 0.50   # NSF30.13(1), non-financial corporates < 1y
+    wholesale_unsecured_lt1y: 0.25        # NSF30.14(1) 0% for < 6m, NSF30.13(4) 50% for 6-12m; assumption: half each
+    other_liabilities: 0.00               # NSF30.14
+  rsf:
+    hqla_l1_cash_cb: 0.00                 # NSF30.25(1)-(2)
+    hqla_l1_gov_bonds: 0.05               # NSF30.26
+    hqla_l2a_covered: 0.15                # NSF30.28(1)
+    hqla_l2b_corp: 0.50                   # NSF30.29(1)
+    bonds_non_hqla: 0.85                  # NSF30.31(3), maturity >= 1y
+    loans_lt1y: 0.50                      # NSF30.29(5)
+    loans_ge1y: 0.85                      # NSF30.31(2), corporate risk weight > 35% assumed
+    other_assets: 1.00                    # NSF30.32
+  minimum: 1.00
+
+deposits:   # behavioural model (assumptions) and BCBS 368 Table 2 caps
+  n_accounts: 24000
+  observation_years: [2016, 2025]
+  categories:   # weibull time-to-closure (years); shape < 1 = early attrition, sticky tail
+    retail_deposits_stable:        {share: 0.45, scale: 14.0, shape: 0.80, bcbs_class: retail_transactional}
+    retail_deposits_less_stable:   {share: 0.25, scale: 6.0,  shape: 0.75, bcbs_class: retail_non_transactional}
+    corp_deposits_operational:     {share: 0.15, scale: 5.0,  shape: 0.90, bcbs_class: wholesale}
+    corp_deposits_non_operational: {share: 0.15, scale: 1.8,  shape: 0.85, bcbs_class: wholesale}
+  balance_effect: -0.10      # AFT coefficient on log(balance / median): larger balances leave sooner
+  core_horizon_years: 1.0    # stable share = balance-weighted share surviving beyond this horizon
+  bcbs_caps:                 # BCBS 368 Table 2 (para 110, 115)
+    retail_transactional:     {core_share: 0.90, avg_maturity: 5.0}
+    retail_non_transactional: {core_share: 0.70, avg_maturity: 4.5}
+    wholesale:                {core_share: 0.50, avg_maturity: 4.0}
+  max_years: 20.0
+
+irrbb:
+  shocks_bp: {parallel: 200, short: 250, long: 100}    # BCBS 368 Annex 2 Table 1, EUR
+  decay_x: 4.0                                          # BCBS 368 Annex 2 footnote 43
+  floor: 0.0               # post-shock floor; BCBS 368 Annex 2: national discretion, floor <= 0
+  eve_outlier_tier1: 0.15  # BCBS 368 para 88
+  nii_outlier_tier1: 0.05  # EU RTS 2024/856 large-decline NII test: NOT verified (EUR-Lex unreadable)
+  nii_horizon_years: 1.0
+  deposit_beta:            # assumption: pass-through of rate changes to deposit rates
+    retail_deposits_stable: 0.30
+    retail_deposits_less_stable: 0.40
+    corp_deposits_operational: 0.50
+    corp_deposits_non_operational: 0.70
+  floating_reprice_years: 0.25
+  grid_months: 360
+
+ftp:        # assumption: bank's own unsecured funding spread over the risk-free curve
+  lp_long: 0.0090          # liquidity premium at long tenors
+  lp_tau_years: 3.0        # lp(t) = lp_long * (1 - exp(-t / tau))
+
+ladder_buckets_years: [0.0, 0.0833, 0.25, 0.5, 1.0, 2.0, 3.0, 5.0, 10.0, 30.0]
