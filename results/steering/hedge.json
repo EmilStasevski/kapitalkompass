@@ -1,0 +1,42 @@
+{
+  "delta_eve_after": {
+    "flattener": -40074515.0,
+    "parallel_down": -96474947.94,
+    "parallel_up": 73912897.19,
+    "short_down": 14081043.7,
+    "short_up": -13699259.66,
+    "steepener": 50689429.48
+  },
+  "delta_nii_after": {
+    "flattener": -3034800.377,
+    "parallel_down": -2576604.78,
+    "parallel_up": 2576604.78,
+    "short_down": 2174825.908,
+    "short_up": -2174825.908,
+    "steepener": 3356046.318
+  },
+  "direction": "receive_fixed",
+  "feasible": true,
+  "notional_eur": 599023540.0,
+  "target_max_loss_eur": 96474947.94,
+  "tenor_years": 5.0,
+  "unit_delta_eve": {
+    "flattener": -0.003746244508,
+    "parallel_down": 0.09350057739,
+    "parallel_up": -0.08437533808,
+    "short_down": 0.02985496591,
+    "short_up": -0.02864473002,
+    "steepener": -0.01038666414
+  },
+  "unit_delta_nii": {
+    "flattener": -0.01612164718,
+    "parallel_down": 0.0175,
+    "parallel_up": -0.0175,
+    "short_down": 0.02054966075,
+    "short_up": -0.02054966075,
+    "steepener": 0.01288015736
+  },
+  "worst_after_eur": -96474947.94,
+  "worst_after_scenario": "parallel_down",
+  "worst_nii_after_eur": -3034800.377
+}

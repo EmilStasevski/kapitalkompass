@@ -1,0 +1,111 @@
+{
+  "binding_constraints": [
+    "capital_budget",
+    "growth_lower",
+    "growth_upper",
+    "sector_share_real_estate"
+  ],
+  "capital_after_resimulated_eur": 214740845.7,
+  "capital_before_eur": 214719314.1,
+  "capital_iterations": [
+    {
+      "budget_eur": 214719314.1,
+      "iteration": 0,
+      "linear_ec_eur": 214719314.1,
+      "resimulated_ec_eur": 216487642.0
+    },
+    {
+      "budget_eur": 212965430.4,
+      "iteration": 1,
+      "linear_ec_eur": 212965430.4,
+      "resimulated_ec_eur": 214740845.7
+    }
+  ],
+  "constraints": {
+    "capital_budget": {
+      "binding": true,
+      "max_violation": 0.002754509449,
+      "shadow_price": 0.06072053243
+    },
+    "growth_lower": {
+      "binding": true,
+      "max_violation": 5.430322858e-11,
+      "shadow_price": [
+        0.002000585612,
+        0.0005991596449,
+        407355.3698,
+        3035410.1,
+        1025897.208,
+        0.001169876384,
+        0.0007611906527,
+        0.0007528927991,
+        0.0007761915595,
+        0.0007902263855,
+        0.0007460725261,
+        1629455.114
+      ]
+    },
+    "growth_upper": {
+      "binding": true,
+      "max_violation": 1.63269398e-10,
+      "shadow_price": [
+        0.003568100025,
+        342393.6076,
+        0.0008004528374,
+        0.0007182552026,
+        0.0007393438758,
+        0.0002102744242,
+        918596.8144,
+        835273.2904,
+        577193.4424,
+        1775331.936,
+        1457843.084,
+        0.0007487703117
+      ]
+    },
+    "lcr_floor": {
+      "binding": false,
+      "max_violation": 0.0,
+      "shadow_price": 7.615935027e-13
+    },
+    "nsfr_floor": {
+      "binding": false,
+      "max_violation": 0.0,
+      "shadow_price": 1.559049929e-12
+    },
+    "sector_share_manufacturing": {
+      "binding": false,
+      "max_violation": 0.0,
+      "shadow_price": 1.363339691e-12
+    },
+    "sector_share_real_estate": {
+      "binding": true,
+      "max_violation": 0.0,
+      "shadow_price": 0.005961165097
+    },
+    "sector_share_trade": {
+      "binding": false,
+      "max_violation": 0.0,
+      "shadow_price": 1.636364333e-12
+    }
+  },
+  "eva_after_eur": 14963297.14,
+  "eva_before_eur": 12760035.96,
+  "feasibility_violations": [],
+  "lcr_after": 1.911654144,
+  "nsfr_after": 1.139128909,
+  "objective": "risk-adjusted profit minus hurdle x EC (EVA)",
+  "profit_after_eur": 36437381.7,
+  "profit_before_eur": 34231967.36,
+  "raroc_after_linear": 0.1710952883,
+  "raroc_after_resimulated": 0.1696807218,
+  "raroc_before": 0.1594265868,
+  "sector_share_after": {
+    "manufacturing": 0.4120757634,
+    "real_estate": 0.25,
+    "trade": 0.3379242366
+  },
+  "status": "optimal",
+  "total_ead_after_eur": 6145963057.0,
+  "total_ead_before_eur": 5806362604.0
+}

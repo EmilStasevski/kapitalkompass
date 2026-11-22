@@ -44,6 +44,7 @@ tasks:
       - "{{.PY}} -m kapitalkompass.credit.run"
       - "{{.PY}} -m kapitalkompass.bayes.run"
       - "{{.PY}} -m kapitalkompass.alm.run"
+      - "{{.PY}} -m kapitalkompass.steering.run"
       # module steps are appended as they are built
 
   bench:

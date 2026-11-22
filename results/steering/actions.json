@@ -1,0 +1,23 @@
+{
+  "irrbb_hedge": {
+    "instrument": "receive-fixed swap",
+    "notional_eur": 599023540.0,
+    "tenor_years": 5.0
+  },
+  "note": "Sell-down capital relief is not re-simulated (small relative to the book).",
+  "reallocation": {
+    "largest_decreases": [
+      "manufacturing_3",
+      "manufacturing_4",
+      "real_estate_1"
+    ],
+    "largest_increases": [
+      "manufacturing_2",
+      "trade_2",
+      "trade_3"
+    ],
+    "raroc_after": 0.1696807218,
+    "raroc_before": 0.1594265868
+  },
+  "single_name_sell_down_eur": 11282701.42
+}

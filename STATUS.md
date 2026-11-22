@@ -27,3 +27,10 @@
 3. Six BCBS 368 shocks: worst dEVE parallel_down -152.5m EUR = -21.3% of Tier 1 (EVE outlier: True); worst dNII parallel_down -13.1m EUR.
 4. FTP curve (base + liquidity premium) with per-segment FTP charge and NIM after FTP in results/alm/ftp_segments.csv, the input for RAROC.
 5. Tests: BCBS 368 worked examples reproduced exactly, zero shock gives zero delta, LCR/NSFR hand cases, ladders tie to the balance sheet; task test passes, task lint clean.
+
+## Day 5 (2026-11-23): modules 4 and 5, RAROC, optimisation, limits — done
+1. RAROC per segment after FTP, fees, opex and EL on Euler EC: bank 15.9% vs hurdle 10%; 3 of 12 below hurdle (manufacturing_1, manufacturing_4, trade_4); Euler allocation sums to the total.
+2. cvxpy EVA maximisation under the capital budget, sector caps, growth bounds, LCR >= 130% and NSFR >= 110%: RAROC 15.9% -> 17.0% at unchanged capital (re-simulated, 2 passes); binding: capital_budget, growth_lower, growth_upper, sector_share_real_estate.
+3. Limit system with traffic lights and escalation (docs/limits.md): {'amber': 1, 'green': 4, 'red': 2} before, {'amber': 3, 'green': 4, 'red': 0} after re-allocation, a 599m receive-fixed 5y hedge and an 11.3m single-name sell-down.
+4. Tests: hand-solved LP (solution and shadow price), sector-limit LP, 40 random instances never violate constraints, allocation additivity and RAROC identity, hedge restores the EVE limit.
+5. `task pipeline` (modules 1-5) runs end to end in about 3 minutes and reproduces the committed results; task test 44 passed, task lint clean. MVP (modules 1-5) complete.

@@ -1,0 +1,8 @@
+limit,description,exposure,limit_value,unit,utilisation,status,escalation
+credit_risk_capital,Credit EC (ES99.9 - EL) / risk cover,214719314.1,321583159.8,EUR,0.6676945217,green,No action. Monthly reporting to the ALCO / risk committee.
+irrbb_eve,Worst six-shock dEVE / Tier 1 (BCBS 368 para 88 outlier level),152483994.8,107194386.6,EUR,1.422499812,red,Limit breach: immediate ad-hoc report to the management board (Vorstand); measures to restore the limit decided within 10 business days and implemented within 30; documented in the next risk report.
+total_risk_cover,Credit EC + IRRBB dEVE / risk cover,367203308.9,571703395.2,EUR,0.6422968832,green,No action. Monthly reporting to the ALCO / risk committee.
+nii_shock,Worst six-shock dNII / Tier 1,13059516.73,35731462.2,EUR,0.3654906888,green,No action. Monthly reporting to the ALCO / risk committee.
+sector_concentration,Largest sector EAD share,0.4421710479,0.45,share,0.9826023287,amber,Early warning: risk controlling informs the risk committee within 5 business days; the business owner submits an action plan within 20 business days.
+single_name,Largest single-name EAD / CET1,0.1679192407,0.15,share of CET1,1.119461604,red,Limit breach: immediate ad-hoc report to the management board (Vorstand); measures to restore the limit decided within 10 business days and implemented within 30; documented in the next risk report.
+lcr,LCR vs internal floor 130%; red below 110%,2.393001556,1.3,ratio,0.5432507959,green,No action. Monthly reporting to the ALCO / risk committee.

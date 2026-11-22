@@ -1,0 +1,56 @@
+{
+  "bank_raroc": 0.1594265868,
+  "euler_allocation_sums_to_total": true,
+  "euler_relative_gap": 1.210882831e-10,
+  "hedge": {
+    "direction": "receive_fixed",
+    "feasible": true,
+    "notional_eur": 599023540.0,
+    "worst_after_eur": -96474947.94,
+    "worst_after_scenario": "parallel_down"
+  },
+  "hurdle_rate": 0.1,
+  "limits_after": {
+    "amber": 1,
+    "green": 4,
+    "red": 2
+  },
+  "limits_after_actions": {
+    "amber": 3,
+    "green": 4,
+    "red": 0
+  },
+  "limits_before": {
+    "amber": 1,
+    "green": 4,
+    "red": 2
+  },
+  "optimiser": {
+    "binding_constraints": [
+      "capital_budget",
+      "growth_lower",
+      "growth_upper",
+      "sector_share_real_estate"
+    ],
+    "feasibility_violations": [],
+    "raroc_after_resimulated": 0.1696807218,
+    "raroc_before": 0.1594265868
+  },
+  "red_after": [
+    "irrbb_eve",
+    "single_name"
+  ],
+  "red_after_actions": [],
+  "red_before": [
+    "irrbb_eve",
+    "single_name"
+  ],
+  "segments": 12,
+  "segments_below_hurdle": 3,
+  "segments_below_hurdle_names": [
+    "manufacturing_1",
+    "manufacturing_4",
+    "trade_4"
+  ],
+  "single_name_sell_down_eur": 11282701.42
+}

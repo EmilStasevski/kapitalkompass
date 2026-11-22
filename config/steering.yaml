@@ -1,0 +1,40 @@
+# Steering: RAROC, optimiser and limit system. All internal (bank policy) assumptions.
+hurdle_rate: 0.10                  # pre-tax cost of economic capital
+
+optimiser:
+  objective: risk_adjusted_profit  # sum_s x_s * (profit_s - hurdle * EC_s)
+  growth_bounds: [0.80, 1.20]      # volume multiplier per segment
+  capital_budget: current          # economic capital may not exceed today's total
+  sector_share_max:                # EAD share limits
+    manufacturing: 0.45
+    trade: 0.40
+    real_estate: 0.25
+  lcr_floor: 1.30                  # internal floor (regulatory minimum 100%)
+  nsfr_floor: 1.10
+  funding: hqla_l1_cash_cb         # loan volume changes are funded from / released into L1 cash
+  resimulate_scenarios: 1000000    # ex-post Monte Carlo check of the optimised book
+
+limits:
+  # Risk-bearing capacity (Risikodeckungspotenzial) = CET1; limits as share of it.
+  risk_cover_item: cet1_equity
+  amber_from: 0.80                 # utilisation of limit at which amber starts
+  red_from: 1.00
+  items:
+    credit_risk_capital:      {limit_share_of_cover: 0.45, description: "Credit EC (ES99.9 - EL) / risk cover"}
+    irrbb_eve:                {limit_share_of_cover: 0.15, description: "Worst six-shock dEVE / Tier 1 (BCBS 368 para 88 outlier level)"}
+    total_risk_cover:         {limit_share_of_cover: 0.80, description: "Credit EC + IRRBB dEVE / risk cover"}
+    nii_shock:                {limit_share_of_cover: 0.05, description: "Worst six-shock dNII / Tier 1"}
+    sector_concentration:     {limit: 0.45, description: "Largest sector EAD share"}
+    single_name:              {limit: 0.15, description: "Largest single-name EAD / CET1"}
+  lcr:                         # higher is better: thresholds on the ratio itself
+    green_from: 1.30
+    amber_from: 1.10
+  escalation:
+    green: "No action. Monthly reporting to the ALCO / risk committee."
+    amber: "Early warning: risk controlling informs the risk committee within 5 business days; the business owner submits an action plan within 20 business days."
+    red: "Limit breach: immediate ad-hoc report to the management board (Vorstand); measures to restore the limit decided within 10 business days and implemented within 30; documented in the next risk report."
+
+hedge:                             # IRRBB management action for the EVE limit
+  instrument: receive_fixed_swap
+  tenor_years: 5.0
+  target_share_of_limit: 0.90      # bring worst dEVE to 90% of the limit
