@@ -59,9 +59,9 @@ deposits:   # behavioural model (assumptions) and BCBS 368 Table 2 caps
 irrbb:
   shocks_bp: {parallel: 200, short: 250, long: 100}    # BCBS 368 Annex 2 Table 1, EUR
   decay_x: 4.0                                          # BCBS 368 Annex 2 footnote 43
-  floor: 0.0               # post-shock floor; BCBS 368 Annex 2: national discretion, floor <= 0
-  eve_outlier_tier1: 0.15  # BCBS 368 para 88
-  nii_outlier_tier1: 0.05  # EU RTS 2024/856 large-decline NII test: NOT verified (EUR-Lex unreadable)
+  floor: eu                # post-shock floor: RTS (EU) 2024/856 Art. 3(7), -150bp rising 3bp/yr to 0% at 50y
+  eve_outlier_tier1: 0.15  # BCBS 368 para 88; CRD Art. 98(5)(a)
+  nii_outlier_tier1: 0.05  # RTS (EU) 2024/856 Art. 5(1): NII decline > 5% of Tier 1 ("large decline")
   nii_horizon_years: 1.0
   deposit_beta:            # assumption: pass-through of rate changes to deposit rates
     retail_deposits_stable: 0.30

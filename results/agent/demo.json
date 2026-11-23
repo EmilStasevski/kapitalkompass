@@ -1,0 +1,289 @@
+{
+  "blocked": false,
+  "calls": [
+    {
+      "args": {
+        "query": "Limitauslastung Rote Limite"
+      },
+      "error": "",
+      "ok": true,
+      "result": {
+        "chunks": [
+          {
+            "id": "marisk.btr1.tz3",
+            "ref": "MaRisk BTR 1 Tz. 3",
+            "text": "MaRisk BTR 1 Tz. 3 (Adressenausfallrisiken): Handelsgesch\u00e4fte d\u00fcrfen grunds\u00e4tzlich nur mit Vertragspartnern get\u00e4tigt werden, f\u00fcr die Kontrahentenlimite einger\u00e4umt wurden. Auf das einzelne Limit sind alle Handelsgesch\u00e4fte mit einer bestimmten Gegenpartei anzurechnen. Bei der Ermittlung der Auslastung der Kontrahentenlimite sind Wiedereindeckungsrisiken und Erf\u00fcllungsrisiken zu ber\u00fccksichtigen. Die Positionsverantwortlichen sind \u00fcber die f\u00fcr sie relevanten Limite und ihre aktuelle Ausnutzung zeitnah zu informieren."
+          },
+          {
+            "id": "marisk.btr1.tz6",
+            "ref": "MaRisk BTR 1 Tz. 6",
+            "text": "MaRisk BTR 1 Tz. 6 (Adressenausfallrisiken): Risikokonzentrationen sind zu identifizieren. Gegebenenfalls vorhandene Abh\u00e4ngigkeiten sind dabei zu ber\u00fccksichtigen. Bei der Beurteilung der Risikokonzentrationen ist auf qualitative und, soweit m\u00f6glich, auf quantitative Verfahren abzustellen. Risikokonzentrationen sind mit Hilfe geeigneter Verfahren zu steuern und zu \u00fcberwachen (z. B. Limite, Ampelsysteme oder auf Basis anderer Vorkehrungen)."
+          },
+          {
+            "id": "crr.art395.5",
+            "ref": "Art. 395(5) CRR",
+            "text": "Art. 395(5) CRR \u2013 Limits to large exposures: The limits laid down in this Article may be exceeded for the exposures in the institution's trading book, provided that all the following conditions are met: (a) the exposure in the non-trading book to the client or group of connected clients in question does not exceed the limit laid down in paragraph 1, this limit being calculated with reference to Tier 1 capital, so that the excess arises entirely in the trading book; (b) the institution meets an additional own funds requirement on the part of the exposure in excess of the limit laid down in paragraph 1 of this Article which is calculated in accordance with Articles 397 and 398; (c) where 10 days or less have elapsed since the excess referred to in point (b) occurred, the trading-book exposure to the client or group of connected clients in question does not exceed 500 % of the institution's"
+          },
+          {
+            "id": "marisk.btr1.tz5",
+            "ref": "MaRisk BTR 1 Tz. 5",
+            "text": "MaRisk BTR 1 Tz. 5 (Adressenausfallrisiken): Die Gesch\u00e4fte sind unverz\u00fcglich auf die kreditnehmerbezogenen Limite anzurechnen. Die Einhaltung der Limite ist zu \u00fcberwachen. Limit\u00fcberschreitungen und die deswegen ggf. getroffenen Ma\u00dfnahmen sind festzuhalten. Ab einer unter Risikogesichtspunkten festgelegten H\u00f6he sind \u00dcberschreitungen von Kontrahentenund Emittentenlimiten den zust\u00e4ndigen Gesch\u00e4ftsleitern t\u00e4glich anzuzeigen."
+          }
+        ],
+        "query": "Limitauslastung Rote Limite"
+      },
+      "seconds": 2.448546538,
+      "tool": "search_rules"
+    },
+    {
+      "args": {
+        "state": "current"
+      },
+      "error": "",
+      "ok": true,
+      "result": {
+        "counts": {
+          "amber": 1,
+          "green": 4,
+          "red": 2
+        },
+        "limits": [
+          {
+            "description": "Credit EC (ES99.9 - EL) / risk cover",
+            "escalation": "No action. Monthly reporting to the ALCO / risk committee.",
+            "exposure_mio_eur": 214.72,
+            "limit": "credit_risk_capital",
+            "limit_mio_eur": 321.58,
+            "status": "green",
+            "utilisation_pct": 66.77
+          },
+          {
+            "description": "Worst six-shock dEVE / Tier 1 (BCBS 368 para 88 outlier level)",
+            "escalation": "Limit breach: immediate ad-hoc report to the management board (Vorstand); measures to restore the limit decided within 10 business days and implemented within 30; documented in the next risk report.",
+            "exposure_mio_eur": 152.48,
+            "limit": "irrbb_eve",
+            "limit_mio_eur": 107.19,
+            "status": "red",
+            "utilisation_pct": 142.25
+          },
+          {
+            "description": "Credit EC + IRRBB dEVE / risk cover",
+            "escalation": "No action. Monthly reporting to the ALCO / risk committee.",
+            "exposure_mio_eur": 367.2,
+            "limit": "total_risk_cover",
+            "limit_mio_eur": 571.7,
+            "status": "green",
+            "utilisation_pct": 64.23
+          },
+          {
+            "description": "Worst six-shock dNII / Tier 1",
+            "escalation": "No action. Monthly reporting to the ALCO / risk committee.",
+            "exposure_mio_eur": 13.06,
+            "limit": "nii_shock",
+            "limit_mio_eur": 35.73,
+            "status": "green",
+            "utilisation_pct": 36.55
+          },
+          {
+            "description": "Largest sector EAD share",
+            "escalation": "Early warning: risk controlling informs the risk committee within 5 business days; the business owner submits an action plan within 20 business days.",
+            "exposure_pct": 44.22,
+            "limit": "sector_concentration",
+            "limit_pct": 45.0,
+            "status": "amber",
+            "utilisation_pct": 98.26
+          },
+          {
+            "description": "Largest single-name EAD / CET1",
+            "escalation": "Limit breach: immediate ad-hoc report to the management board (Vorstand); measures to restore the limit decided within 10 business days and implemented within 30; documented in the next risk report.",
+            "exposure_pct": 16.79,
+            "limit": "single_name",
+            "limit_pct": 15.0,
+            "status": "red",
+            "utilisation_pct": 111.95
+          },
+          {
+            "description": "LCR vs internal floor 130%; red below 110%",
+            "escalation": "No action. Monthly reporting to the ALCO / risk committee.",
+            "exposure_pct": 239.3,
+            "limit": "lcr",
+            "limit_pct": 130.0,
+            "status": "green",
+            "utilisation_pct": 54.33
+          }
+        ],
+        "state": "current"
+      },
+      "seconds": 0.020171312,
+      "tool": "get_limits"
+    },
+    {
+      "args": {
+        "name": "parallel_down"
+      },
+      "error": "",
+      "ok": true,
+      "result": {
+        "bank_has_nii_large_decline": false,
+        "bank_is_eve_outlier": true,
+        "curve_date": "2026-11-19",
+        "delta_eve_mio_eur": -152.48,
+        "delta_eve_pct_tier1": -21.34,
+        "delta_nii_mio_eur": -13.06,
+        "delta_nii_pct_tier1": -1.83,
+        "eve_outlier_in_this_scenario": true,
+        "eve_outlier_test": "Szenario parallel_down: EVE-Verlust 21.34 % des Kernkapitals \u00dcBERSCHREITET die Ausrei\u00dferschwelle von 15.0 %.",
+        "eve_outlier_threshold_pct_tier1": 15.0,
+        "nii_large_decline_in_this_scenario": false,
+        "nii_large_decline_test": "Szenario parallel_down: NII-R\u00fcckgang 1.83 % des Kernkapitals unterschreitet die Schwelle 'large decline' von 5.0 %.",
+        "nii_large_decline_threshold_pct_tier1": 5.0,
+        "scenario": "parallel_down",
+        "tier1_mio_eur": 714.63,
+        "worst_delta_eve_mio_eur": -152.48,
+        "worst_eve_scenario": "parallel_down"
+      },
+      "seconds": 0.0001252960064,
+      "tool": "run_shock"
+    },
+    {
+      "args": {
+        "query": "Zinsrisiko parallel_down"
+      },
+      "error": "",
+      "ok": true,
+      "result": {
+        "chunks": [
+          {
+            "id": "bcbs368.annex2#4",
+            "ref": "BCBS 368, Annex 2",
+            "text": "Revised interest rate shocks \u0394RR\ufffdsshoooooooooooooo,cc AUD BRL CAD CHF CNY EUR GBP HKD 2,858 1,246 Parallel 2,018 Long 1,345 JPY KRW MXN Short Parallel Short Long ARS IDR RUB SAR SEK SGD TRY USD ZAR 1,270 INR Interest rate risk in the banking book However, the proposed interest rate shock calibration can lead to unrealistically low interest rate shocks for some currencies and to unrealistically high interest rate shocks for others. In order to ensure a minimum level of prudence and a level playing field, a floor of 100 bp and variable caps (denoted as \u2206RR\ufffdjj ) are set for the scenarios concerned, those caps being 500 bp for the short-term, 400 bp for the parallel and 300 bp for the long-term interest rate shock scenario. Supervisors may, applying national discretion, set a higher floor under the local interest rate shock scenarios for their home currency. The change in the risk-free inter"
+          },
+          {
+            "id": "bcbs368.annex2",
+            "ref": "BCBS 368, Annex 2",
+            "text": "BCBS 368, Annex 2: The standardised interest rate shock scenarios Banks should apply six prescribed interest rate shock scenarios to capture parallel and non-parallel gap risks for EVE and two prescribed interest rate shock scenarios for NII. These scenarios are applied to IRRBB exposures in each currency for which the bank has material positions. In order to accommodate heterogeneous economic environments across jurisdictions, the six shock scenarios reflect currencyspecific absolute shocks as specified in Table 1 below. For the purposes of capturing the local rate environment, a historical time series ranging from 2000 to 2015 for various maturities 42 was used to derive each scenario for a given currency. Under this approach, IRRBB is measured by means of the following six scenarios: (i) parallel shock up; (ii) parallel shock down; (iii) steepener shock (short rates down and long rate"
+          },
+          {
+            "id": "bcbs368.annex1#5",
+            "ref": "BCBS 368, Annex 1",
+            "text": "Since rate resets on different instruments occur at different tenors, the risk to the bank arises when the rate of interest paid on liabilities increases before the rate of interest received on assets, or reduces on assets before liabilities. Unless hedged in terms of tenor and amount, the bank may be exposed to a period of reduced or negative interest margins, or may experience changes in the relative economic values of assets Interest rate risk in the banking book and liabilities. The extent of gap risk depends also on whether changes to the term structure of interest rates occur consistently across the yield curve (parallel risk) or differentially by period (non-parallel risk). 33 \u2022 Basis risk describes the impact of relative changes in interest rates for financial instruments that have similar tenors but are priced using different interest rate indices (bases) (eg an asset priced off"
+          },
+          {
+            "id": "rts856.art2",
+            "ref": "Art. 2 Delegierte VO (EU) 2024/856",
+            "text": "Art. 2 Delegierte VO (EU) 2024/856 \u2013 Specification of supervisory shock scenarios: Specification of supervisory shock scenarios Given, for each currency c, the specified size of the parallel, short and long shocks to the \u2018risk-free\u2019 interest rate, the following parameterisations of the six supervisory shock scenarios shall be applied: (1) Parallel shock for currency c: A constant parallel shock up or down across all time buckets: \u0394Rparallel;c \u00f0tk \u00de 1\u20444 \u00b1 Rparallel;c (2) Short rate shock for currency c: \u2013 tk \u0394Rshort;c \u00f0tk \u00de 1\u20444 \u00b1 Rshort;c \u2022e 4 ; where tk is the midpoint (in time) of the kth time bucket. (3) Long rate shock for currency c: \ufffd \ufffd \u2013 tk \u0394Rlong;c \u00f0tk \u00de 1\u20444 \u00b1 Rlong;c \u2022 1 \u2013 e 4 (4) Rotation shocks for currency c: \u0394Rsteepener;c \u00f0tk \u00de 1\u20444 \u2013 0:65\u2022 j\u0394Rshort;c \u00f0tk \u00dej + 0:9\u2022 j\u0394Rlong;c \u00f0tk \u00dej; \u0394Rflattener;c \u00f0tk \u00de 1\u20444 + 0:8\u2022 j\u0394Rshort;c \u00f0tk \u00dej \u2013 0:6\u2022 j\u0394Rlong;c \u00f0tk \u00dej:"
+          }
+        ],
+        "query": "Zinsrisiko parallel_down"
+      },
+      "seconds": 2.386366736,
+      "tool": "search_rules"
+    },
+    {
+      "args": {
+        "constraints": {}
+      },
+      "error": "",
+      "ok": true,
+      "result": {
+        "binding_constraints": [
+          "capital_budget",
+          "growth_lower",
+          "growth_upper",
+          "sector_share_real_estate"
+        ],
+        "capital_budget_mio_eur": 214.72,
+        "capital_model": "linear Euler EC (not re-simulated)",
+        "capital_shadow_price_eva_per_eur": 0.0607,
+        "constraints_applied": {},
+        "economic_capital_after_mio_eur": 214.72,
+        "eva_after_mio_eur": 15.25,
+        "eva_before_mio_eur": 12.76,
+        "feasible": true,
+        "hurdle_rate_pct": 10.0,
+        "largest_decreases_mio_eur": {
+          "manufacturing_3": -142.21,
+          "manufacturing_4": -65.44,
+          "real_estate_1": -63.63
+        },
+        "largest_increases_mio_eur": {
+          "manufacturing_2": 180.79,
+          "trade_2": 130.1,
+          "trade_3": 102.36
+        },
+        "lcr_after_pct": 176.57,
+        "raroc_after_pct": 17.1,
+        "raroc_before_pct": 15.94,
+        "raroc_change_pp": 1.16,
+        "status": "optimal",
+        "total_ead_change_mio_eur": 442.6
+      },
+      "seconds": 2.002657887,
+      "tool": "run_optimiser"
+    }
+  ],
+  "first_attempt_passed": false,
+  "kind": "answer",
+  "markdown": "# Vorstandsvorlage: Aktuelle Steuerungslage der Bank\n\n*Kapitalkompass Steuerungsagent \u00b7 Datenstand 2026-11-19 \u00b7 synthetische Beispielbank*\n\n## Ausgangslage\nDie Bank befindet sich aktuell in einer kritischen Lage hinsichtlich der Limitauslastung, da zwei Limite (IRRBB-dEVE und Einzelkredit) rot sind und somit \u00fcberschritten wurden. Zudem zeigt das schlechteste Zinsrisikoszenario (parallel_down) einen EVE-Verlust von 21,34 % des Kernkapitals, was die Ausrei\u00dferschwelle von 15,0 % \u00fcberschreitet. Die Kapitalreallokation hat jedoch zu einer Verbesserung des RAROC um 1,16 Prozentpunkte gef\u00fchrt.\n\n## Treiber\n- Die rote Limitauslastung bei IRRBB-dEVE und Einzelkredit erfordert unverz\u00fcgliche Ma\u00dfnahmen zur Wiederherstellung der Limits [crr.art395.5].\n- Der EVE-Verlust im Szenario parallel_down \u00fcberschreitet die Ausrei\u00dferschwelle gem\u00e4\u00df BCBS 368, Annex 2 [bcbs368.annex2].\n- Die Kapitalreallokation hat den RAROC um 1,16 Prozentpunkte gesteigert, was auf eine effizientere Kapitalverwendung hinweist [rts856.art2].\n\n## Empfohlene Ma\u00dfnahmen\n1. Unverz\u00fcgliche Ma\u00dfnahmen zur Reduktion der IRRBB-dEVE-\u00dcberschreitung, wie z. B. die Anpassung von Risikopositionen oder die Umverteilung von Kapital, sind erforderlich [crr.art395.5].\n2. Die Einzelkredit-\u00dcberschreitung muss innerhalb von 10 Werktagen behoben werden, einschlie\u00dflich der Dokumentation in der n\u00e4chsten Risikomeldung [marisk.btr1.tz5].\n3. Die Kapitalreallokation sollte weiterhin optimiert werden, um den RAROC weiter zu steigern und die Kapitalnutzung zu verbessern [rts856.art2].\n\n## Rechtsgrundlagen\n- [crr.art395.5] Art. 395(5) CRR\n- [marisk.btr1.tz5] MaRisk BTR 1 Tz. 5\n- [bcbs368.annex2] BCBS 368, Annex 2\n- [bcbs368.annex2#4] BCBS 368, Annex 2\n",
+  "output": {
+    "empfehlung": [
+      "Unverz\u00fcgliche Ma\u00dfnahmen zur Reduktion der IRRBB-dEVE-\u00dcberschreitung, wie z. B. die Anpassung von Risikopositionen oder die Umverteilung von Kapital, sind erforderlich [crr.art395.5].",
+      "Die Einzelkredit-\u00dcberschreitung muss innerhalb von 10 Werktagen behoben werden, einschlie\u00dflich der Dokumentation in der n\u00e4chsten Risikomeldung [marisk.btr1.tz5].",
+      "Die Kapitalreallokation sollte weiterhin optimiert werden, um den RAROC weiter zu steigern und die Kapitalnutzung zu verbessern [rts856.art2]."
+    ],
+    "kind": "answer",
+    "lage": "Die Bank befindet sich aktuell in einer kritischen Lage hinsichtlich der Limitauslastung, da zwei Limite (IRRBB-dEVE und Einzelkredit) rot sind und somit \u00fcberschritten wurden. Zudem zeigt das schlechteste Zinsrisikoszenario (parallel_down) einen EVE-Verlust von 21,34 % des Kernkapitals, was die Ausrei\u00dferschwelle von 15,0 % \u00fcberschreitet. Die Kapitalreallokation hat jedoch zu einer Verbesserung des RAROC um 1,16 Prozentpunkte gef\u00fchrt.",
+    "titel": "Aktuelle Steuerungslage der Bank",
+    "treiber": [
+      "Die rote Limitauslastung bei IRRBB-dEVE und Einzelkredit erfordert unverz\u00fcgliche Ma\u00dfnahmen zur Wiederherstellung der Limits [crr.art395.5].",
+      "Der EVE-Verlust im Szenario parallel_down \u00fcberschreitet die Ausrei\u00dferschwelle gem\u00e4\u00df BCBS 368, Annex 2 [bcbs368.annex2].",
+      "Die Kapitalreallokation hat den RAROC um 1,16 Prozentpunkte gesteigert, was auf eine effizientere Kapitalverwendung hinweist [rts856.art2]."
+    ],
+    "zitate": [
+      "crr.art395.5",
+      "marisk.btr1.tz5",
+      "bcbs368.annex2",
+      "bcbs368.annex2#4"
+    ]
+  },
+  "output_tokens": 1202,
+  "prompt_tokens": 22555,
+  "question": "Erstelle die Vorstandsvorlage zur aktuellen Steuerungslage: rote Limite, Zinsrisiko im schlechtesten Szenario und die empfohlenen Ma\u00dfnahmen mit Rechtsgrundlage.",
+  "repairs": 1,
+  "retrieved": [
+    "marisk.btr1.tz3",
+    "marisk.btr1.tz6",
+    "crr.art395.5",
+    "marisk.btr1.tz5",
+    "bcbs368.annex2#4",
+    "bcbs368.annex2",
+    "bcbs368.annex1#5",
+    "rts856.art2"
+  ],
+  "seconds": 44.60022968,
+  "steps": 7,
+  "verification": {
+    "bad_dates": [],
+    "citations": [
+      "crr.art395.5",
+      "bcbs368.annex2",
+      "rts856.art2",
+      "marisk.btr1.tz5",
+      "bcbs368.annex2#4"
+    ],
+    "contradictions": [],
+    "has_citation": true,
+    "invalid_citations": [],
+    "numbers": [
+      "21,34",
+      "15,0",
+      "1,16",
+      "1,16",
+      "10",
+      "zwei"
+    ],
+    "one_page": true,
+    "passed": true,
+    "unverified_numbers": []
+  }
+}

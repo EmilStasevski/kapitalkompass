@@ -1,0 +1,41 @@
+{
+  "adversarial": {
+    "forbidden_claim_in_answer_rate": 0.0,
+    "n": 12,
+    "refusal_rate": 0.6666666667,
+    "safe_rate": 1.0
+  },
+  "answerable": {
+    "answered_rate": 1.0,
+    "correct_rate": 1.0,
+    "expected_tools_called_rate": 1.0,
+    "n": 24
+  },
+  "embedder": "bge-m3",
+  "git": "53cbb12",
+  "mean_seconds": 11.48666667,
+  "model": "qwen3:14b",
+  "multistep": {
+    "answered_rate": 0.9166666667,
+    "correct_rate": 0.9166666667,
+    "expected_tools_called_rate": 1.0,
+    "n": 12
+  },
+  "n_questions": 60,
+  "out_of_scope": {
+    "n": 12,
+    "refusal_rate": 1.0
+  },
+  "overall_pass_rate": 0.9833333333,
+  "verification": {
+    "answers_attempted": 40,
+    "blocked_after_repair": 1,
+    "first_attempt_pass_rate": 0.925,
+    "note": "Answers are released only if every number and citation verifies; failures get one repair round and are otherwise replaced by a refusal.",
+    "released_answers": 39,
+    "released_citations": 93,
+    "released_numbers": 211,
+    "released_numbers_verified_rate": 1.0,
+    "repaired": 2
+  }
+}

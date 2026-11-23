@@ -89,7 +89,7 @@ def run_scenarios(
     base: ZeroCurve,
     shocks_bp: dict[str, float],
     x: float,
-    floor: float | None,
+    floor: float | str | None,
     horizon: float,
 ) -> dict[str, dict[str, float]]:
     eve0 = eve(positions, base)

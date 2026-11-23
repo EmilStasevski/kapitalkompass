@@ -24,59 +24,59 @@
   "constraints": {
     "capital_budget": {
       "binding": true,
-      "max_violation": 0.002754509449,
+      "max_violation": 0.002754539251,
       "shadow_price": 0.06072053243
     },
     "growth_lower": {
       "binding": true,
-      "max_violation": 5.430322858e-11,
+      "max_violation": 5.430311756e-11,
       "shadow_price": [
-        0.002000585612,
-        0.0005991596449,
+        0.002000585603,
+        0.0005991596421,
         407355.3698,
         3035410.1,
         1025897.208,
-        0.001169876384,
-        0.0007611906527,
-        0.0007528927991,
-        0.0007761915595,
-        0.0007902263855,
-        0.0007460725261,
+        0.001169876378,
+        0.0007611906491,
+        0.0007528927956,
+        0.0007761915559,
+        0.0007902263818,
+        0.0007460725227,
         1629455.114
       ]
     },
     "growth_upper": {
       "binding": true,
-      "max_violation": 1.63269398e-10,
+      "max_violation": 1.632698421e-10,
       "shadow_price": [
-        0.003568100025,
+        0.003568100009,
         342393.6076,
-        0.0008004528374,
-        0.0007182552026,
-        0.0007393438758,
-        0.0002102744242,
+        0.0008004528337,
+        0.0007182551993,
+        0.0007393438724,
+        0.0002102744232,
         918596.8144,
         835273.2904,
         577193.4424,
         1775331.936,
         1457843.084,
-        0.0007487703117
+        0.0007487703082
       ]
     },
     "lcr_floor": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 7.615935027e-13
+      "shadow_price": 7.615934992e-13
     },
     "nsfr_floor": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.559049929e-12
+      "shadow_price": 1.559049921e-12
     },
     "sector_share_manufacturing": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.363339691e-12
+      "shadow_price": 1.363339685e-12
     },
     "sector_share_real_estate": {
       "binding": true,
@@ -86,7 +86,7 @@
     "sector_share_trade": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.636364333e-12
+      "shadow_price": 1.636364325e-12
     }
   },
   "eva_after_eur": 14963297.14,

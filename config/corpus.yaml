@@ -1,0 +1,92 @@
+# RAG corpus for module 6. PDFs live in data/external/regs/ (not committed: third-party texts);
+# sha256 pins the exact file the chunk ids were derived from. `task data:regs` checks them.
+dir: data/external/regs
+max_chunk_chars: 2400
+documents:
+  - id: crr
+    title: "Regulation (EU) No 575/2013 (CRR), consolidated 26.06.2026 (extracts)"
+    file: crr_consolidated.pdf
+    sha256: 6796302ed4213bcba4d4b9b17dc48aefcaf7ef586b875c30c8c71a7689288ecf
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02013R0575-20260626"
+    parser: eu_articles
+    label: "CRR"
+    articles: ["92", "153", "395", "412", "413", "428b", "428k", "428l", "428m", "428n", "428o",
+               "428r", "428s", "428u", "428ad", "428ag", "428ah"]
+  - id: crd
+    title: "Directive 2013/36/EU (CRD), consolidated 17.01.2025 (extracts)"
+    file: crd_consolidated.pdf
+    sha256: e8c0f8eb1ac8dbd47a6201861c78a475a274123c5dcd391d4adb3107692b099c
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02013L0036-20250117"
+    parser: eu_articles
+    label: "CRD"
+    articles: ["73", "84", "98"]
+  - id: rts856
+    title: "Commission Delegated Regulation (EU) 2024/856 (IRRBB supervisory outlier tests)"
+    file: rts_2024_856.pdf
+    sha256: 8a96588ed1693522997e5d855b55c1b2c5e80ba7b307755025cfef0d4880fd12
+    url: "https://eur-lex.europa.eu/eli/reg_del/2024/856/oj"
+    parser: eu_articles
+    label: "Delegierte VO (EU) 2024/856"
+    articles: ["1", "2", "3", "4", "5"]
+  - id: ebagl
+    title: "EBA/GL/2022/14 Guidelines on IRRBB and CSRBB (20.10.2022)"
+    file: eba_gl_2022_14.pdf
+    sha256: 8050134f0d9c63610b0535991f49d6965879063782bfb0de36727a118e0629ed
+    url: "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-14%20GL%20on%20IRRBB%20and%20CSRBB/1041754/Guidelines%20on%20IRRBB%20and%20CSRBB.pdf"
+    parser: numbered
+    label: "EBA/GL/2022/14"
+    start: "^4\\.1 General provisions$"
+    occurrence: 2
+    end: "^5\\. Accompanying documents$"
+    para: "^(\\d{1,3})\\.(?:\\s?(?=[A-Z(])|$)"
+    first_para: 10
+  - id: marisk
+    title: "BaFin Rundschreiben 05/2023 (BA) MaRisk (29.06.2023)"
+    file: marisk_2023.pdf
+    sha256: c6875acd503b51d4e8e68f327c498f2d0f39b0776f83dae93ae2e9b525d777ab
+    url: "https://www.bafin.de/SharedDocs/Downloads/DE/Rundschreiben/dl_rs_05_2023_MaRisk_pdf_BA.pdf?__blob=publicationFile&v=1"
+    parser: marisk
+    label: "MaRisk"
+  - id: bcbs368
+    title: "BCBS 368 Interest rate risk in the banking book (April 2016)"
+    file: bcbs_368.pdf
+    sha256: 144c8a20189b53fd97d66aac0bb364b79a7c6f917ee943a176a9cb2d7d384b22
+    url: "https://www.bis.org/bcbs/publ/d368.pdf"
+    parser: numbered
+    label: "BCBS 368"
+    start: "^Annex 2 \\.{5}"
+    occurrence: 1
+    para: "^(\\d{1,3})\\.$"
+    annex: "^Annex (\\d)$"
+  - id: lcr30
+    title: "Basel Framework LCR30 High-quality liquid assets"
+    file: bcbs_lcr30.pdf
+    sha256: c2bceda970e09c5301aed7a10d7c83a2708091b0af3899f53add444608504002
+    url: "https://www.bis.org/committees/bcbs/basel-framework/standard/lcr/30/inforce/2019-12-15/published/2020-06-05"
+    parser: basel
+    label: "LCR"
+    chapter: "30"
+  - id: lcr40
+    title: "Basel Framework LCR40 Cash outflows and inflows"
+    file: bcbs_lcr40.pdf
+    sha256: 6aa749f41754de65213d622eda5170938c8357cf4fedefe75be738be875a3212
+    url: "https://www.bis.org/committees/bcbs/basel-framework/standard/lcr/40/inforce/2019-12-15/published/2023-03-30"
+    parser: basel
+    label: "LCR"
+    chapter: "40"
+  - id: nsf30
+    title: "Basel Framework NSF30 Available and required stable funding"
+    file: bcbs_nsf30.pdf
+    sha256: 7e6ef3adfd2d3ad37f2399b00a009a08fe66b80e30ecd8107a297e2942a1eb93
+    url: "https://www.bis.org/committees/bcbs/basel-framework/standard/nsf/30/inforce/2019-12-15/published/2024-07-05"
+    parser: basel
+    label: "NSF"
+    chapter: "30"
+  - id: cre31
+    title: "Basel Framework CRE31 IRB approach: risk weight functions"
+    file: bcbs_cre31.pdf
+    sha256: ca1abb89ad6ba75a2e10836d30e88f3ca1abca18e152f251dcf890d5ad81a30a
+    url: "https://www.bis.org/committees/bcbs/basel-framework/standard/cre/31/inforce/2023-01-01/published/2020-03-27"
+    parser: basel
+    label: "CRE"
+    chapter: "31"

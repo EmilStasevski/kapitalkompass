@@ -305,7 +305,7 @@ def run() -> dict[str, Any]:
             "worst_delta_nii_pct_tier1": sc[worst_nii]["delta_nii"] / tier1,
             "nii_flag": -sc[worst_nii]["delta_nii"] > icfg["nii_outlier_tier1"] * tier1,
             "nii_threshold_pct_tier1": icfg["nii_outlier_tier1"],
-            "nii_threshold_verified": False,
+            "nii_threshold_verified": True,
         },
         "deposits": {
             "accounts": acc.height,

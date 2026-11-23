@@ -52,6 +52,31 @@ tasks:
     cmds:
       - "{{.PY}} -m kapitalkompass.credit.bench"
 
+  data:regs:
+    desc: Check the pinned regulatory PDFs for the RAG corpus (sha256 in config/corpus.yaml)
+    cmds:
+      - "{{.PY}} -c \"from kapitalkompass.agent.corpus import build_chunks; print(len(build_chunks()), 'chunks, hashes ok')\""
+
+  agent:index:
+    desc: Chunk the corpus and build the LanceDB index with bge-m3 (needs Ollama)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.agent.run index"
+
+  agent:demo:
+    desc: Agent writes the demo Vorstandsvorlage to reports/vorstandsvorlage.md (needs Ollama)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.agent.run demo"
+
+  agent:eval:
+    desc: Run the 60-question eval and score it deterministically (needs Ollama, ~25 min)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.agent.run eval"
+
+  mcp:
+    desc: Serve the five agent tools over MCP (stdio)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.agent.mcp_server"
+
   report:
     desc: Rebuild reports/ and README tables from results/
     cmds:

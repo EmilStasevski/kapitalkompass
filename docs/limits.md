@@ -20,7 +20,7 @@ risk types (conservative).
 | total_risk_cover | Credit EC + IRRBB loss | 80% of risk cover |
 | nii_shock | max(0, −worst ΔNII) | 5% of Tier 1 |
 | sector_concentration | Largest sector EAD share | 45% |
-| single_name | Largest single-name EAD / CET1 | 15% |
+| single_name | Largest single-name EAD / CET1 (stricter than the CRR Art. 395(1) large-exposure ceiling of 25% of Tier 1) | 15% |
 | lcr | LCR | green ≥ 130%, amber 110–130%, red < 110% |
 
 ## Traffic lights

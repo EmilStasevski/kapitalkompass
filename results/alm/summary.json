@@ -17,7 +17,7 @@
     "eve_threshold_pct_tier1": 0.15,
     "nii_flag": false,
     "nii_threshold_pct_tier1": 0.05,
-    "nii_threshold_verified": false,
+    "nii_threshold_verified": true,
     "scenarios": {
       "flattener": {
         "delta_eve": -37830426.35,

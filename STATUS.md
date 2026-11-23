@@ -34,3 +34,10 @@
 3. Limit system with traffic lights and escalation (docs/limits.md): {'amber': 1, 'green': 4, 'red': 2} before, {'amber': 3, 'green': 4, 'red': 0} after re-allocation, a 599m receive-fixed 5y hedge and an 11.3m single-name sell-down.
 4. Tests: hand-solved LP (solution and shadow price), sector-limit LP, 40 random instances never violate constraints, allocation additivity and RAROC identity, hedge restores the EVE limit.
 5. `task pipeline` (modules 1-5) runs end to end in about 3 minutes and reproduces the committed results; task test 44 passed, task lint clean. MVP (modules 1-5) complete.
+
+## Day 6 (2026-11-23): module 6, LLM steering agent — done
+1. Local agent (qwen3:14b via Ollama, JSON-schema constrained steps) with five allowlisted Pydantic tools (get_raroc, get_limits, run_shock, run_optimiser, search_rules) and a LanceDB/bge-m3 index over 931 stable paragraph chunks of CRR, CRD, RTS 2024/856, EBA/GL/2022/14, MaRisk, BCBS 368 and Basel LCR/NSFR/CRE chapters; MCP server exposes the same tools.
+2. Deterministic verification before release: every number vs tool results (rounding-faithful), every citation vs retrieved chunks, polarity check for EVE/NII outlier claims, one-page limit; one repair round, otherwise refusal. Demo Vorlage in reports/vorstandsvorlage.md.
+3. Eval (60 seeded questions, results/agent/eval_summary.json): answerable 24/24, multi-step 11/12 (1 blocked), out-of-scope refused 12/12, adversarial safe 12/12; first-attempt verification pass 92.5%, 211 released numbers all verified. Caveat: prompt and tools were tuned while looking at failures from this same set, so the rates are optimistic for unseen questions.
+4. EU texts found locally: NII 5% threshold, EUR shock sizes and EVE 15% now verified (RTS 2024/856, CRD Art. 98(5)); EU post-shock floor implemented (non-binding, results unchanged). EU LCR regulation 2015/61 still missing.
+5. task test 67 passed (LLM smoke test deselected), task lint clean. Known limits: citation relevance not checked; small integers can match unrelated tool values.

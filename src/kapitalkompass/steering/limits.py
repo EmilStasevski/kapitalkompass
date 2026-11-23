@@ -93,7 +93,7 @@ def swap_legs(curve: ZeroCurve, tenor: float) -> list[Position]:
 
 
 def swap_unit_deltas(
-    curve: ZeroCurve, tenor: float, shocks_bp: dict[str, float], x: float, floor: float
+    curve: ZeroCurve, tenor: float, shocks_bp: dict[str, float], x: float, floor: float | str
 ) -> dict[str, dict[str, float]]:
     """dEVE and dNII (one-year horizon) of a 1 EUR receive-fixed swap per scenario."""
     legs = swap_legs(curve, tenor)

@@ -22,11 +22,19 @@ class ZeroCurve:
         tt = np.asarray(t, dtype=float)
         return np.exp(-self.rate(tt) * tt)
 
-    def shifted(self, delta: NDArray[np.float64], floor: float | None = None) -> ZeroCurve:
+    def shifted(self, delta: NDArray[np.float64], floor: float | str | None = None) -> ZeroCurve:
+        """Shocked curve. `floor` is a flat post-shock floor, "eu" for the maturity-dependent
+        floor of RTS (EU) 2024/856 Art. 3(7), or None. A floor never raises the base rate."""
         r = self.r + delta
         if floor is not None:
-            r = np.maximum(r, np.minimum(floor, self.r))  # floor never raises the base rate
+            f = eu_floor(self.t) if floor == "eu" else np.full_like(self.t, float(floor))
+            r = np.maximum(r, np.minimum(f, self.r))
         return ZeroCurve(self.t, r)
+
+
+def eu_floor(t: ArrayLike) -> NDArray[np.float64]:
+    """RTS (EU) 2024/856 Art. 3(7): -150 bp at immediate maturity, +3 bp per year, 0% from 50y."""
+    return np.minimum(-0.015 + 0.0003 * np.asarray(t, dtype=float), 0.0)
 
 
 def shock_vector(

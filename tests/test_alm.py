@@ -9,7 +9,7 @@ import numpy as np
 import polars as pl
 import pytest
 
-from kapitalkompass.alm.curves import ZeroCurve, shock_vector
+from kapitalkompass.alm.curves import ZeroCurve, eu_floor, shock_vector
 from kapitalkompass.alm.deposits import behavioural_profile, fit_model, simulate_accounts
 from kapitalkompass.alm.ftp import ftp_loans, liquidity_premium
 from kapitalkompass.alm.irrbb import bullet, delta_nii, eve, floating, run_scenarios
@@ -190,3 +190,12 @@ def test_ftp_margin_identity(bank: dict[str, Any]) -> None:
     lp = liquidity_premium(lb["maturity_years"].to_numpy() / 2, 0.009, 3.0)
     expect = (lb["client_margin"].to_numpy() - lp) * lb["ead_eur"].to_numpy()
     assert np.allclose(f["nim_after_ftp_eur"].to_numpy(), expect)
+
+
+def test_eu_floor_rts_2024_856() -> None:
+    # Art. 3(7): -150 bp at 0y, +3 bp per year, 0% from 50y on
+    assert np.allclose(eu_floor([0.0, 10.0, 50.0, 80.0]), [-0.015, -0.012, 0.0, 0.0])
+    c = ZeroCurve([0.0, 10.0], [-0.02, 0.01])
+    s = c.shifted(np.array([-0.01, -0.03]), floor="eu")
+    # observed rate below the floor is kept; shocked rate floored at -1.2% at 10y
+    assert np.allclose(s.r, [-0.02, -0.012])

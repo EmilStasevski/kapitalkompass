@@ -1,0 +1,29 @@
+# Module 6: local LLM steering agent
+llm:
+  host: "http://localhost:11434"
+  model: "qwen3:14b"          # Q4_K_M, 9.3 GB; checked with `ollama list` on 2026-11-23
+  num_ctx: 8192
+  temperature: 0.0
+  seed: 11
+  think: false               # Qwen3 thinking off: JSON-schema constrained output, faster, deterministic
+  keep_alive: "10m"
+  max_steps: 7
+  max_repairs: 1             # one retry with verifier feedback, then refuse
+embed:
+  model: "bge-m3"
+  keep_alive: 0              # embedder runs on demand and is unloaded immediately
+  batch: 32
+index:
+  dir: data/index
+  table: rules
+  top_k: 4
+  snippet_chars: 900
+verify:
+  rel_tol: 0.0               # extra relative tolerance; 0 = a number must equal a tool value up to its own shown rounding
+  max_page_chars: 3800       # rendered Markdown Vorlage; about one A4 page
+eval:
+  seed: 20261123
+  n_answerable: 24
+  n_multistep: 12
+  n_out_of_scope: 12
+  n_adversarial: 12

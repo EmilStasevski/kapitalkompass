@@ -1,0 +1,932 @@
+id,doc,ref,n_chars,text_sha256
+crr.art92.1,crr,Art. 92(1) CRR,299,ea982505c516607d
+crr.art92.1a,crr,Art. 92(1a) CRR,1224,89d63d7e875450b6
+crr.art92.2,crr,Art. 92(2) CRR,517,fff500039d040f1f
+crr.art92.3,crr,Art. 92(3) CRR,1100,42e172f4238d0f6e
+crr.art92.4,crr,Art. 92(4) CRR,1963,f9870559878b2a57
+crr.art92.5,crr,Art. 92(5) CRR,1596,0e3a469c11d84cc4
+crr.art92.6,crr,Art. 92(6) CRR,519,352c154d8a0d7569
+crr.art153.1,crr,Art. 153(1) CRR,1563,495a58bfe98df27b
+crr.art153.2,crr,Art. 153(2) CRR,326,c9561e59335c28fb
+crr.art153.4,crr,Art. 153(4) CRR,997,526537358af1c8c9
+crr.art153.5,crr,Art. 153(5) CRR,820,91ad9c2a15e05f93
+crr.art153.6,crr,Art. 153(6) CRR,509,c0180b706b686899
+crr.art153.7,crr,Art. 153(7) CRR,664,5763772a72872441
+crr.art153.8,crr,Art. 153(8) CRR,972,0f3396f27cc46d41
+crr.art153.9,crr,Art. 153(9) CRR,589,ac30941c6e62312b
+crr.art395.1,crr,Art. 395(1) CRR,2279,7dab90b3e9fcb06b
+crr.art395.2,crr,Art. 395(2) CRR,1528,40ff05028332e42d
+crr.art395.2a,crr,Art. 395(2a) CRR,1283,21e0274a47081fff
+crr.art395.3,crr,Art. 395(3) CRR,159,7853d073287bcf18
+crr.art395.4,crr,Art. 395(4) CRR,202,a4e87c9e184c98ed
+crr.art395.5,crr,Art. 395(5) CRR,1297,085bf0a8835f3a27
+crr.art395.6,crr,Art. 395(6) CRR,2078,46b086694705d688
+crr.art395.7,crr,Art. 395(7) CRR,836,95cd3a53b2f169ae
+crr.art395.8,crr,Art. 395(8) CRR,2148,e804c026aa5734b0
+crr.art412.1,crr,Art. 412(1) CRR,532,ab28227dc4ca2c65
+crr.art412.2,crr,Art. 412(2) CRR,391,cbb5ff9412d003a2
+crr.art412.3,crr,Art. 412(3) CRR,202,fa91396ecbf79ebb
+crr.art412.4,crr,Art. 412(4) CRR,185,748bf9c3a495de61
+crr.art412.4a,crr,Art. 412(4a) CRR,127,1583d599b505cdb1
+crr.art412.5,crr,Art. 412(5) CRR,590,4ef462c09855eb02
+crr.art413.1,crr,Art. 413(1) CRR,240,14ead0a5127b32b6
+crr.art413.2,crr,Art. 413(2) CRR,334,6d467d65bdb82e9c
+crr.art413.3,crr,Art. 413(3) CRR,259,2bec6ebba8aad045
+crr.art413.4,crr,Art. 413(4) CRR,263,dfe69927ac4d68e1
+crr.art428b.1,crr,Art. 428b(1) CRR,513,4eea82648d8b42df
+crr.art428b.2,crr,Art. 428b(2) CRR,239,db15807492a9f3ae
+crr.art428b.3,crr,Art. 428b(3) CRR,527,472b1eb22b983ec6
+crr.art428b.4,crr,Art. 428b(4) CRR,377,6b9d85b1071098b7
+crr.art428b.5,crr,Art. 428b(5) CRR,1521,cfd6b677c6988171
+crr.art428k.1,crr,Art. 428k(1) CRR,539,9dffab380ba3b4e7
+crr.art428k.2,crr,Art. 428k(2) CRR,577,e1bcbe4faf646cb9
+crr.art428k.3,crr,Art. 428k(3) CRR,907,3be0db2eec9c6650
+crr.art428k.4,crr,Art. 428k(4) CRR,1082,be700a2f83707295
+crr.art428l,crr,Art. 428l CRR,1443,f79eb1ae2744ee8f
+crr.art428m,crr,Art. 428m CRR,431,66355f42a10287eb
+crr.art428n,crr,Art. 428n CRR,432,723be7578a3a7c85
+crr.art428o,crr,Art. 428o CRR,1590,78f02043a3c6d405
+crr.art428r.1,crr,Art. 428r(1) CRR,2242,28157b75c6fcc49d
+crr.art428r.2,crr,Art. 428r(2) CRR,767,d0cf79c62dfcf845
+crr.art428s.1,crr,Art. 428s(1) CRR,1169,fe2b173551783224
+crr.art428s.2,crr,Art. 428s(2) CRR,526,b81fc1e638ae1502
+crr.art428u,crr,Art. 428u CRR,296,3e50e67c077492bb
+crr.art428ad,crr,Art. 428ad CRR,2322,6026265fc2a15bb7
+crr.art428ag,crr,Art. 428ag CRR,2092,e6649d4efb6a92ce
+crr.art428ah.1,crr,Art. 428ah(1) CRR,583,1c0d669e48f327c1
+crr.art428ah.2,crr,Art. 428ah(2) CRR,1123,845a7e08218fc7e9
+crd.art73,crd,Art. 73 CRD,667,be4f5ab6f29423ac
+crd.art84.1,crd,Art. 84(1) CRD,454,be9ad6b0d977b01a
+crd.art84.2,crd,Art. 84(2) CRD,347,384231fbb3552982
+crd.art84.3,crd,Art. 84(3) CRD,337,fb78b2bb91267e56
+crd.art84.4,crd,Art. 84(4) CRD,425,96001243f3edfc53
+crd.art84.5,crd,Art. 84(5) CRD,857,699b510374f18ae5
+crd.art84.6,crd,Art. 84(6) CRD,632,af8b5d761df13dde
+crd.art98.1,crd,Art. 98(1) CRD,1783,69ad8a39a2019782
+crd.art98.2,crd,Art. 98(2) CRD,647,8342205cb41b02a5
+crd.art98.3,crd,Art. 98(3) CRD,487,07477c211339f07b
+crd.art98.4,crd,Art. 98(4) CRD,496,3ec603c0500956e9
+crd.art98.5,crd,Art. 98(5) CRD,1659,83defb717fa60591
+crd.art98.5a,crd,Art. 98(5a) CRD,2361,c57cd7aaf1c52e7e
+crd.art98.6,crd,Art. 98(6) CRD,657,ce6b350491a3e18c
+crd.art98.7,crd,Art. 98(7) CRD,584,84e3790fc04e4300
+crd.art98.8,crd,Art. 98(8) CRD,1576,ecf0bdfde64a3407
+rts856.art1.1,rts856,Art. 1(1) Delegierte VO (EU) 2024/856,1176,c36766e0a68eb43b
+rts856.art1.2,rts856,Art. 1(2) Delegierte VO (EU) 2024/856,510,51edd2ca4d8c8f08
+rts856.art1.3,rts856,Art. 1(3) Delegierte VO (EU) 2024/856,827,d712c734b7ae7fc1
+rts856.art1.4,rts856,Art. 1(4) Delegierte VO (EU) 2024/856,806,e1c042f51ed02e82
+rts856.art2,rts856,Art. 2 Delegierte VO (EU) 2024/856,878,32a14bac0c82227b
+rts856.art3.1,rts856,Art. 3(1) Delegierte VO (EU) 2024/856,254,3a1d53793ed6bed4
+rts856.art3.2,rts856,Art. 3(2) Delegierte VO (EU) 2024/856,1497,153d64e567735200
+rts856.art3.3,rts856,Art. 3(3) Delegierte VO (EU) 2024/856,209,803afc2c5d5023b6
+rts856.art3.4,rts856,Art. 3(4) Delegierte VO (EU) 2024/856,794,48c9e7c53c0d89ab
+rts856.art3.5,rts856,Art. 3(5) Delegierte VO (EU) 2024/856,907,045f42f43d3b4ac5
+rts856.art3.6,rts856,Art. 3(6) Delegierte VO (EU) 2024/856,253,32a321141ebf8afa
+rts856.art3.7,rts856,Art. 3(7) Delegierte VO (EU) 2024/856,489,953354b71e1a4c0b
+rts856.art3.8,rts856,Art. 3(8) Delegierte VO (EU) 2024/856,881,9c246dd7dbce6070
+rts856.art3.9,rts856,Art. 3(9) Delegierte VO (EU) 2024/856,1244,bed4e9b94e17158c
+rts856.art4.1,rts856,Art. 4(1) Delegierte VO (EU) 2024/856,450,a14425a639727bb6
+rts856.art4.2,rts856,Art. 4(2) Delegierte VO (EU) 2024/856,326,4ae54d6cedd0f6ae
+rts856.art4.3,rts856,Art. 4(3) Delegierte VO (EU) 2024/856,186,2d8f73feae56b45c
+rts856.art4.4,rts856,Art. 4(4) Delegierte VO (EU) 2024/856,787,069160a9981234b4
+rts856.art5.1,rts856,Art. 5(1) Delegierte VO (EU) 2024/856,414,aad7e5b7bf365156
+rts856.art5.2,rts856,Art. 5(2) Delegierte VO (EU) 2024/856,196,4a8648d473b75403
+ebagl.p10,ebagl,"EBA/GL/2022/14, Rn. 10",215,602e4d69109e5f14
+ebagl.p11,ebagl,"EBA/GL/2022/14, Rn. 11",357,63f6f970267b2132
+ebagl.p12,ebagl,"EBA/GL/2022/14, Rn. 12",177,f08d791678a4fb81
+ebagl.p13,ebagl,"EBA/GL/2022/14, Rn. 13",292,69ad7ed3fa6bbb05
+ebagl.p14,ebagl,"EBA/GL/2022/14, Rn. 14",677,4a67d37e83931638
+ebagl.p15,ebagl,"EBA/GL/2022/14, Rn. 15",571,9112075913d92d4c
+ebagl.p16,ebagl,"EBA/GL/2022/14, Rn. 16",388,6d9dd5d9662fc15f
+ebagl.p17,ebagl,"EBA/GL/2022/14, Rn. 17",590,760a4b285a25ba82
+ebagl.p18,ebagl,"EBA/GL/2022/14, Rn. 18",584,833cfc7c25069cc3
+ebagl.p19,ebagl,"EBA/GL/2022/14, Rn. 19",362,b80dd37a2e9a787c
+ebagl.p20,ebagl,"EBA/GL/2022/14, Rn. 20",501,c8409e8bcca10bd1
+ebagl.p21,ebagl,"EBA/GL/2022/14, Rn. 21",326,56b359d08e36d50b
+ebagl.p22,ebagl,"EBA/GL/2022/14, Rn. 22",608,5ce14685161e720c
+ebagl.p23,ebagl,"EBA/GL/2022/14, Rn. 23",872,8d188eea40e03061
+ebagl.p24,ebagl,"EBA/GL/2022/14, Rn. 24",448,3435a962c58bce8d
+ebagl.p25,ebagl,"EBA/GL/2022/14, Rn. 25",447,8eaaf4a2c7eefb15
+ebagl.p26,ebagl,"EBA/GL/2022/14, Rn. 26",1103,8af4e37083f03b47
+ebagl.p27,ebagl,"EBA/GL/2022/14, Rn. 27",196,2bfc97a131e0250f
+ebagl.p28,ebagl,"EBA/GL/2022/14, Rn. 28",335,ff2a779769dee93b
+ebagl.p29,ebagl,"EBA/GL/2022/14, Rn. 29",636,32eee408bec41fa6
+ebagl.p30,ebagl,"EBA/GL/2022/14, Rn. 30",1767,bd54e1168a70239f
+ebagl.p31,ebagl,"EBA/GL/2022/14, Rn. 31",329,e20ca12ffc3b156e
+ebagl.p32,ebagl,"EBA/GL/2022/14, Rn. 32",348,6da9c78af675c6fa
+ebagl.p33,ebagl,"EBA/GL/2022/14, Rn. 33",377,1afa2a5ba940d063
+ebagl.p34,ebagl,"EBA/GL/2022/14, Rn. 34",527,ad0782b45091491a
+ebagl.p35,ebagl,"EBA/GL/2022/14, Rn. 35",653,68868a0284294b9c
+ebagl.p36,ebagl,"EBA/GL/2022/14, Rn. 36",263,8bc7003df0e83146
+ebagl.p37,ebagl,"EBA/GL/2022/14, Rn. 37",302,3f63484a9f2a8390
+ebagl.p38,ebagl,"EBA/GL/2022/14, Rn. 38",214,8d6ec58feecc5b39
+ebagl.p39,ebagl,"EBA/GL/2022/14, Rn. 39",285,e5af2780126816e5
+ebagl.p40,ebagl,"EBA/GL/2022/14, Rn. 40",1321,cd52928a5b25d40a
+ebagl.p41,ebagl,"EBA/GL/2022/14, Rn. 41",2285,0c448498a4e95e88
+ebagl.p41#2,ebagl,"EBA/GL/2022/14, Rn. 41",345,4fd6203fdcb22b18
+ebagl.p42,ebagl,"EBA/GL/2022/14, Rn. 42",1888,3f198daaedbc327d
+ebagl.p43,ebagl,"EBA/GL/2022/14, Rn. 43",1526,e10654957023b59e
+ebagl.p44,ebagl,"EBA/GL/2022/14, Rn. 44",1837,67b8dbec72421d6b
+ebagl.p45,ebagl,"EBA/GL/2022/14, Rn. 45",314,061e090f106b819f
+ebagl.p46,ebagl,"EBA/GL/2022/14, Rn. 46",834,f9da46f74bde4696
+ebagl.p47,ebagl,"EBA/GL/2022/14, Rn. 47",2226,02dcc027279dbe0d
+ebagl.p48,ebagl,"EBA/GL/2022/14, Rn. 48",114,f90d5047b9fdb327
+ebagl.p49,ebagl,"EBA/GL/2022/14, Rn. 49",272,a39fdb0b974c51d6
+ebagl.p50,ebagl,"EBA/GL/2022/14, Rn. 50",313,c530a06ac1a03639
+ebagl.p51,ebagl,"EBA/GL/2022/14, Rn. 51",275,aa3bb99bd53e9b4a
+ebagl.p52,ebagl,"EBA/GL/2022/14, Rn. 52",1235,c401479820cb002b
+ebagl.p53,ebagl,"EBA/GL/2022/14, Rn. 53",428,d4fde0dadaa25276
+ebagl.p54,ebagl,"EBA/GL/2022/14, Rn. 54",1498,e118ba22aff5e735
+ebagl.p55,ebagl,"EBA/GL/2022/14, Rn. 55",802,9100c0a01f0e56d4
+ebagl.p56,ebagl,"EBA/GL/2022/14, Rn. 56",461,3437364d9f718626
+ebagl.p57,ebagl,"EBA/GL/2022/14, Rn. 57",592,06d47c9db362d87e
+ebagl.p58,ebagl,"EBA/GL/2022/14, Rn. 58",288,092a952f9e0e084a
+ebagl.p59,ebagl,"EBA/GL/2022/14, Rn. 59",707,e9a380d64d85aed7
+ebagl.p60,ebagl,"EBA/GL/2022/14, Rn. 60",345,b56d24d6604b78e3
+ebagl.p61,ebagl,"EBA/GL/2022/14, Rn. 61",380,8210e024767dc2d6
+ebagl.p62,ebagl,"EBA/GL/2022/14, Rn. 62",229,786a6a2e09b87798
+ebagl.p63,ebagl,"EBA/GL/2022/14, Rn. 63",227,82c1aac9ae70ef96
+ebagl.p64,ebagl,"EBA/GL/2022/14, Rn. 64",432,f7f6e16b102af036
+ebagl.p65,ebagl,"EBA/GL/2022/14, Rn. 65",447,08b1019786727526
+ebagl.p66,ebagl,"EBA/GL/2022/14, Rn. 66",600,0e98da6f46bbb169
+ebagl.p67,ebagl,"EBA/GL/2022/14, Rn. 67",1682,41b2a439603caab1
+ebagl.p68,ebagl,"EBA/GL/2022/14, Rn. 68",322,d640738ff09e68bd
+ebagl.p69,ebagl,"EBA/GL/2022/14, Rn. 69",442,74408354ef80134d
+ebagl.p70,ebagl,"EBA/GL/2022/14, Rn. 70",843,d981478730ebfd2e
+ebagl.p71,ebagl,"EBA/GL/2022/14, Rn. 71",589,3a58c00c5cfe4ebb
+ebagl.p72,ebagl,"EBA/GL/2022/14, Rn. 72",333,f50552aba0ad0cf2
+ebagl.p73,ebagl,"EBA/GL/2022/14, Rn. 73",407,f3e800e376f73402
+ebagl.p74,ebagl,"EBA/GL/2022/14, Rn. 74",378,8d6f363eee356d90
+ebagl.p75,ebagl,"EBA/GL/2022/14, Rn. 75",372,dcb03f1349c8f502
+ebagl.p76,ebagl,"EBA/GL/2022/14, Rn. 76",271,68d6069aaa1b44da
+ebagl.p77,ebagl,"EBA/GL/2022/14, Rn. 77",867,d94453e88f4f8c8f
+ebagl.p78,ebagl,"EBA/GL/2022/14, Rn. 78",383,2e8f5088dc5a1a96
+ebagl.p79,ebagl,"EBA/GL/2022/14, Rn. 79",202,a224829484bc1758
+ebagl.p80,ebagl,"EBA/GL/2022/14, Rn. 80",626,1833bb807b75e6f7
+ebagl.p81,ebagl,"EBA/GL/2022/14, Rn. 81",374,d6e1864b9498c7d3
+ebagl.p82,ebagl,"EBA/GL/2022/14, Rn. 82",146,b22804fb748a4314
+ebagl.p83,ebagl,"EBA/GL/2022/14, Rn. 83",185,c9ee111bfe5e4d2b
+ebagl.p84,ebagl,"EBA/GL/2022/14, Rn. 84",602,7491e56886e756ac
+ebagl.p85,ebagl,"EBA/GL/2022/14, Rn. 85",391,97dbfdab989338e1
+ebagl.p86,ebagl,"EBA/GL/2022/14, Rn. 86",375,99c74e0b7f38634b
+ebagl.p87,ebagl,"EBA/GL/2022/14, Rn. 87",1296,b54a73ced0b50132
+ebagl.p88,ebagl,"EBA/GL/2022/14, Rn. 88",591,1900f0233eb2f2ad
+ebagl.p89,ebagl,"EBA/GL/2022/14, Rn. 89",458,30169e332e0df5b8
+ebagl.p90,ebagl,"EBA/GL/2022/14, Rn. 90",518,3102e1ac1c83abea
+ebagl.p91,ebagl,"EBA/GL/2022/14, Rn. 91",1238,7a180e470fec1591
+ebagl.p92,ebagl,"EBA/GL/2022/14, Rn. 92",1155,3a7e639298130c0e
+ebagl.p93,ebagl,"EBA/GL/2022/14, Rn. 93",420,b8c3006cae92e7c0
+ebagl.p94,ebagl,"EBA/GL/2022/14, Rn. 94",702,3cb5b4c3110ac52e
+ebagl.p95,ebagl,"EBA/GL/2022/14, Rn. 95",188,10ced3429be0da5b
+ebagl.p96,ebagl,"EBA/GL/2022/14, Rn. 96",216,66f0ae72ed59a4f4
+ebagl.p97,ebagl,"EBA/GL/2022/14, Rn. 97",217,8bba9fd5be5fe4b1
+ebagl.p98,ebagl,"EBA/GL/2022/14, Rn. 98",377,6a582d745ce427a1
+ebagl.p99,ebagl,"EBA/GL/2022/14, Rn. 99",839,4aa570febc723037
+ebagl.p100,ebagl,"EBA/GL/2022/14, Rn. 100",389,26269873b2db8ef5
+ebagl.p101,ebagl,"EBA/GL/2022/14, Rn. 101",293,50d5ef38ed55c3b7
+ebagl.p102,ebagl,"EBA/GL/2022/14, Rn. 102",460,0154f7cdf223051b
+ebagl.p103,ebagl,"EBA/GL/2022/14, Rn. 103",505,7d62ffab2eab72aa
+ebagl.p104,ebagl,"EBA/GL/2022/14, Rn. 104",441,bae8866d4c4f5c8c
+ebagl.p105,ebagl,"EBA/GL/2022/14, Rn. 105",178,e970f8d8cf38b9b7
+ebagl.p106,ebagl,"EBA/GL/2022/14, Rn. 106",838,2241775d472d5342
+ebagl.p107,ebagl,"EBA/GL/2022/14, Rn. 107",358,7b9980e9e545d087
+ebagl.p108,ebagl,"EBA/GL/2022/14, Rn. 108",588,2227751004fb756f
+ebagl.p109,ebagl,"EBA/GL/2022/14, Rn. 109",1572,1329d6a18c9d58fd
+ebagl.p110,ebagl,"EBA/GL/2022/14, Rn. 110",215,69284f07215fa5ca
+ebagl.p111,ebagl,"EBA/GL/2022/14, Rn. 111",694,935f75f14b7f9e00
+ebagl.p112,ebagl,"EBA/GL/2022/14, Rn. 112",2017,6253072b581ec441
+ebagl.p112#2,ebagl,"EBA/GL/2022/14, Rn. 112",1290,91e02d352672c132
+ebagl.p113,ebagl,"EBA/GL/2022/14, Rn. 113",1293,25d7695a22eb5905
+ebagl.p114,ebagl,"EBA/GL/2022/14, Rn. 114",281,3bdbb082eb253c0e
+ebagl.p115,ebagl,"EBA/GL/2022/14, Rn. 115",491,8b1b1ecdf9c598be
+ebagl.p116,ebagl,"EBA/GL/2022/14, Rn. 116",409,f23c1e8fbf87197a
+ebagl.p117,ebagl,"EBA/GL/2022/14, Rn. 117",365,071a2efbe42ca761
+ebagl.p118,ebagl,"EBA/GL/2022/14, Rn. 118",181,e4d2943cab83edeb
+ebagl.p119,ebagl,"EBA/GL/2022/14, Rn. 119",1585,17534598028fe1c6
+ebagl.p120,ebagl,"EBA/GL/2022/14, Rn. 120",471,e16ab0e7bfb587a8
+ebagl.p121,ebagl,"EBA/GL/2022/14, Rn. 121",494,58e87a601f170dda
+ebagl.p122,ebagl,"EBA/GL/2022/14, Rn. 122",65,3ba1352b7ce32a23
+ebagl.p123,ebagl,"EBA/GL/2022/14, Rn. 123",259,7c34fc89c0377f06
+ebagl.p124,ebagl,"EBA/GL/2022/14, Rn. 124",552,01c8726ca4ed5f7b
+ebagl.p125,ebagl,"EBA/GL/2022/14, Rn. 125",281,01b1431f85246322
+ebagl.p126,ebagl,"EBA/GL/2022/14, Rn. 126",783,2287c711c05f9262
+ebagl.p127,ebagl,"EBA/GL/2022/14, Rn. 127",278,9c0ac3a708035520
+ebagl.p128,ebagl,"EBA/GL/2022/14, Rn. 128",281,708ba84a67b9841b
+ebagl.p129,ebagl,"EBA/GL/2022/14, Rn. 129",287,c1371a0423926c29
+ebagl.p130,ebagl,"EBA/GL/2022/14, Rn. 130",1117,76b5cff32ba19817
+ebagl.p131,ebagl,"EBA/GL/2022/14, Rn. 131",2201,71a35d4cb99f619b
+ebagl.p131#2,ebagl,"EBA/GL/2022/14, Rn. 131",216,04c4d1431bb80d60
+ebagl.p132,ebagl,"EBA/GL/2022/14, Rn. 132",1918,6f709f81513764e6
+ebagl.p133,ebagl,"EBA/GL/2022/14, Rn. 133",671,08e11e37a62c6c2c
+ebagl.p134,ebagl,"EBA/GL/2022/14, Rn. 134",593,7e84907b1dfa1b83
+ebagl.p135,ebagl,"EBA/GL/2022/14, Rn. 135",273,413c05f024173ac0
+ebagl.p136,ebagl,"EBA/GL/2022/14, Rn. 136",314,4f1d14b4dfedbe3b
+ebagl.p137,ebagl,"EBA/GL/2022/14, Rn. 137",259,4b4eec3d28a944e9
+ebagl.p138,ebagl,"EBA/GL/2022/14, Rn. 138",429,7369f75bb440a8ee
+ebagl.p139,ebagl,"EBA/GL/2022/14, Rn. 139",1058,065bc29df01fb7ec
+ebagl.p140,ebagl,"EBA/GL/2022/14, Rn. 140",120,aa1a6edbaa581d3a
+ebagl.p141,ebagl,"EBA/GL/2022/14, Rn. 141",132,13a665f4a4f2d5ae
+ebagl.p142,ebagl,"EBA/GL/2022/14, Rn. 142",289,be7a077bc4037b76
+ebagl.p143,ebagl,"EBA/GL/2022/14, Rn. 143",727,ebadd7cca8accf29
+ebagl.p144,ebagl,"EBA/GL/2022/14, Rn. 144",228,e3468877596a9f9c
+ebagl.p145,ebagl,"EBA/GL/2022/14, Rn. 145",419,28eccbf5bd9857dc
+ebagl.p146,ebagl,"EBA/GL/2022/14, Rn. 146",447,38015450447c2caa
+ebagl.p147,ebagl,"EBA/GL/2022/14, Rn. 147",492,a164b41bd72117a9
+ebagl.p148,ebagl,"EBA/GL/2022/14, Rn. 148",532,a4589af2a3179b22
+ebagl.p149,ebagl,"EBA/GL/2022/14, Rn. 149",323,7f5f67d1b3d1ad2c
+ebagl.p150,ebagl,"EBA/GL/2022/14, Rn. 150",394,639ca8d2cee53a0e
+ebagl.p151,ebagl,"EBA/GL/2022/14, Rn. 151",919,0efdf031662229b4
+ebagl.p152,ebagl,"EBA/GL/2022/14, Rn. 152",203,cb7fabb2853e1818
+ebagl.p153,ebagl,"EBA/GL/2022/14, Rn. 153",569,5f7c846bc474756c
+ebagl.p154,ebagl,"EBA/GL/2022/14, Rn. 154",231,8710a7e422266be1
+ebagl.p155,ebagl,"EBA/GL/2022/14, Rn. 155",376,ee082ccf3f1dc4f1
+ebagl.p156,ebagl,"EBA/GL/2022/14, Rn. 156",332,6d0b5042503c547f
+ebagl.p157,ebagl,"EBA/GL/2022/14, Rn. 157",209,4acf747ee89298c5
+ebagl.p158,ebagl,"EBA/GL/2022/14, Rn. 158",207,8d3d0b3333944e9e
+ebagl.p159,ebagl,"EBA/GL/2022/14, Rn. 159",630,439c5a9ce7f567e4
+ebagl.p160,ebagl,"EBA/GL/2022/14, Rn. 160",249,b082e660b2ad4f12
+ebagl.p161,ebagl,"EBA/GL/2022/14, Rn. 161",2395,499ee701ed6a059e
+ebagl.p161#2,ebagl,"EBA/GL/2022/14, Rn. 161",2379,307b65c28ca4b0be
+ebagl.p161#3,ebagl,"EBA/GL/2022/14, Rn. 161",2226,08ece3057caedabd
+ebagl.p161#4,ebagl,"EBA/GL/2022/14, Rn. 161",2208,91235636554951af
+ebagl.p161#5,ebagl,"EBA/GL/2022/14, Rn. 161",2283,03dae9f936f1faa3
+ebagl.p161#6,ebagl,"EBA/GL/2022/14, Rn. 161",2069,aeac12e9673626d2
+marisk.at1.tz1,marisk,MaRisk AT 1 Tz. 1,1135,4c07b83e8feea54f
+marisk.at1.tz2,marisk,MaRisk AT 1 Tz. 2,1528,bec78468ea6618f5
+marisk.at1.tz3,marisk,MaRisk AT 1 Tz. 3,1214,ecbf118de3df64a3
+marisk.at1.tz4,marisk,MaRisk AT 1 Tz. 4,949,9033f741f5c640e8
+marisk.at1.tz5,marisk,MaRisk AT 1 Tz. 5,708,fdab586cac3d31a7
+marisk.at1.tz6,marisk,MaRisk AT 1 Tz. 6,267,29c8a60f6d404b76
+marisk.at1.tz7,marisk,MaRisk AT 1 Tz. 7,299,43fcaf32424770fa
+marisk.at1.tz8,marisk,MaRisk AT 1 Tz. 8,1019,bf1b911e16426a64
+marisk.at2.tz1,marisk,MaRisk AT 2 Tz. 1,677,d737e88725f97c51
+marisk.at2.1.tz1,marisk,MaRisk AT 2.1 Tz. 1,650,666886acad9f9759
+marisk.at2.1.tz2,marisk,MaRisk AT 2.1 Tz. 2,596,2d9d505661d85ad2
+marisk.at2.2.tz1,marisk,MaRisk AT 2.2 Tz. 1,1047,49fd4ef7140f7f85
+marisk.at2.2.tz2,marisk,MaRisk AT 2.2 Tz. 2,383,00f0228b8b1c13ad
+marisk.at2.3.tz1,marisk,MaRisk AT 2.3 Tz. 1,215,598d1d5c7380e827
+marisk.at2.3.tz2,marisk,MaRisk AT 2.3 Tz. 2,587,b414966f4e30c5b1
+marisk.at2.3.tz3,marisk,MaRisk AT 2.3 Tz. 3,746,730b50237ef75e48
+marisk.at2.3.tz4,marisk,MaRisk AT 2.3 Tz. 4,248,0df183bc798026fa
+marisk.at2.3.tz5,marisk,MaRisk AT 2.3 Tz. 5,1210,01d4548b7c2eb07b
+marisk.at3.tz1,marisk,MaRisk AT 3 Tz. 1,1098,bf435f16e0a29455
+marisk.at3.tz2,marisk,MaRisk AT 3 Tz. 2,465,589de1cc5970116c
+marisk.at4.1.tz1,marisk,MaRisk AT 4.1 Tz. 1,408,5a067ca1bb327a38
+marisk.at4.1.tz2,marisk,MaRisk AT 4.1 Tz. 2,516,328ab2373363b45a
+marisk.at4.1.tz3,marisk,MaRisk AT 4.1 Tz. 3,324,4c173190acca77e6
+marisk.at4.1.tz4,marisk,MaRisk AT 4.1 Tz. 4,511,252d876d60109ead
+marisk.at4.1.tz5,marisk,MaRisk AT 4.1 Tz. 5,385,2719dee07713c620
+marisk.at4.1.tz6,marisk,MaRisk AT 4.1 Tz. 6,395,2fb68ff528500299
+marisk.at4.1.tz7,marisk,MaRisk AT 4.1 Tz. 7,890,61bb0a9ed1b8f35a
+marisk.at4.1.tz8,marisk,MaRisk AT 4.1 Tz. 8,416,c54d149c48153a3f
+marisk.at4.1.tz9,marisk,MaRisk AT 4.1 Tz. 9,1734,202c0264d5157f56
+marisk.at4.2.tz1,marisk,MaRisk AT 4.2 Tz. 1,1194,0a137bde5e6c9675
+marisk.at4.2.tz2,marisk,MaRisk AT 4.2 Tz. 2,932,27a79ffd6a3be167
+marisk.at4.2.tz3,marisk,MaRisk AT 4.2 Tz. 3,621,6661d4b0bf7796fb
+marisk.at4.2.tz4,marisk,MaRisk AT 4.2 Tz. 4,472,b60c54e693d000f9
+marisk.at4.2.tz5,marisk,MaRisk AT 4.2 Tz. 5,434,a78567ece261fca8
+marisk.at4.2.tz6,marisk,MaRisk AT 4.2 Tz. 6,296,5ce58ea8dff5e519
+marisk.at4.2.tz7,marisk,MaRisk AT 4.2 Tz. 7,227,28ac9c9ef35c2878
+marisk.at4.3.tz1,marisk,MaRisk AT 4.3 Tz. 1,343,74e8df893a8ec9bb
+marisk.at4.3.1.tz1,marisk,MaRisk AT 4.3.1 Tz. 1,529,ebc13624dc679d1d
+marisk.at4.3.1.tz2,marisk,MaRisk AT 4.3.1 Tz. 2,762,da6a4ef24ab51e6a
+marisk.at4.3.2.tz1,marisk,MaRisk AT 4.3.2 Tz. 1,691,1ae447a05cdd20f8
+marisk.at4.3.2.tz2,marisk,MaRisk AT 4.3.2 Tz. 2,632,834c6a82825a2637
+marisk.at4.3.2.tz3,marisk,MaRisk AT 4.3.2 Tz. 3,594,970a1da096c97431
+marisk.at4.3.2.tz4,marisk,MaRisk AT 4.3.2 Tz. 4,382,4433db6733755075
+marisk.at4.3.2.tz5,marisk,MaRisk AT 4.3.2 Tz. 5,453,519f9f796873d55a
+marisk.at4.3.3.tz1,marisk,MaRisk AT 4.3.3 Tz. 1,676,3abbd9529fa9659a
+marisk.at4.3.3.tz2,marisk,MaRisk AT 4.3.3 Tz. 2,536,b32a2f030353c74c
+marisk.at4.3.3.tz3,marisk,MaRisk AT 4.3.3 Tz. 3,559,0625335d72abb562
+marisk.at4.3.3.tz4,marisk,MaRisk AT 4.3.3 Tz. 4,272,c63220db7ed8d08e
+marisk.at4.3.3.tz5,marisk,MaRisk AT 4.3.3 Tz. 5,183,dff0878bbc5d3904
+marisk.at4.3.3.tz6,marisk,MaRisk AT 4.3.3 Tz. 6,402,9d41047d25a5c9f4
+marisk.at4.3.4.tz1,marisk,MaRisk AT 4.3.4 Tz. 1,498,eff9ff2a5a22c9fe
+marisk.at4.3.4.tz2,marisk,MaRisk AT 4.3.4 Tz. 2,563,b914eb594a8585fa
+marisk.at4.3.4.tz3,marisk,MaRisk AT 4.3.4 Tz. 3,661,c09060b6217011dd
+marisk.at4.3.4.tz4,marisk,MaRisk AT 4.3.4 Tz. 4,402,800201f19a7c7ffb
+marisk.at4.3.4.tz5,marisk,MaRisk AT 4.3.4 Tz. 5,440,242baccc25d67eca
+marisk.at4.3.4.tz6,marisk,MaRisk AT 4.3.4 Tz. 6,502,b8367735a3d39721
+marisk.at4.3.4.tz7,marisk,MaRisk AT 4.3.4 Tz. 7,506,123e73f7fae2bec3
+marisk.at4.3.5.tz1,marisk,MaRisk AT 4.3.5 Tz. 1,293,d36611c47acc0a70
+marisk.at4.3.5.tz2,marisk,MaRisk AT 4.3.5 Tz. 2,445,bb4bba46be6b3fb1
+marisk.at4.3.5.tz3,marisk,MaRisk AT 4.3.5 Tz. 3,265,52e71de797c5b2af
+marisk.at4.3.5.tz4,marisk,MaRisk AT 4.3.5 Tz. 4,216,0a1ed8b25b2c944c
+marisk.at4.3.5.tz5,marisk,MaRisk AT 4.3.5 Tz. 5,599,eb3d212c9b34c07c
+marisk.at4.3.5.tz6,marisk,MaRisk AT 4.3.5 Tz. 6,271,99e526d021085e24
+marisk.at4.4.1.tz1,marisk,MaRisk AT 4.4.1 Tz. 1,490,765a5a20eb299e58
+marisk.at4.4.1.tz2,marisk,MaRisk AT 4.4.1 Tz. 2,1132,2a4304b35da62af8
+marisk.at4.4.1.tz3,marisk,MaRisk AT 4.4.1 Tz. 3,370,efbb4187ee8d3af0
+marisk.at4.4.1.tz4,marisk,MaRisk AT 4.4.1 Tz. 4,455,6fab5adf104a1cb2
+marisk.at4.4.1.tz5,marisk,MaRisk AT 4.4.1 Tz. 5,713,a786220837dc8226
+marisk.at4.4.1.tz6,marisk,MaRisk AT 4.4.1 Tz. 6,201,4a0c1996d8639f93
+marisk.at4.4.2.tz1,marisk,MaRisk AT 4.4.2 Tz. 1,665,469eb0b008fc6540
+marisk.at4.4.2.tz2,marisk,MaRisk AT 4.4.2 Tz. 2,315,bc420e7b1ee464e7
+marisk.at4.4.2.tz3,marisk,MaRisk AT 4.4.2 Tz. 3,625,f2a4ac32c29522f9
+marisk.at4.4.2.tz4,marisk,MaRisk AT 4.4.2 Tz. 4,288,552b759f5912c7d1
+marisk.at4.4.2.tz5,marisk,MaRisk AT 4.4.2 Tz. 5,401,ead054a21683e430
+marisk.at4.4.2.tz6,marisk,MaRisk AT 4.4.2 Tz. 6,571,3d6f85b19e28338b
+marisk.at4.4.2.tz7,marisk,MaRisk AT 4.4.2 Tz. 7,515,47f81487b502eb3f
+marisk.at4.4.2.tz8,marisk,MaRisk AT 4.4.2 Tz. 8,192,9a822aa79d41de32
+marisk.at4.4.3.tz1,marisk,MaRisk AT 4.4.3 Tz. 1,316,03376bf3c67317f2
+marisk.at4.4.3.tz2,marisk,MaRisk AT 4.4.3 Tz. 2,531,fbc6a15023bac315
+marisk.at4.4.3.tz3,marisk,MaRisk AT 4.4.3 Tz. 3,421,e566ae7ef42d58b9
+marisk.at4.4.3.tz4,marisk,MaRisk AT 4.4.3 Tz. 4,454,8faccb2d7fe7fb5c
+marisk.at4.4.3.tz5,marisk,MaRisk AT 4.4.3 Tz. 5,272,e22e064e469cbd5d
+marisk.at4.4.3.tz6,marisk,MaRisk AT 4.4.3 Tz. 6,182,353357b137f654dc
+marisk.at4.5.tz1,marisk,MaRisk AT 4.5 Tz. 1,1022,5294128c6ccf4739
+marisk.at4.5.tz2,marisk,MaRisk AT 4.5 Tz. 2,455,93ba3ffb47c82008
+marisk.at4.5.tz3,marisk,MaRisk AT 4.5 Tz. 3,402,571bc5bd4d8c9ac2
+marisk.at4.5.tz4,marisk,MaRisk AT 4.5 Tz. 4,433,03190d745d71c665
+marisk.at4.5.tz5,marisk,MaRisk AT 4.5 Tz. 5,700,3e7406fea02f591d
+marisk.at4.5.tz6,marisk,MaRisk AT 4.5 Tz. 6,975,275ca563b57f433f
+marisk.at5.tz1,marisk,MaRisk AT 5 Tz. 1,379,340b36b4d8946e7f
+marisk.at5.tz2,marisk,MaRisk AT 5 Tz. 2,370,895906a8f466e0e7
+marisk.at5.tz3,marisk,MaRisk AT 5 Tz. 3,1015,65104f04ecbb1a89
+marisk.at5.tz4,marisk,MaRisk AT 5 Tz. 4,167,421de22ec1696e41
+marisk.at6.tz1,marisk,MaRisk AT 6 Tz. 1,270,0d5c0d2ff7ae4f4c
+marisk.at6.tz2,marisk,MaRisk AT 6 Tz. 2,284,b9070cd840af04e2
+marisk.at7.1.tz1,marisk,MaRisk AT 7.1 Tz. 1,275,3f08b17cff05ac32
+marisk.at7.1.tz2,marisk,MaRisk AT 7.1 Tz. 2,385,c768abaae9680e9d
+marisk.at7.1.tz3,marisk,MaRisk AT 7.1 Tz. 3,235,0fd7193330a13776
+marisk.at7.2.tz1,marisk,MaRisk AT 7.2 Tz. 1,252,1257040b749d7efd
+marisk.at7.2.tz2,marisk,MaRisk AT 7.2 Tz. 2,852,f6762143f603eedc
+marisk.at7.2.tz3,marisk,MaRisk AT 7.2 Tz. 3,459,20ebd7977dd857b3
+marisk.at7.2.tz4,marisk,MaRisk AT 7.2 Tz. 4,496,4545730cd1e74566
+marisk.at7.2.tz5,marisk,MaRisk AT 7.2 Tz. 5,498,6cc27b6b1a7ac0e6
+marisk.at7.3.tz1,marisk,MaRisk AT 7.3 Tz. 1,736,d99e2d67cbf6a040
+marisk.at7.3.tz2,marisk,MaRisk AT 7.3 Tz. 2,625,a232ade4d071fbf5
+marisk.at7.3.tz3,marisk,MaRisk AT 7.3 Tz. 3,503,02530cd281d0f842
+marisk.at8.1.tz1,marisk,MaRisk AT 8.1 Tz. 1,560,f5ad5f910360d40d
+marisk.at8.1.tz2,marisk,MaRisk AT 8.1 Tz. 2,859,5d092f07a1f78105
+marisk.at8.1.tz3,marisk,MaRisk AT 8.1 Tz. 3,218,9ea3545f95130e4c
+marisk.at8.1.tz4,marisk,MaRisk AT 8.1 Tz. 4,541,adb43b20d28cff76
+marisk.at8.1.tz5,marisk,MaRisk AT 8.1 Tz. 5,328,344bc36ece90038b
+marisk.at8.1.tz6,marisk,MaRisk AT 8.1 Tz. 6,414,8340a99733c76d54
+marisk.at8.1.tz7,marisk,MaRisk AT 8.1 Tz. 7,346,4df43c260745268b
+marisk.at8.1.tz8,marisk,MaRisk AT 8.1 Tz. 8,708,b7122e49a12ea716
+marisk.at8.2.tz1,marisk,MaRisk AT 8.2 Tz. 1,533,1ebd81893915ba0a
+marisk.at8.3.tz1,marisk,MaRisk AT 8.3 Tz. 1,858,eadf1954f25e9abf
+marisk.at9.tz1,marisk,MaRisk AT 9 Tz. 1,469,ae8d90f40fe981bc
+marisk.at9.tz2,marisk,MaRisk AT 9 Tz. 2,741,5e670410525075ff
+marisk.at9.tz3,marisk,MaRisk AT 9 Tz. 3,219,e0657a0ee924b5e0
+marisk.at9.tz4,marisk,MaRisk AT 9 Tz. 4,945,12a5fd732a98032f
+marisk.at9.tz5,marisk,MaRisk AT 9 Tz. 5,1586,002bb6da2c56a737
+marisk.at9.tz6,marisk,MaRisk AT 9 Tz. 6,741,a81a951ca34ba844
+marisk.at9.tz7,marisk,MaRisk AT 9 Tz. 7,1919,5306e92ef996cafc
+marisk.at9.tz8,marisk,MaRisk AT 9 Tz. 8,843,3bb16d5c04e81533
+marisk.at9.tz9,marisk,MaRisk AT 9 Tz. 9,2321,57ee755cc656d795
+marisk.at9.tz9#2,marisk,MaRisk AT 9 Tz. 9,2305,f73973d0214c998b
+marisk.at9.tz9#3,marisk,MaRisk AT 9 Tz. 9,800,6ceaa7fd7ce3c4f9
+marisk.bt1.tz1,marisk,MaRisk BT 1 Tz. 1,620,24299c73110e73d0
+marisk.bto.tz1,marisk,MaRisk BTO Tz. 1,349,1255b07522d571c8
+marisk.bto.tz2,marisk,MaRisk BTO Tz. 2,838,90918122b7d409d2
+marisk.bto.tz3,marisk,MaRisk BTO Tz. 3,744,5476996b25e734aa
+marisk.bto.tz4,marisk,MaRisk BTO Tz. 4,235,1a42a88f87c7d867
+marisk.bto.tz5,marisk,MaRisk BTO Tz. 5,277,eab0380fe6703579
+marisk.bto.tz6,marisk,MaRisk BTO Tz. 6,303,3ba02f3468e73401
+marisk.bto.tz7,marisk,MaRisk BTO Tz. 7,255,41ed6eb5b0146949
+marisk.bto.tz8,marisk,MaRisk BTO Tz. 8,209,47e5d24ebb0306ff
+marisk.bto.tz9,marisk,MaRisk BTO Tz. 9,194,72fd4bc3dd23fd2c
+marisk.bto1.tz1,marisk,MaRisk BTO 1 Tz. 1,542,29db155854444de5
+marisk.bto1.1.tz1,marisk,MaRisk BTO 1.1 Tz. 1,377,7cb6828016797f6c
+marisk.bto1.1.tz2,marisk,MaRisk BTO 1.1 Tz. 2,513,1e82c3659f062ec9
+marisk.bto1.1.tz3,marisk,MaRisk BTO 1.1 Tz. 3,176,815bf2609124fca8
+marisk.bto1.1.tz4,marisk,MaRisk BTO 1.1 Tz. 4,737,d672aa653772be41
+marisk.bto1.1.tz5,marisk,MaRisk BTO 1.1 Tz. 5,656,aa36ff5b48368745
+marisk.bto1.1.tz6,marisk,MaRisk BTO 1.1 Tz. 6,404,4063c2a448a99927
+marisk.bto1.1.tz7,marisk,MaRisk BTO 1.1 Tz. 7,518,fe7384419019a91d
+marisk.bto1.2.tz1,marisk,MaRisk BTO 1.2 Tz. 1,397,03b514b6e509c3c6
+marisk.bto1.2.tz2,marisk,MaRisk BTO 1.2 Tz. 2,975,a4bd2fd923b5de80
+marisk.bto1.2.tz3,marisk,MaRisk BTO 1.2 Tz. 3,728,2977311cfcffa777
+marisk.bto1.2.tz4,marisk,MaRisk BTO 1.2 Tz. 4,488,5529f4b3bc81d5db
+marisk.bto1.2.tz5,marisk,MaRisk BTO 1.2 Tz. 5,324,5d6b35d5840ef402
+marisk.bto1.2.tz6,marisk,MaRisk BTO 1.2 Tz. 6,454,0be304b6a9f7f779
+marisk.bto1.2.tz7,marisk,MaRisk BTO 1.2 Tz. 7,414,a1280ddc5fef4a0d
+marisk.bto1.2.tz8,marisk,MaRisk BTO 1.2 Tz. 8,437,63d98d08ba47fa6f
+marisk.bto1.2.tz9,marisk,MaRisk BTO 1.2 Tz. 9,1200,eb5dffb7cadf722c
+marisk.bto1.2.1.tz1,marisk,MaRisk BTO 1.2.1 Tz. 1,632,db0fd3a4a3f30107
+marisk.bto1.2.1.tz2,marisk,MaRisk BTO 1.2.1 Tz. 2,458,e0cca15ebe5b484d
+marisk.bto1.2.2.tz1,marisk,MaRisk BTO 1.2.2 Tz. 1,329,89bd2be808c9ee76
+marisk.bto1.2.2.tz2,marisk,MaRisk BTO 1.2.2 Tz. 2,546,f9c16555392fddf8
+marisk.bto1.2.2.tz3,marisk,MaRisk BTO 1.2.2 Tz. 3,455,bef3fe8331f8ac6f
+marisk.bto1.2.2.tz4,marisk,MaRisk BTO 1.2.2 Tz. 4,478,0f9e09da6cffa7d6
+marisk.bto1.2.3.tz1,marisk,MaRisk BTO 1.2.3 Tz. 1,375,d94d27596888ee95
+marisk.bto1.2.3.tz2,marisk,MaRisk BTO 1.2.3 Tz. 2,267,47ea042cc1522936
+marisk.bto1.2.4.tz1,marisk,MaRisk BTO 1.2.4 Tz. 1,297,41dcef977d2484b0
+marisk.bto1.2.4.tz2,marisk,MaRisk BTO 1.2.4 Tz. 2,202,bdb21c2fc93a9d08
+marisk.bto1.2.4.tz3,marisk,MaRisk BTO 1.2.4 Tz. 3,292,e7d71f4de7e810c5
+marisk.bto1.2.5.tz1,marisk,MaRisk BTO 1.2.5 Tz. 1,551,64aedf16306bc960
+marisk.bto1.2.5.tz2,marisk,MaRisk BTO 1.2.5 Tz. 2,624,687bfbbb6f5a1a3e
+marisk.bto1.2.5.tz3,marisk,MaRisk BTO 1.2.5 Tz. 3,537,c93ffd5829c1ef0d
+marisk.bto1.2.5.tz4,marisk,MaRisk BTO 1.2.5 Tz. 4,341,c63317ec80d3208d
+marisk.bto1.2.5.tz5,marisk,MaRisk BTO 1.2.5 Tz. 5,247,723996c8c4fe750d
+marisk.bto1.2.5.tz6,marisk,MaRisk BTO 1.2.5 Tz. 6,308,09deaa483c8524c3
+marisk.bto1.2.5.tz7,marisk,MaRisk BTO 1.2.5 Tz. 7,385,6f56b15c5506e063
+marisk.bto1.2.5.tz8,marisk,MaRisk BTO 1.2.5 Tz. 8,366,f01a89f777e8cbe8
+marisk.bto1.2.5.tz9,marisk,MaRisk BTO 1.2.5 Tz. 9,335,e6f1f6685e14d27f
+marisk.bto1.2.6.tz1,marisk,MaRisk BTO 1.2.6 Tz. 1,492,35aee54f304c030e
+marisk.bto1.2.6.tz2,marisk,MaRisk BTO 1.2.6 Tz. 2,207,6ddc1e4125108e55
+marisk.bto1.2.6.tz3,marisk,MaRisk BTO 1.2.6 Tz. 3,332,80b0cd085005949d
+marisk.bto1.3.1.tz1,marisk,MaRisk BTO 1.3.1 Tz. 1,451,58ef00aff642ab96
+marisk.bto1.3.1.tz2,marisk,MaRisk BTO 1.3.1 Tz. 2,638,5969a2d37bd3e7f0
+marisk.bto1.3.1.tz3,marisk,MaRisk BTO 1.3.1 Tz. 3,464,915addd3a2c058f9
+marisk.bto1.3.2.tz1,marisk,MaRisk BTO 1.3.2 Tz. 1,412,4cfe7be2b65845ac
+marisk.bto1.3.2.tz2,marisk,MaRisk BTO 1.3.2 Tz. 2,657,6f2272a0bb8d1c1c
+marisk.bto1.3.2.tz3,marisk,MaRisk BTO 1.3.2 Tz. 3,508,9ea04c112aa7489c
+marisk.bto1.3.2.tz4,marisk,MaRisk BTO 1.3.2 Tz. 4,323,283e53d48aa21a5e
+marisk.bto1.3.2.tz5,marisk,MaRisk BTO 1.3.2 Tz. 5,629,c96614bf684c2986
+marisk.bto1.3.2.tz6,marisk,MaRisk BTO 1.3.2 Tz. 6,211,67b807b70a06f8d4
+marisk.bto1.4.tz1,marisk,MaRisk BTO 1.4 Tz. 1,437,1924d5f6c8c30a6d
+marisk.bto1.4.tz2,marisk,MaRisk BTO 1.4 Tz. 2,217,7d16ff7f4aaeeede
+marisk.bto1.4.tz3,marisk,MaRisk BTO 1.4 Tz. 3,400,937ae2040347aa3a
+marisk.bto1.4.tz4,marisk,MaRisk BTO 1.4 Tz. 4,191,1a655799c3d92726
+marisk.bto2.tz1,marisk,MaRisk BTO 2 Tz. 1,145,3b383fd2b0706089
+marisk.bto2.1.tz1,marisk,MaRisk BTO 2.1 Tz. 1,312,841bfdb41d2eca7f
+marisk.bto2.1.tz2,marisk,MaRisk BTO 2.1 Tz. 2,336,ca1c854d78761bbb
+marisk.bto2.2.1.tz1,marisk,MaRisk BTO 2.2.1 Tz. 1,389,a2ef66bab95e61aa
+marisk.bto2.2.1.tz2,marisk,MaRisk BTO 2.2.1 Tz. 2,645,5fab30a2ee073007
+marisk.bto2.2.1.tz3,marisk,MaRisk BTO 2.2.1 Tz. 3,1217,605f6942777c2c0a
+marisk.bto2.2.1.tz4,marisk,MaRisk BTO 2.2.1 Tz. 4,284,2fcf267cfe472808
+marisk.bto2.2.1.tz5,marisk,MaRisk BTO 2.2.1 Tz. 5,391,09cb3e351253daa2
+marisk.bto2.2.1.tz6,marisk,MaRisk BTO 2.2.1 Tz. 6,340,16497aea0906d124
+marisk.bto2.2.1.tz7,marisk,MaRisk BTO 2.2.1 Tz. 7,428,c85b7b284c87fca3
+marisk.bto2.2.1.tz8,marisk,MaRisk BTO 2.2.1 Tz. 8,372,b3c809c4138e279c
+marisk.bto2.2.1.tz9,marisk,MaRisk BTO 2.2.1 Tz. 9,615,8163c0532dd8067a
+marisk.bto2.2.2.tz1,marisk,MaRisk BTO 2.2.2 Tz. 1,249,03c7bfd432054a6c
+marisk.bto2.2.2.tz2,marisk,MaRisk BTO 2.2.2 Tz. 2,711,f8b1b596829c4404
+marisk.bto2.2.2.tz3,marisk,MaRisk BTO 2.2.2 Tz. 3,659,8bb90acc113849c0
+marisk.bto2.2.2.tz4,marisk,MaRisk BTO 2.2.2 Tz. 4,845,5baf3f505a02ed9f
+marisk.bto2.2.2.tz5,marisk,MaRisk BTO 2.2.2 Tz. 5,416,63cba54015728ff5
+marisk.bto2.2.2.tz6,marisk,MaRisk BTO 2.2.2 Tz. 6,390,4d84783b6ffa55a1
+marisk.bto2.2.2.tz7,marisk,MaRisk BTO 2.2.2 Tz. 7,538,6fc99e320330aa40
+marisk.bto2.2.3.tz1,marisk,MaRisk BTO 2.2.3 Tz. 1,187,37dc0f3f47f6430e
+marisk.bto3.tz1,marisk,MaRisk BTO 3 Tz. 1,151,2e21045bdc0fff6d
+marisk.bto3.1.tz1,marisk,MaRisk BTO 3.1 Tz. 1,253,81b545787f124277
+marisk.bto3.1.tz2,marisk,MaRisk BTO 3.1 Tz. 2,565,12d27005aef8b48f
+marisk.bto3.1.tz3,marisk,MaRisk BTO 3.1 Tz. 3,490,6fa8e5acbd51818a
+marisk.bto3.2.tz1,marisk,MaRisk BTO 3.2 Tz. 1,194,0ffebd8dad777b16
+marisk.bto3.2.tz2,marisk,MaRisk BTO 3.2 Tz. 2,416,a64bc263910064e9
+marisk.bto3.2.tz3,marisk,MaRisk BTO 3.2 Tz. 3,514,227dc6ea7f3e5e7e
+marisk.bto3.2.tz4,marisk,MaRisk BTO 3.2 Tz. 4,321,46e9e134d13f7282
+marisk.bto3.2.1.tz1,marisk,MaRisk BTO 3.2.1 Tz. 1,416,e19394c55498cbd2
+marisk.bto3.2.1.tz2,marisk,MaRisk BTO 3.2.1 Tz. 2,487,4bc05b9a9c68e140
+marisk.bto3.2.1.tz3,marisk,MaRisk BTO 3.2.1 Tz. 3,350,1bc6d606b1a2ef29
+marisk.bto3.2.2.tz1,marisk,MaRisk BTO 3.2.2 Tz. 1,303,e285f5370a684510
+marisk.bto3.2.2.tz2,marisk,MaRisk BTO 3.2.2 Tz. 2,559,54820791ce868d61
+marisk.bto3.2.2.tz3,marisk,MaRisk BTO 3.2.2 Tz. 3,452,fd39aebaf9619c09
+marisk.bto3.2.2.tz4,marisk,MaRisk BTO 3.2.2 Tz. 4,356,dc21f9ee14d654d4
+marisk.bto3.2.3.tz1,marisk,MaRisk BTO 3.2.3 Tz. 1,442,eb2eac6af885bb5c
+marisk.btr.tz1,marisk,MaRisk BTR Tz. 1,433,7c59084cb8504e4b
+marisk.btr1.tz1,marisk,MaRisk BTR 1 Tz. 1,321,57fea98f32047a9d
+marisk.btr1.tz2,marisk,MaRisk BTR 1 Tz. 2,284,32c0bc3c3325c655
+marisk.btr1.tz3,marisk,MaRisk BTR 1 Tz. 3,518,ae5729bfa70fec82
+marisk.btr1.tz4,marisk,MaRisk BTR 1 Tz. 4,697,3a20257da15876c0
+marisk.btr1.tz5,marisk,MaRisk BTR 1 Tz. 5,424,5e8c88663783f0ad
+marisk.btr1.tz6,marisk,MaRisk BTR 1 Tz. 6,442,0a8a40f7b63041e2
+marisk.btr1.tz7,marisk,MaRisk BTR 1 Tz. 7,377,0d5bd829c47520ea
+marisk.btr2.1.tz1,marisk,MaRisk BTR 2.1 Tz. 1,254,353cbc6fe486b446
+marisk.btr2.1.tz2,marisk,MaRisk BTR 2.1 Tz. 2,149,e5754a911e2807c1
+marisk.btr2.1.tz3,marisk,MaRisk BTR 2.1 Tz. 3,483,93e0c68b3f6014ab
+marisk.btr2.1.tz4,marisk,MaRisk BTR 2.1 Tz. 4,152,ca8ad7c095ef0fcf
+marisk.btr2.2.tz1,marisk,MaRisk BTR 2.2 Tz. 1,455,8e08bc3f847613f0
+marisk.btr2.2.tz2,marisk,MaRisk BTR 2.2 Tz. 2,151,0a5bd38df84f50d9
+marisk.btr2.2.tz3,marisk,MaRisk BTR 2.2 Tz. 3,250,42b9859c3b539419
+marisk.btr2.2.tz4,marisk,MaRisk BTR 2.2 Tz. 4,166,273b3225a67f2536
+marisk.btr2.3.tz1,marisk,MaRisk BTR 2.3 Tz. 1,206,83aa323d413a5d3b
+marisk.btr2.3.tz2,marisk,MaRisk BTR 2.3 Tz. 2,183,ed88e3b33b4cafec
+marisk.btr2.3.tz3,marisk,MaRisk BTR 2.3 Tz. 3,258,36b64ea770758cd0
+marisk.btr2.3.tz4,marisk,MaRisk BTR 2.3 Tz. 4,313,bc57983c58ae60da
+marisk.btr2.3.tz5,marisk,MaRisk BTR 2.3 Tz. 5,240,869a1239b451ada7
+marisk.btr2.3.tz6,marisk,MaRisk BTR 2.3 Tz. 6,827,13fd8ac70a1f914d
+marisk.btr2.3.tz7,marisk,MaRisk BTR 2.3 Tz. 7,306,df7bde094d432146
+marisk.btr2.3.tz8,marisk,MaRisk BTR 2.3 Tz. 8,258,46e768076829ccb5
+marisk.btr3.1.tz1,marisk,MaRisk BTR 3.1 Tz. 1,522,5c6967689fe7e521
+marisk.btr3.1.tz2,marisk,MaRisk BTR 3.1 Tz. 2,402,8731cf87e4085f7e
+marisk.btr3.1.tz3,marisk,MaRisk BTR 3.1 Tz. 3,704,307126f3ef66ede4
+marisk.btr3.1.tz4,marisk,MaRisk BTR 3.1 Tz. 4,605,0117a991d1e9ed34
+marisk.btr3.1.tz5,marisk,MaRisk BTR 3.1 Tz. 5,458,63dcaf2a733155cc
+marisk.btr3.1.tz6,marisk,MaRisk BTR 3.1 Tz. 6,885,2a0396d09e2370b1
+marisk.btr3.1.tz7,marisk,MaRisk BTR 3.1 Tz. 7,452,5e059a6edb677a6e
+marisk.btr3.1.tz8,marisk,MaRisk BTR 3.1 Tz. 8,546,41544dbd941b9282
+marisk.btr3.1.tz9,marisk,MaRisk BTR 3.1 Tz. 9,1836,5873dad21d920d37
+marisk.btr3.2.tz1,marisk,MaRisk BTR 3.2 Tz. 1,479,209a5db5538ada68
+marisk.btr3.2.tz2,marisk,MaRisk BTR 3.2 Tz. 2,661,1dd401b087230bf9
+marisk.btr3.2.tz3,marisk,MaRisk BTR 3.2 Tz. 3,1265,df8e25e329fc4918
+marisk.btr3.2.tz4,marisk,MaRisk BTR 3.2 Tz. 4,428,aa88b2fcd23948dc
+marisk.btr4.tz1,marisk,MaRisk BTR 4 Tz. 1,308,600d9460286fabb1
+marisk.btr4.tz2,marisk,MaRisk BTR 4 Tz. 2,240,f2dd337486ec78ff
+marisk.btr4.tz3,marisk,MaRisk BTR 4 Tz. 3,293,63b85e709c47df11
+marisk.btr4.tz4,marisk,MaRisk BTR 4 Tz. 4,170,ff253dcf526bba81
+marisk.btr4.tz5,marisk,MaRisk BTR 4 Tz. 5,298,22c60ac3d30bd39a
+marisk.bt2.1.tz1,marisk,MaRisk BT 2.1 Tz. 1,243,6ea10d0819c03e37
+marisk.bt2.1.tz2,marisk,MaRisk BT 2.1 Tz. 2,212,aad36aabaf618eb1
+marisk.bt2.1.tz3,marisk,MaRisk BT 2.1 Tz. 3,540,bc87de211c541e61
+marisk.bt2.2.tz1,marisk,MaRisk BT 2.2 Tz. 1,442,80bfc212c8080109
+marisk.bt2.2.tz2,marisk,MaRisk BT 2.2 Tz. 2,489,842a837d5c952aa9
+marisk.bt2.2.tz3,marisk,MaRisk BT 2.2 Tz. 3,959,1c3dd39ae303578b
+marisk.bt2.3.tz1,marisk,MaRisk BT 2.3 Tz. 1,652,9bf45dab978eca9e
+marisk.bt2.3.tz2,marisk,MaRisk BT 2.3 Tz. 2,379,f3de077ec0f5211f
+marisk.bt2.3.tz3,marisk,MaRisk BT 2.3 Tz. 3,192,a3306bde71cb4e86
+marisk.bt2.3.tz4,marisk,MaRisk BT 2.3 Tz. 4,253,e98cc3bbcec93f05
+marisk.bt2.3.tz5,marisk,MaRisk BT 2.3 Tz. 5,151,af3a035daab20fcb
+marisk.bt2.4.tz1,marisk,MaRisk BT 2.4 Tz. 1,587,833cc3dda5db32f8
+marisk.bt2.4.tz2,marisk,MaRisk BT 2.4 Tz. 2,251,ff44be872b0189b4
+marisk.bt2.4.tz3,marisk,MaRisk BT 2.4 Tz. 3,285,8207bf612754e6e8
+marisk.bt2.4.tz4,marisk,MaRisk BT 2.4 Tz. 4,1082,79cf53c0d93c76dc
+marisk.bt2.4.tz5,marisk,MaRisk BT 2.4 Tz. 5,564,b98e13c8e07df152
+marisk.bt2.4.tz6,marisk,MaRisk BT 2.4 Tz. 6,110,44ddbeb74e754159
+marisk.bt2.5.tz1,marisk,MaRisk BT 2.5 Tz. 1,247,38c197dfeb2a4e9c
+marisk.bt2.5.tz2,marisk,MaRisk BT 2.5 Tz. 2,439,a443090ada3883c1
+marisk.bt3.1.tz1,marisk,MaRisk BT 3.1 Tz. 1,837,dd3991ce6e2a7ae9
+marisk.bt3.1.tz2,marisk,MaRisk BT 3.1 Tz. 2,448,7f8900c430cfe156
+marisk.bt3.1.tz3,marisk,MaRisk BT 3.1 Tz. 3,419,de3d2991c9e6fb5f
+marisk.bt3.1.tz4,marisk,MaRisk BT 3.1 Tz. 4,319,21935cb856d9405e
+marisk.bt3.1.tz5,marisk,MaRisk BT 3.1 Tz. 5,807,e45153c718a63f3b
+marisk.bt3.2.tz1,marisk,MaRisk BT 3.2 Tz. 1,671,0eb07d57d2e04a93
+marisk.bt3.2.tz2,marisk,MaRisk BT 3.2 Tz. 2,591,77174b7a714b4656
+marisk.bt3.2.tz3,marisk,MaRisk BT 3.2 Tz. 3,1769,276471cd34f361e3
+marisk.bt3.2.tz4,marisk,MaRisk BT 3.2 Tz. 4,1295,1d8307852f4e60b7
+marisk.bt3.2.tz5,marisk,MaRisk BT 3.2 Tz. 5,863,91b58b840bb0f2cb
+marisk.bt3.2.tz6,marisk,MaRisk BT 3.2 Tz. 6,463,1a601e17380a1b87
+marisk.bt3.2.tz7,marisk,MaRisk BT 3.2 Tz. 7,621,9b2c9d787c869d13
+bcbs368.p1,bcbs368,"BCBS 368, para 1",463,207e3def14e714c0
+bcbs368.p2,bcbs368,"BCBS 368, para 2",362,454e3cced9b09b39
+bcbs368.p3,bcbs368,"BCBS 368, para 3",760,90e7e466dbca9ad4
+bcbs368.p4,bcbs368,"BCBS 368, para 4",2181,88da2b0a0e45d229
+bcbs368.p4#2,bcbs368,"BCBS 368, para 4",238,c1e4dd5dd08ad297
+bcbs368.p5,bcbs368,"BCBS 368, para 5",306,9ba16ecb019992a4
+bcbs368.p6,bcbs368,"BCBS 368, para 6",1147,606639d8380125e8
+bcbs368.p7,bcbs368,"BCBS 368, para 7",478,127566360a947433
+bcbs368.p8,bcbs368,"BCBS 368, para 8",723,739e0f1982963b38
+bcbs368.p9,bcbs368,"BCBS 368, para 9",1332,853e0de760cd0392
+bcbs368.p10,bcbs368,"BCBS 368, para 10",409,5cb3f40d34e972ee
+bcbs368.p11,bcbs368,"BCBS 368, para 11",881,e630895bbba46cfc
+bcbs368.p12,bcbs368,"BCBS 368, para 12",665,e208b4071cb6a631
+bcbs368.p13,bcbs368,"BCBS 368, para 13",176,6cb8745b13e4cfce
+bcbs368.p14,bcbs368,"BCBS 368, para 14",784,b98babe9920115ef
+bcbs368.p15,bcbs368,"BCBS 368, para 15",665,9d5aa4b6fe76532a
+bcbs368.p16,bcbs368,"BCBS 368, para 16",601,cba010010a7f714b
+bcbs368.p17,bcbs368,"BCBS 368, para 17",869,5b73ab08467bcdf1
+bcbs368.p18,bcbs368,"BCBS 368, para 18",675,c8ef02e427ccacbe
+bcbs368.p19,bcbs368,"BCBS 368, para 19",689,c4791b27353eed9f
+bcbs368.p20,bcbs368,"BCBS 368, para 20",322,f06e94f43e9408c7
+bcbs368.p21,bcbs368,"BCBS 368, para 21",535,9542ba2f93da0df4
+bcbs368.p22,bcbs368,"BCBS 368, para 22",283,5ab4dde602688400
+bcbs368.p23,bcbs368,"BCBS 368, para 23",616,0f6e366eb7b1a011
+bcbs368.p24,bcbs368,"BCBS 368, para 24",306,0257ae8d0f9ad666
+bcbs368.p25,bcbs368,"BCBS 368, para 25",263,7191d6b095a14415
+bcbs368.p26,bcbs368,"BCBS 368, para 26",898,2e727e4445f38241
+bcbs368.p27,bcbs368,"BCBS 368, para 27",639,a6c936feca94b1ff
+bcbs368.p28,bcbs368,"BCBS 368, para 28",592,c222fdda5ebd118e
+bcbs368.p29,bcbs368,"BCBS 368, para 29",979,b1b5e3c3fe1e0e28
+bcbs368.p30,bcbs368,"BCBS 368, para 30",683,5a866d74917c9ead
+bcbs368.p31,bcbs368,"BCBS 368, para 31",815,fbc96b0014c2a6db
+bcbs368.p32,bcbs368,"BCBS 368, para 32",648,4233356c5bca1746
+bcbs368.p33,bcbs368,"BCBS 368, para 33",368,f52716fc54919adc
+bcbs368.p34,bcbs368,"BCBS 368, para 34",1830,f3ed43d61f9847de
+bcbs368.p35,bcbs368,"BCBS 368, para 35",676,ffda9e9b9c837eac
+bcbs368.p36,bcbs368,"BCBS 368, para 36",244,2dfee7dd65eb695c
+bcbs368.p37,bcbs368,"BCBS 368, para 37",702,ad5797644122d958
+bcbs368.p38,bcbs368,"BCBS 368, para 38",1134,e5db9782b4b45519
+bcbs368.p39,bcbs368,"BCBS 368, para 39",508,70ee944a7522d154
+bcbs368.p40,bcbs368,"BCBS 368, para 40",724,ac2939db7ae4f531
+bcbs368.p41,bcbs368,"BCBS 368, para 41",2255,b0d8324299503ea9
+bcbs368.p41#2,bcbs368,"BCBS 368, para 41",259,56957756d5fac452
+bcbs368.p42,bcbs368,"BCBS 368, para 42",497,a07b06cba5bcc7fc
+bcbs368.p43,bcbs368,"BCBS 368, para 43",579,2dd2610c007f700e
+bcbs368.p44,bcbs368,"BCBS 368, para 44",841,c9a063bbca69198e
+bcbs368.p45,bcbs368,"BCBS 368, para 45",2282,0705172cedea7849
+bcbs368.p45#2,bcbs368,"BCBS 368, para 45",150,977f515831cd6c2e
+bcbs368.p46,bcbs368,"BCBS 368, para 46",1881,2ce9ddbad2c87807
+bcbs368.p47,bcbs368,"BCBS 368, para 47",535,d59f08ce08d6dba6
+bcbs368.p48,bcbs368,"BCBS 368, para 48",267,f8b02ba2758d611d
+bcbs368.p49,bcbs368,"BCBS 368, para 49",557,9d218999ea85d576
+bcbs368.p50,bcbs368,"BCBS 368, para 50",285,4ccf33a68d05865f
+bcbs368.p51,bcbs368,"BCBS 368, para 51",926,5ded2dd050bf933f
+bcbs368.p52,bcbs368,"BCBS 368, para 52",395,8cff07c0dcc94742
+bcbs368.p53,bcbs368,"BCBS 368, para 53",494,8238b7b5aae6c32d
+bcbs368.p54,bcbs368,"BCBS 368, para 54",309,e7996213249e7c56
+bcbs368.p55,bcbs368,"BCBS 368, para 55",272,e2add67f6a5cd3cc
+bcbs368.p56,bcbs368,"BCBS 368, para 56",322,6ef1b36e5153b1e4
+bcbs368.p57,bcbs368,"BCBS 368, para 57",411,868a7e7ea6cc732b
+bcbs368.p58,bcbs368,"BCBS 368, para 58",752,3988bf32886b2dc0
+bcbs368.p59,bcbs368,"BCBS 368, para 59",410,9f1100b13b96d0a5
+bcbs368.p60,bcbs368,"BCBS 368, para 60",324,b79c286d30ed5399
+bcbs368.p61,bcbs368,"BCBS 368, para 61",745,c8ed12544f9ae934
+bcbs368.p62,bcbs368,"BCBS 368, para 62",639,ce9408676b5ef7a9
+bcbs368.p63,bcbs368,"BCBS 368, para 63",365,83a14dbe65aa713c
+bcbs368.p64,bcbs368,"BCBS 368, para 64",399,9ad2d7478d1bfa37
+bcbs368.p65,bcbs368,"BCBS 368, para 65",584,8ae5ac45c24082c6
+bcbs368.p66,bcbs368,"BCBS 368, para 66",602,ed54c20ed0644074
+bcbs368.p67,bcbs368,"BCBS 368, para 67",892,0e375069d922b466
+bcbs368.p68,bcbs368,"BCBS 368, para 68",1084,57639925ddf4ad7c
+bcbs368.p69,bcbs368,"BCBS 368, para 69",934,4f3decd8429ce3a1
+bcbs368.p70,bcbs368,"BCBS 368, para 70",1724,30a0704de3328124
+bcbs368.p71,bcbs368,"BCBS 368, para 71",1935,d49f8a98f8a85208
+bcbs368.p71#2,bcbs368,"BCBS 368, para 71",2397,596ab72f524c9e9d
+bcbs368.p71#3,bcbs368,"BCBS 368, para 71",1112,6f18af8fe5ef3994
+bcbs368.p72,bcbs368,"BCBS 368, para 72",533,05774c4365b6f25c
+bcbs368.p73,bcbs368,"BCBS 368, para 73",327,61bfb70e4b9a9d35
+bcbs368.p74,bcbs368,"BCBS 368, para 74",348,9a9474ac849db558
+bcbs368.p75,bcbs368,"BCBS 368, para 75",982,32f6c887f215ee40
+bcbs368.p76,bcbs368,"BCBS 368, para 76",534,458ef707f2db4eb4
+bcbs368.p77,bcbs368,"BCBS 368, para 77",420,b360d41802ed3695
+bcbs368.p78,bcbs368,"BCBS 368, para 78",1366,873d7501b18dafab
+bcbs368.p79,bcbs368,"BCBS 368, para 79",658,863aac5201402598
+bcbs368.p80,bcbs368,"BCBS 368, para 80",411,ef454c7e404c2f6f
+bcbs368.p81,bcbs368,"BCBS 368, para 81",443,44603d65a258f7aa
+bcbs368.p82,bcbs368,"BCBS 368, para 82",637,e762556e658a2cdb
+bcbs368.p83,bcbs368,"BCBS 368, para 83",1370,0b216ee32523ad50
+bcbs368.p84,bcbs368,"BCBS 368, para 84",415,4693209da2b8d617
+bcbs368.p85,bcbs368,"BCBS 368, para 85",512,e11e0eb931542781
+bcbs368.p86,bcbs368,"BCBS 368, para 86",431,e7e2b04d1c8572a2
+bcbs368.p87,bcbs368,"BCBS 368, para 87",1166,e0e85fee9b4a3e4d
+bcbs368.p88,bcbs368,"BCBS 368, para 88",449,3e1bf545ecd5b511
+bcbs368.p89,bcbs368,"BCBS 368, para 89",561,288da753981e4fbe
+bcbs368.p90,bcbs368,"BCBS 368, para 90",159,f7618931584f5d05
+bcbs368.p91,bcbs368,"BCBS 368, para 91",1628,a8b6cdd1a9d5c6f7
+bcbs368.p92,bcbs368,"BCBS 368, para 92",264,26f53f1cba6eeda5
+bcbs368.p93,bcbs368,"BCBS 368, para 93",214,cab94f0a9b552a47
+bcbs368.p94,bcbs368,"BCBS 368, para 94",509,af7f73e0619f313c
+bcbs368.p95,bcbs368,"BCBS 368, para 95",377,5005bbc70983bcd8
+bcbs368.p96,bcbs368,"BCBS 368, para 96",424,ac2ca3cfd9767467
+bcbs368.p97,bcbs368,"BCBS 368, para 97",453,37acc2acb429e0b9
+bcbs368.p98,bcbs368,"BCBS 368, para 98",246,0c2269cfdad9332a
+bcbs368.p99,bcbs368,"BCBS 368, para 99",192,13fa16527a3faad0
+bcbs368.p100,bcbs368,"BCBS 368, para 100",2308,6fccb49d6d58a6b0
+bcbs368.p101,bcbs368,"BCBS 368, para 101",834,188e35269dc48638
+bcbs368.p102,bcbs368,"BCBS 368, para 102",1124,1b0326b431688d3d
+bcbs368.p103,bcbs368,"BCBS 368, para 103",194,36b8d1b61083208c
+bcbs368.p104,bcbs368,"BCBS 368, para 104",1061,6e98b5b8a1ea8050
+bcbs368.p105,bcbs368,"BCBS 368, para 105",451,271795591e3c7b2c
+bcbs368.p106,bcbs368,"BCBS 368, para 106",1145,badac5f329a30b52
+bcbs368.p107,bcbs368,"BCBS 368, para 107",624,c35a21c1f432c235
+bcbs368.p108,bcbs368,"BCBS 368, para 108",363,b7662b182dd79847
+bcbs368.p109,bcbs368,"BCBS 368, para 109",207,eecbcf6c69e680b5
+bcbs368.p110,bcbs368,"BCBS 368, para 110",437,5b7368184e4d2956
+bcbs368.p111,bcbs368,"BCBS 368, para 111",2084,03e38420b7ce932a
+bcbs368.p112,bcbs368,"BCBS 368, para 112",451,9023764ba6504172
+bcbs368.p113,bcbs368,"BCBS 368, para 113",287,714971633aa3e585
+bcbs368.p114,bcbs368,"BCBS 368, para 114",266,10b15ac038f72b43
+bcbs368.p115,bcbs368,"BCBS 368, para 115",474,2c0d50f42c900f33
+bcbs368.p116,bcbs368,"BCBS 368, para 116",403,918cf4793fca3318
+bcbs368.p117,bcbs368,"BCBS 368, para 117",828,39d69a5012381c24
+bcbs368.p118,bcbs368,"BCBS 368, para 118",291,7660720bdec9b7cc
+bcbs368.p119,bcbs368,"BCBS 368, para 119",227,4c0b2432c5f83544
+bcbs368.p120,bcbs368,"BCBS 368, para 120",429,6037248503e918cf
+bcbs368.p121,bcbs368,"BCBS 368, para 121",274,04bdef65b60fc7ce
+bcbs368.p122,bcbs368,"BCBS 368, para 122",499,ede7841d91ec8119
+bcbs368.p123,bcbs368,"BCBS 368, para 123",859,a8edfc0186f9b667
+bcbs368.p124,bcbs368,"BCBS 368, para 124",748,61390ad86720ffe3
+bcbs368.p125,bcbs368,"BCBS 368, para 125",790,a5c58cd4c0129a2e
+bcbs368.p126,bcbs368,"BCBS 368, para 126",559,68269275c0f0612e
+bcbs368.p127,bcbs368,"BCBS 368, para 127",816,54f9a929cfe717b8
+bcbs368.p128,bcbs368,"BCBS 368, para 128",763,7ff0477e28aef621
+bcbs368.p129,bcbs368,"BCBS 368, para 129",216,f7cf4e76e2283a29
+bcbs368.p130,bcbs368,"BCBS 368, para 130",2252,fbea19c9011b239e
+bcbs368.p131,bcbs368,"BCBS 368, para 131",471,1dccc7768710f6fc
+bcbs368.p132,bcbs368,"BCBS 368, para 132",2329,8be0172c87525e54
+bcbs368.p132#2,bcbs368,"BCBS 368, para 132",1437,4d206e413ff0bd76
+bcbs368.annex1,bcbs368,"BCBS 368, Annex 1",2140,dccdd7a2ed8cb763
+bcbs368.annex1#2,bcbs368,"BCBS 368, Annex 1",2394,f76e10b439ed3e14
+bcbs368.annex1#3,bcbs368,"BCBS 368, Annex 1",2242,912fc7fb8fbeb4cb
+bcbs368.annex1#4,bcbs368,"BCBS 368, Annex 1",2213,2ea9b6889fd63c29
+bcbs368.annex1#5,bcbs368,"BCBS 368, Annex 1",2266,a43054b0c290be0f
+bcbs368.annex1#6,bcbs368,"BCBS 368, Annex 1",2224,f8eb3549b2ab14b9
+bcbs368.annex1#7,bcbs368,"BCBS 368, Annex 1",2397,f1da3ee00c1aba9d
+bcbs368.annex1#8,bcbs368,"BCBS 368, Annex 1",2373,110b91c78867c636
+bcbs368.annex1#9,bcbs368,"BCBS 368, Annex 1",2346,44271276ed0b30ce
+bcbs368.annex1#10,bcbs368,"BCBS 368, Annex 1",2382,b280786512605e43
+bcbs368.annex1#11,bcbs368,"BCBS 368, Annex 1",2378,6bae7932c8c573ef
+bcbs368.annex1#12,bcbs368,"BCBS 368, Annex 1",2191,f5a25789d976acdf
+bcbs368.annex1#13,bcbs368,"BCBS 368, Annex 1",2171,64432055f65a9e33
+bcbs368.annex1#14,bcbs368,"BCBS 368, Annex 1",2345,6b0804c4326f7046
+bcbs368.annex1#15,bcbs368,"BCBS 368, Annex 1",2308,b9e62fe3c936af85
+bcbs368.annex1#16,bcbs368,"BCBS 368, Annex 1",2281,c5f7d344dc802cdb
+bcbs368.annex1#17,bcbs368,"BCBS 368, Annex 1",1912,2c6a55aa7c16c3e7
+bcbs368.annex1#18,bcbs368,"BCBS 368, Annex 1",1984,efa698edd13dfbaf
+bcbs368.annex2,bcbs368,"BCBS 368, Annex 2",2355,b557c7581d245205
+bcbs368.annex2#2,bcbs368,"BCBS 368, Annex 2",2308,03c205817d1569a7
+bcbs368.annex2#3,bcbs368,"BCBS 368, Annex 2",2000,2c56fc1577de0a4a
+bcbs368.annex2#4,bcbs368,"BCBS 368, Annex 2",1666,838aaf76edb85b83
+lcr30.1,lcr30,LCR30.1,1506,8d676e50f2bf8099
+lcr30.2,lcr30,LCR30.2,846,c5cf9abdb17fab23
+lcr30.3,lcr30,LCR30.3,916,2a13d0802cd3483e
+lcr30.4,lcr30,LCR30.4,1079,37b776f687208102
+lcr30.5,lcr30,LCR30.5,154,31339045d7db94bc
+lcr30.6,lcr30,LCR30.6,369,d318b610ffc11e62
+lcr30.7,lcr30,LCR30.7,502,f49650fb8815395e
+lcr30.8,lcr30,LCR30.8,258,39affdbf6c1d68aa
+lcr30.9,lcr30,LCR30.9,135,952895c9719bb990
+lcr30.10,lcr30,LCR30.10,648,d35d4e8d9404fb6e
+lcr30.11,lcr30,LCR30.11,452,54a5fa26bb96c41b
+lcr30.12,lcr30,LCR30.12,276,53c85f92a3cd8379
+lcr30.13,lcr30,LCR30.13,444,ee97be2ea40fc75b
+lcr30.14,lcr30,LCR30.14,505,b7aa72f3ed28328e
+lcr30.15,lcr30,LCR30.15,989,a49801befa9e8209
+lcr30.16,lcr30,LCR30.16,1983,7e464b4e016f1c75
+lcr30.16#2,lcr30,LCR30.16,878,d8adecab70d9a180
+lcr30.17,lcr30,LCR30.17,654,8f2658b2cd78cd78
+lcr30.18,lcr30,LCR30.18,923,e51c3185b0202f91
+lcr30.19,lcr30,LCR30.19,375,4681b4f3f0b47109
+lcr30.20,lcr30,LCR30.20,573,7d714a5b503deeb8
+lcr30.21,lcr30,LCR30.21,607,5153befafe082a57
+lcr30.22,lcr30,LCR30.22,415,85414fe895bc0452
+lcr30.23,lcr30,LCR30.23,529,8eab13e3a9176d6a
+lcr30.24,lcr30,LCR30.24,488,837d1b282280ed0a
+lcr30.25,lcr30,LCR30.25,274,c6090d74f67e96d0
+lcr30.26,lcr30,LCR30.26,446,9f50ec097b230ab7
+lcr30.27,lcr30,LCR30.27,949,fbe7db5638ca30c6
+lcr30.28,lcr30,LCR30.28,375,716d45c97efbbaea
+lcr30.29,lcr30,LCR30.29,754,9119678a4875f8a6
+lcr30.30,lcr30,LCR30.30,226,6543c6495fe44970
+lcr30.31,lcr30,LCR30.31,346,5d2d8edb8633ba4a
+lcr30.32,lcr30,LCR30.32,499,3dc74c035bf438c6
+lcr30.33,lcr30,LCR30.33,271,fc704428c8adc740
+lcr30.34,lcr30,LCR30.34,327,bc0e71cad575f4f4
+lcr30.35,lcr30,LCR30.35,526,a8938569a4f8ac9c
+lcr30.36,lcr30,LCR30.36,556,547f6f5f6f8f6309
+lcr30.37,lcr30,LCR30.37,1694,0db26416592a848f
+lcr30.38,lcr30,LCR30.38,77,e90a84b21b721159
+lcr30.39,lcr30,LCR30.39,119,642eacf7d1e86ac2
+lcr30.40,lcr30,LCR30.40,492,9a83061895ac1a97
+lcr30.41,lcr30,LCR30.41,2250,77b573243990b900
+lcr30.41#2,lcr30,LCR30.41,2389,a1ddc712a3de1310
+lcr30.42,lcr30,LCR30.42,381,aafc44d2ca460288
+lcr30.43,lcr30,LCR30.43,2326,a3e5b44297c566a6
+lcr30.43#2,lcr30,LCR30.43,1872,dc6a20cb67ff4cbd
+lcr30.43#3,lcr30,LCR30.43,816,46bdd790351495b8
+lcr30.44,lcr30,LCR30.44,490,20c2a91e1a4b23f1
+lcr30.45,lcr30,LCR30.45,2245,ea5382d7e790ae37
+lcr30.45#2,lcr30,LCR30.45,2306,3306b413ae44a7e4
+lcr30.45#3,lcr30,LCR30.45,2370,c694a4b61889be83
+lcr30.45#4,lcr30,LCR30.45,1085,2f56bff977b22d46
+lcr30.46,lcr30,LCR30.46,2321,2d77bcd69452574d
+lcr30.47,lcr30,LCR30.47,2242,5aa2141653a01bdc
+lcr40.1,lcr40,LCR40.1,843,fa57f6c42910a580
+lcr40.2,lcr40,LCR40.2,313,6035dc9ea42a668c
+lcr40.3,lcr40,LCR40.3,83,52ad11dffeb55a58
+lcr40.4,lcr40,LCR40.4,570,309e15b16404d402
+lcr40.5,lcr40,LCR40.5,2039,00ad4003ccbc2506
+lcr40.5#2,lcr40,LCR40.5,498,af0dae753215ae32
+lcr40.6,lcr40,LCR40.6,426,3be9f83e39e95530
+lcr40.7,lcr40,LCR40.7,1460,b670a8d710665595
+lcr40.8,lcr40,LCR40.8,399,f193183d37bd3f0e
+lcr40.9,lcr40,LCR40.9,201,dedf54087b7d414f
+lcr40.10,lcr40,LCR40.10,99,14f1d770a9c19c43
+lcr40.11,lcr40,LCR40.11,1446,081e4f22bcb9294c
+lcr40.12,lcr40,LCR40.12,394,c92272575e88770e
+lcr40.13,lcr40,LCR40.13,686,1089a72a0b1e1aba
+lcr40.14,lcr40,LCR40.14,359,1dd7196eeef9896a
+lcr40.15,lcr40,LCR40.15,731,486d3e3d3bf12ae9
+lcr40.16,lcr40,LCR40.16,604,b19199c2508bb8a1
+lcr40.17,lcr40,LCR40.17,642,58b6e64dccc5a428
+lcr40.18,lcr40,LCR40.18,898,eace0a20a497d01b
+lcr40.19,lcr40,LCR40.19,491,f534f26b4fd01565
+lcr40.20,lcr40,LCR40.20,1028,7044c78b3c40cf08
+lcr40.21,lcr40,LCR40.21,404,199be48b5abaad63
+lcr40.22,lcr40,LCR40.22,418,c2602ab7afe826f2
+lcr40.23,lcr40,LCR40.23,2060,96c32ce41a10f6d3
+lcr40.24,lcr40,LCR40.24,643,5f8e097366dea891
+lcr40.25,lcr40,LCR40.25,252,9bdf8c0daea28e94
+lcr40.26,lcr40,LCR40.26,1079,3d6c7740bfbcfaad
+lcr40.27,lcr40,LCR40.27,848,de78aca2158d1353
+lcr40.28,lcr40,LCR40.28,752,c3315d0486ff382a
+lcr40.29,lcr40,LCR40.29,616,f4c155a42f268ad3
+lcr40.30,lcr40,LCR40.30,647,b24f078b71c7dfa0
+lcr40.31,lcr40,LCR40.31,234,1c484776ed89fdfe
+lcr40.32,lcr40,LCR40.32,1024,8320f297e82ba2ae
+lcr40.33,lcr40,LCR40.33,813,4a193b5dddbca87e
+lcr40.34,lcr40,LCR40.34,858,cf61d363de320d8f
+lcr40.35,lcr40,LCR40.35,527,508ae563f7736e4c
+lcr40.36,lcr40,LCR40.36,296,d5a1becaf331cbe9
+lcr40.37,lcr40,LCR40.37,850,cf74b24a1aa45aa5
+lcr40.38,lcr40,LCR40.38,195,2cff65d5c7648a75
+lcr40.39,lcr40,LCR40.39,741,743a45840ef1294d
+lcr40.40,lcr40,LCR40.40,475,00f84ee35a33cdd9
+lcr40.41,lcr40,LCR40.41,449,4957b06d547c0b2b
+lcr40.42,lcr40,LCR40.42,1642,4d2228e496876e6f
+lcr40.43,lcr40,LCR40.43,730,9ba7202e55e77e88
+lcr40.44,lcr40,LCR40.44,568,ad08573225049a51
+lcr40.45,lcr40,LCR40.45,489,f7cfaaaeed1ed78c
+lcr40.46,lcr40,LCR40.46,2314,77fe3b46bc5069c6
+lcr40.46#2,lcr40,LCR40.46,564,485ecfdadc51bd58
+lcr40.47,lcr40,LCR40.47,2344,9c03c39ba44cf35f
+lcr40.48,lcr40,LCR40.48,1530,1bdf6a7826b16754
+lcr40.49,lcr40,LCR40.49,2206,cb632efd361b38b9
+lcr40.49#2,lcr40,LCR40.49,604,24c4e57d3e3feda6
+lcr40.50,lcr40,LCR40.50,530,d605d59302634f8f
+lcr40.51,lcr40,LCR40.51,2293,68872ff6fca7dfe8
+lcr40.51#2,lcr40,LCR40.51,421,a9de96261e9f01ed
+lcr40.52,lcr40,LCR40.52,2056,c826e0d3f63bd9c1
+lcr40.52#2,lcr40,LCR40.52,2367,1492629329c6c01a
+lcr40.52#3,lcr40,LCR40.52,992,455a6b87d8bfa836
+lcr40.53,lcr40,LCR40.53,1153,3c0781969d8bc522
+lcr40.54,lcr40,LCR40.54,937,1bc399bae0d7e138
+lcr40.55,lcr40,LCR40.55,2307,8a1c6156b21f2f65
+lcr40.55#2,lcr40,LCR40.55,510,de66fd0fe3af8062
+lcr40.56,lcr40,LCR40.56,1964,79e4bdbd7f82a93f
+lcr40.57,lcr40,LCR40.57,1036,59a3b3ebb837f473
+lcr40.58,lcr40,LCR40.58,2216,778681aad88db79e
+lcr40.59,lcr40,LCR40.59,1183,08dc74705d8b4647
+lcr40.60,lcr40,LCR40.60,874,2375068c80781710
+lcr40.61,lcr40,LCR40.61,1446,d3cabf787c05cbe1
+lcr40.62,lcr40,LCR40.62,622,deb5d553c49e60ef
+lcr40.63,lcr40,LCR40.63,361,f7702a208aee3bdf
+lcr40.64,lcr40,LCR40.64,1999,163d595b95390cd4
+lcr40.65,lcr40,LCR40.65,247,44283e05c3f39a8a
+lcr40.66,lcr40,LCR40.66,456,62e3ed4030867db1
+lcr40.67,lcr40,LCR40.67,396,3e4dadd38466eab8
+lcr40.68,lcr40,LCR40.68,960,242f677dcd19a172
+lcr40.69,lcr40,LCR40.69,1607,c75978cac60187d9
+lcr40.70,lcr40,LCR40.70,440,e1b2872d4fdf4320
+lcr40.71,lcr40,LCR40.71,522,f17fc6509bfbc18e
+lcr40.72,lcr40,LCR40.72,219,724edc9091c166f7
+lcr40.73,lcr40,LCR40.73,2314,fc375f721f74bfb2
+lcr40.73#2,lcr40,LCR40.73,205,e9cdc8f2b4c33446
+lcr40.74,lcr40,LCR40.74,2252,7ade937289f48a9c
+lcr40.74#2,lcr40,LCR40.74,2202,891350acf27177b9
+lcr40.74#3,lcr40,LCR40.74,1846,ef15ca22bc63b3c3
+lcr40.75,lcr40,LCR40.75,1249,d2b3811975f09792
+lcr40.76,lcr40,LCR40.76,328,ec60403b965180b7
+lcr40.77,lcr40,LCR40.77,496,df0c0b9ceeb46561
+lcr40.78,lcr40,LCR40.78,1708,772b0175155edde8
+lcr40.79,lcr40,LCR40.79,2222,fdd067e996ecd75b
+lcr40.79#2,lcr40,LCR40.79,2368,4401f7a3031c8e98
+lcr40.80,lcr40,LCR40.80,701,219b647c651e1283
+lcr40.81,lcr40,LCR40.81,918,cf23a02b12163666
+lcr40.82,lcr40,LCR40.82,759,99ff59f6de6c7470
+lcr40.83,lcr40,LCR40.83,657,f59ae1e06fb849f2
+lcr40.84,lcr40,LCR40.84,436,7cc73ab5e96c80ff
+lcr40.85,lcr40,LCR40.85,772,c9c01aec3cde763b
+lcr40.86,lcr40,LCR40.86,1666,458f08ed512b9926
+lcr40.87,lcr40,LCR40.87,608,3cd576979e63466d
+lcr40.88,lcr40,LCR40.88,1551,ecfcc4a98579b516
+lcr40.89,lcr40,LCR40.89,1235,5992ae0702791d0f
+lcr40.90,lcr40,LCR40.90,366,532e9e4bf649d360
+lcr40.91,lcr40,LCR40.91,217,c46ef1f77728b536
+lcr40.92,lcr40,LCR40.92,452,e1d624e3d35a8a5b
+lcr40.93,lcr40,LCR40.93,2385,ebce37deb82aadb7
+lcr40.93#2,lcr40,LCR40.93,2051,f529f3e838b4835a
+lcr40.93#3,lcr40,LCR40.93,1833,ceded34d56d0eccf
+nsf30.1,nsf30,NSF30.1,213,412a2203b8def09a
+nsf30.2,nsf30,NSF30.2,570,2354d5604c2703c4
+nsf30.3,nsf30,NSF30.3,1094,76df5d97c0d6210e
+nsf30.4,nsf30,NSF30.4,250,70eebfb529407b78
+nsf30.5,nsf30,NSF30.5,295,bf17e5b379386bd7
+nsf30.6,nsf30,NSF30.6,579,895ea45cd6bb60dd
+nsf30.7,nsf30,NSF30.7,1221,56db04fd672b5bd0
+nsf30.8,nsf30,NSF30.8,402,04ab138adcf83b25
+nsf30.9,nsf30,NSF30.9,1869,9ef86074cec2fb6f
+nsf30.10,nsf30,NSF30.10,1728,52b56809824992d3
+nsf30.11,nsf30,NSF30.11,492,9022297527c7b66f
+nsf30.12,nsf30,NSF30.12,869,e01c3d1dc048c390
+nsf30.13,nsf30,NSF30.13,1095,ee726a67e7f91e22
+nsf30.14,nsf30,NSF30.14,2328,0099e6daf7ec413d
+nsf30.14#2,nsf30,NSF30.14,156,75aa95c672c6b864
+nsf30.15,nsf30,NSF30.15,1488,e1d6b94b1a75dc47
+nsf30.16,nsf30,NSF30.16,747,d01340f082c52619
+nsf30.17,nsf30,NSF30.17,1897,3f6986aecc2fa65b
+nsf30.18,nsf30,NSF30.18,852,c4fb0f47269a59ac
+nsf30.19,nsf30,NSF30.19,670,7da362e0ca31951a
+nsf30.20,nsf30,NSF30.20,2322,e8494e8fe88d06b1
+nsf30.20#2,nsf30,NSF30.20,2161,f5edfc14f0c5d285
+nsf30.20#3,nsf30,NSF30.20,2224,1dd6e59c13bc7111
+nsf30.21,nsf30,NSF30.21,2021,202a9e85c594413e
+nsf30.21#2,nsf30,NSF30.21,677,56ad6b243e04c819
+nsf30.22,nsf30,NSF30.22,506,225bad5f744c7646
+nsf30.23,nsf30,NSF30.23,398,c3a81aeb380cbc57
+nsf30.24,nsf30,NSF30.24,2076,1357ec52bbb405d2
+nsf30.24#2,nsf30,NSF30.24,2173,bcf1b1b1a91b6b31
+nsf30.25,nsf30,NSF30.25,2193,1b2b6f345acbc1e7
+nsf30.25#2,nsf30,NSF30.25,351,82961fdb1678e888
+nsf30.26,nsf30,NSF30.26,1188,e09e37d5a79b3f86
+nsf30.27,nsf30,NSF30.27,328,0c54d5e5f0a6f32e
+nsf30.28,nsf30,NSF30.28,570,894bcf08ccca702c
+nsf30.29,nsf30,NSF30.29,2021,29a5ef9a968db395
+nsf30.30,nsf30,NSF30.30,520,f512eb779f9f426a
+nsf30.31,nsf30,NSF30.31,1415,ee2a442ce8c67b8c
+nsf30.32,nsf30,NSF30.32,2386,b0d1e523502c725f
+nsf30.32#2,nsf30,NSF30.32,654,b320193afaf4cdb9
+nsf30.33,nsf30,NSF30.33,420,19d2d52dbdc31379
+nsf30.34,nsf30,NSF30.34,1407,0af164342bbbd0b5
+nsf30.35,nsf30,NSF30.35,1925,40ec765265e36b55
+nsf30.36,nsf30,NSF30.36,146,b83db9b422326a2e
+nsf30.37,nsf30,NSF30.37,269,fbd948a4c26606a5
+cre31.1,cre31,CRE31.1,450,ddabcc7135634866
+cre31.2,cre31,CRE31.2,956,a08c1165acf94ed7
+cre31.3,cre31,CRE31.3,476,faf46869e5f1a272
+cre31.4,cre31,CRE31.4,159,c26fed018351e266
+cre31.5,cre31,CRE31.5,153,4f7e03eb25563467
+cre31.6,cre31,CRE31.6,227,112f835a2abf8b7e
+cre31.7,cre31,CRE31.7,1829,0c6d04d22da1262f
+cre31.8,cre31,CRE31.8,760,4d6acb54858eb8f6
+cre31.9,cre31,CRE31.9,356,bc28c295423c8d9c
+cre31.10,cre31,CRE31.10,709,a70cc93e98b2a658
+cre31.11,cre31,CRE31.11,433,bc8be878ed7c953e
+cre31.12,cre31,CRE31.12,287,c5a0bf64f450ef6c
+cre31.13,cre31,CRE31.13,509,e9811fee60bcfd94
+cre31.14,cre31,CRE31.14,361,99b038e74567c86a
+cre31.15,cre31,CRE31.15,196,cbdf0f4a7cc14d7a
+cre31.16,cre31,CRE31.16,170,3f6804b10920d7bf

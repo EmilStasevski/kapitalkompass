@@ -10,3 +10,5 @@ mlartifacts/
 .dagster/
 *.lance/
 .env
+data/index/
+data/external/regs/*.pdf

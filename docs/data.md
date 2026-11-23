@@ -61,3 +61,28 @@ are the training sample, 2023-2025 the held-out test years (time split).
 | `defaults` | Binomial(obligors, p_t) with the Vasicek conditional PD p_t = N((N^-1(PD) − √ρ·z_t)/√(1−ρ)), ρ = 0.08, z_t ~ N(0,1) shared by all segments in year t. E[p_t] = PD exactly (test `test_vasicek_year_pd_averages_to_ttc`). |
 | `true_pd` | The through-the-cycle PD of the grade from the loan book, the truth the Bayesian model is scored against. |
 | `macro` | Observable macro index m_t = −0.8·z_t + 0.6·noise, so bad years show low m_t. Used only by the conformal counterpart model. |
+
+## Regulatory corpus (module 6)
+
+The agent's rule search runs over paragraph-level chunks of ten texts, pinned by sha256 in
+`config/corpus.yaml`. The PDFs are third-party texts and are not committed; they live in
+`data/external/regs/` (see `url` per document). `data/corpus_chunks.csv` (committed) lists every
+chunk id, its citation label, length and a hash of its text, so a test can confirm that
+re-chunking reproduces exactly the same ids.
+
+| id | Document | Chunked by |
+|---|---|---|
+| `crr` | CRR consolidated 26.06.2026, extracts: Art. 92, 153, 395, 412, 413, 428b, 428k–428o, 428r, 428s, 428u, 428ad, 428ag, 428ah | numbered paragraph (`crr.art395.1`) |
+| `crd` | CRD consolidated 17.01.2025, extracts: Art. 73, 84, 98 | numbered paragraph (`crd.art98.5`) |
+| `rts856` | Delegated Regulation (EU) 2024/856 (IRRBB supervisory outlier tests), Art. 1–5 | numbered paragraph |
+| `ebagl` | EBA/GL/2022/14 IRRBB/CSRBB guidelines, section 4 (the guidelines proper) | Randnummer (`ebagl.p115`) |
+| `marisk` | BaFin Rundschreiben 05/2023 (BA) MaRisk | module and Textziffer (`marisk.btr3.1.tz4`) |
+| `bcbs368` | BCBS 368 IRRBB standard (2016), paras 1–132 and Annexes 1–2 | paragraph / annex (`bcbs368.p88`, `bcbs368.annex2`) |
+| `lcr30`, `lcr40`, `nsf30`, `cre31` | Basel Framework chapters (BIS chapter PDFs) | Basel paragraph (`lcr30.40`) |
+
+Text is extracted with poppler's `pdftotext`; page headers, page numbers and EUR-Lex amendment
+markers are removed; paragraphs longer than 2,400 characters are split into `#2`, `#3` parts.
+Formulas that are images in the PDFs (e.g. CRE31.5, LCR30.38) are missing from the chunk text.
+Embeddings: `bge-m3` via Ollama, stored in LanceDB (`data/index/`, not committed, rebuilt by
+`task agent:index`). Ollama 0.13.5 returns NaN for a handful of short inputs with bge-m3; those
+are re-embedded with trailing words dropped one at a time (deterministic).
