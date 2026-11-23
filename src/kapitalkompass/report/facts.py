@@ -47,6 +47,41 @@ class Facts:
         runs = {r["engine"]: r for r in self.bench["runs"]}
         return runs["torch_cuda"]["speedup_vs_numpy"] if "torch_cuda" in runs else None
 
+    @property
+    def numba_speedup(self) -> float | None:
+        if not self.bench:
+            return None
+        runs = {r["engine"]: r for r in self.bench["runs"]}
+        if "torch_cuda" not in runs or "numba_parallel" not in runs:
+            return None
+        return float(
+            runs["torch_cuda"]["speedup_vs_numpy"] / runs["numba_parallel"]["speedup_vs_numpy"]
+        )
+
+    @property
+    def energy_ratio(self) -> float | None:
+        """Energy per million scenarios, numpy (1 core) over CUDA."""
+        if not self.bench:
+            return None
+        runs = {r["engine"]: r for r in self.bench["runs"]}
+        if "torch_cuda" not in runs or "numpy_1core" not in runs:
+            return None
+        return float(
+            runs["numpy_1core"]["joules_per_million_scenarios"]
+            / runs["torch_cuda"]["joules_per_million_scenarios"]
+        )
+
+    @property
+    def repro_identical(self) -> tuple[int, int]:
+        """(identical, compared) metrics over all modules of the last two pipeline runs."""
+        if not self.repro:
+            return 0, 0
+        mods = [m for m in self.repro["modules"].values() if m.get("compared")]
+        return (
+            sum(int(m["identical_metrics"]) for m in mods),
+            sum(int(m["metrics_compared"]) for m in mods),
+        )
+
     def limit_counts(self, df: pl.DataFrame) -> dict[str, int]:
         return {s: int((df["status"] == s).sum()) for s in ("green", "amber", "red")}
 

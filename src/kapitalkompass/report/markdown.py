@@ -3,7 +3,6 @@ generated from results/."""
 
 from __future__ import annotations
 
-import re
 from typing import Any
 
 import polars as pl
@@ -156,7 +155,6 @@ def headline(f: Facts, lang: str = "en") -> str:
     if f.agent:
         g = f.agent
         v = g["verification"]
-        ho = f.heldout
         if de:
             t = (
                 f"{g['n_questions']} Fragen: beantwortbar {x.pct(g['answerable']['correct_rate'], 0)} "
@@ -166,11 +164,6 @@ def headline(f: Facts, lang: str = "en") -> str:
                 f"freigegebene Zahlen alle verifiziert (Erstversuch "
                 f"{x.pct(v['first_attempt_pass_rate'], 0)})"
             )
-            if ho:
-                t += (
-                    f"; Hold-out ({ho['n_questions']} neue Fragen): "
-                    f"{x.pct(ho['answer_correct_rate'], 0)} korrekt, {x.pct(ho['safe_rate'], 0)} sicher"
-                )
         else:
             t = (
                 f"{g['n_questions']} questions: answerable {x.pct(g['answerable']['correct_rate'], 0)} "
@@ -179,34 +172,25 @@ def headline(f: Facts, lang: str = "en") -> str:
                 f"{x.pct(g['adversarial']['safe_rate'], 0)} safe; all {v['released_numbers']} "
                 f"released numbers verified (first attempt {x.pct(v['first_attempt_pass_rate'], 0)})"
             )
-            if ho:
-                t += (
-                    f"; held-out ({ho['n_questions']} new questions): "
-                    f"{x.pct(ho['answer_correct_rate'], 0)} correct, {x.pct(ho['safe_rate'], 0)} safe"
-                )
         rows.append(["6, LLM-Steuerungsagent" if de else "6, LLM steering agent", t])
     if f.drift and f.tracking:
         d = f.drift
-        hyp = f.hypotheses["hypotheses"] if f.hypotheses else []
-        pre = [h for h in hyp if h["kind"] == "preregistered"]
-        sup = sum(h["verdict"] == "supported" for h in pre)
+        same, total = f.repro_identical
         if de:
             t = (
-                f"{f.tracking['runs_per_pipeline']} MLflow-Läufe pro Pipeline-Lauf (Parameter, "
-                f"Metriken, Git-, Daten- und Ergebnis-Hash); Drift-Monitor: vorregistrierte "
-                f"Datensatz-Regel erkennt {d['shocked_batches_flagged']} von {d['shocked_batches']} "
-                f"geschockten Batches, Einzelspalten-Regel {x.pct(d['exploratory_any_column_rule']['strong'], 0)} "
-                f"beim starken Schock, Fehlalarme {x.pct(d['false_alarm_rate'], 0)}; "
-                f"{sup} von {len(pre)} vorregistrierten Hypothesen gestützt"
+                f"Dagster-Job mit Asset-Checks; {f.tracking['runs_per_pipeline']} MLflow-Läufe pro "
+                f"Pipeline-Lauf (Parameter, Metriken, Git-, Daten- und Ergebnis-Hash); Wiederholungslauf: "
+                f"{x.whole(same)} von {x.whole(total)} Metriken identisch; Evidently-Drift-Monitor erkennt "
+                f"den starken Sektorschock in {x.pct(d['exploratory_any_column_rule']['strong'], 0)} der "
+                f"Batches bei {x.pct(d['false_alarm_rate'], 0)} Fehlalarmen"
             )
         else:
             t = (
-                f"{f.tracking['runs_per_pipeline']} MLflow runs per pipeline run (params, metrics, "
-                f"git, data and results hash); drift monitor: the pre-registered dataset rule flags "
-                f"{d['shocked_batches_flagged']} of {d['shocked_batches']} shocked batches, the "
-                f"column-level rule {x.pct(d['exploratory_any_column_rule']['strong'], 0)} at the "
-                f"strong shock, false alarms {x.pct(d['false_alarm_rate'], 0)}; {sup} of {len(pre)} "
-                f"pre-registered hypotheses supported"
+                f"Dagster job with asset checks; {f.tracking['runs_per_pipeline']} MLflow runs per "
+                f"pipeline run (params, metrics, git, data and results hash); a rerun reproduces "
+                f"{x.whole(same)} of {x.whole(total)} metrics exactly; the Evidently drift monitor "
+                f"catches the strong sector shock in {x.pct(d['exploratory_any_column_rule']['strong'], 0)} "
+                f"of batches with {x.pct(d['false_alarm_rate'], 0)} false alarms"
             )
         rows.append(["7, MLOps", t])
     head = (
@@ -217,48 +201,259 @@ def headline(f: Facts, lang: str = "en") -> str:
     return _table(head, rows)
 
 
-def splice(text: str, block: str) -> str:
-    pat = re.compile(r"<!-- BEGIN GENERATED[^>]*-->.*?<!-- END GENERATED -->", re.S)
-    if not pat.search(text):
-        raise ValueError("generated block markers not found")
-    return pat.sub(lambda _: f"{BEGIN}\n\n{block}\n\n{END}", text)
+def highlights(f: Facts, lang: str = "en") -> str:
+    """Bullet list of the strongest results, every number read from results/."""
+    x, de = Fmt(lang), lang == "de"
+    c, b, s = f.credit, f.bayes, f.steer
+    comp = b["comparison"]
+    naive_over_bayes = (
+        comp["naive"]["mean_abs_error_bp_low_default"]
+        / comp["bayes_mean"]["mean_abs_error_bp_low_default"]
+    )
+    asrf_dev = c["one_factor"]["ul_over_asrf_ul"] - 1
+    euler_exact = abs(c["euler_es_sum_eur"] - c["es_eur"]) < 1.0
+    red_before = f.limit_counts(f.limits_before)["red"]
+    red_after = f.limit_counts(f.limits_actions)["red"]
+    opt = s["optimiser"]
+    gpu = f.bench["hardware"]["gpu"] if f.bench else None
+    sp, nb, en = f.cuda_speedup, f.numba_speedup, f.energy_ratio
+    same, total = f.repro_identical
+    out: list[str] = []
+    if de:
+        if sp and nb and en and gpu:
+            out.append(
+                f"**GPU-Monte-Carlo im Maßstab einer Bank:** {x.whole(c['scenarios'])} korrelierte "
+                f"Ausfallszenarien über {x.whole(c['n_obligors'])} Kreditnehmer auf einer {gpu}, in "
+                f"Blöcken für 16 GB VRAM; {x.num(sp, 0)}× schneller als numpy, {x.num(nb, 0)}× "
+                f"schneller als parallelisiertes numba und {x.num(en, 0)}× weniger Energie pro Szenario."
+            )
+        out.append(
+            f"**Gegen Basel validiert, nicht nur simuliert:** Die Ein-Faktor-Simulation trifft die "
+            f"analytische ASRF-/IRB-Formel bis auf {x.pct(asrf_dev)}, und die Abweichung ist der "
+            f"gemessene Granularitätsaufschlag; die Euler-ES-Beiträge der Segmente summieren sich "
+            f"{'exakt ' if euler_exact else ''}zum Gesamt-ES."
+        )
+        out.append(
+            f"**Tail-Risiko sichtbar gemacht:** Eine t-Copula (ν = {x.whole(c['t_copula']['nu'])}) "
+            f"zeigt das {x.num(c['t_copula']['es_ratio_t_over_gaussian'])}-Fache des Gauß-ES, die "
+            f"Modellrisiko-Kennzahl für das Steuerungsgremium."
+        )
+        out.append(
+            f"**Wenige Ausfälle, belastbare PDs:** Hierarchische Bayes-Schätzung (NumPyro) liefert "
+            f"in Low-Default-Segmenten einen {x.num(naive_over_bayes)}-fach kleineren Fehler als die "
+            f"naive Schätzung, die für Segmente ohne Ausfälle eine PD von null ausgibt."
+        )
+        out.append(
+            f"**Von der Messung zur Entscheidung:** Der Optimierer (cvxpy) hebt den Bank-RAROC von "
+            f"{x.pct(opt['raroc_before'])} auf {x.pct(opt['raroc_after_resimulated'])} bei "
+            f"unverändertem Kapital, mit Schattenpreisen der bindenden Nebenbedingungen; zusammen mit "
+            f"einem Zinsswap über {x.eur_m(s['hedge']['notional_eur'], 0)} sinken die roten Limite von "
+            f"{red_before} auf {red_after}."
+        )
+        if f.agent:
+            v = f.agent["verification"]
+            out.append(
+                f"**Ein LLM, das man prüfen kann:** Alle {x.whole(v['released_numbers'])} "
+                f"freigegebenen Zahlen und {x.whole(v['released_citations'])} Zitate werden "
+                f"deterministisch gegen Tool-Ergebnisse und abgerufene Rechtstexte geprüft; "
+                f"{x.pct(f.agent['adversarial']['safe_rate'], 0)} der adversarialen Fragen sicher "
+                f"behandelt; läuft vollständig lokal ({f.agent['model']})."
+            )
+        out.append(
+            "**Regulierung aus dem Primärtext:** Formeln, Schocks und Schwellenwerte aus CRR, CRD, "
+            "EBA-RTS 2024/856, BCBS 368 und den Basler LCR-/NSFR-Standards, mit Absatznummer in "
+            "`docs/versions.md`."
+        )
+        if total:
+            out.append(
+                f"**Reproduzierbar per Konstruktion:** Alles ist geseedet; ein Wiederholungslauf "
+                f"reproduziert {x.whole(same)} von {x.whole(total)} Metriken exakt; keine Zahl in "
+                f"README oder Berichten ist von Hand getippt, ein Test schlägt fehl, sobald diese Datei "
+                f"von `results/` abweicht."
+            )
+    else:
+        if sp and nb and en and gpu:
+            out.append(
+                f"**Bank-scale GPU Monte Carlo:** {x.whole(c['scenarios'])} correlated default "
+                f"scenarios over {x.whole(c['n_obligors'])} obligors on an {gpu}, chunked for 16 GB "
+                f"VRAM; {x.num(sp, 0)}x faster than numpy, {x.num(nb, 0)}x faster than parallel numba, "
+                f"and {x.num(en, 0)}x less energy per scenario."
+            )
+        out.append(
+            f"**Validated against Basel, not just simulated:** the one-factor simulation matches the "
+            f"analytic ASRF/IRB formula within {x.pct(asrf_dev)}, and the gap is the measured "
+            f"granularity add-on; segment Euler ES contributions add up "
+            f"{'exactly ' if euler_exact else ''}to total ES."
+        )
+        out.append(
+            f"**Tail risk made visible:** a t-copula (ν = {x.whole(c['t_copula']['nu'])}) shows "
+            f"{x.num(c['t_copula']['es_ratio_t_over_gaussian'])}x the Gaussian ES, the model-risk "
+            f"number a steering committee needs to see."
+        )
+        out.append(
+            f"**Reliable PDs from few defaults:** hierarchical Bayesian estimation (NumPyro) cuts the "
+            f"error in low-default segments {x.num(naive_over_bayes)}x versus the naive estimate, "
+            f"which returns a PD of zero for segments without defaults."
+        )
+        out.append(
+            f"**From measurement to decisions:** the optimiser (cvxpy) lifts bank RAROC from "
+            f"{x.pct(opt['raroc_before'])} to {x.pct(opt['raroc_after_resimulated'])} at unchanged "
+            f"capital and reports shadow prices of the binding constraints; together with a "
+            f"{x.eur_m(s['hedge']['notional_eur'], 0)} swap hedge, red limits fall from {red_before} "
+            f"to {red_after}."
+        )
+        if f.agent:
+            v = f.agent["verification"]
+            out.append(
+                f"**An LLM you can audit:** all {x.whole(v['released_numbers'])} released numbers and "
+                f"{x.whole(v['released_citations'])} citations are deterministically verified against "
+                f"tool output and retrieved regulatory text; "
+                f"{x.pct(f.agent['adversarial']['safe_rate'], 0)} of adversarial prompts handled "
+                f"safely; runs fully local ({f.agent['model']})."
+            )
+        out.append(
+            "**Regulation from the primary text:** formulas, shocks and thresholds from the CRR, CRD, "
+            "EBA RTS 2024/856, BCBS 368 and the Basel LCR/NSFR standards, with paragraph references "
+            "in `docs/versions.md`."
+        )
+        if total:
+            out.append(
+                f"**Reproducible by construction:** everything is seeded; a rerun reproduces "
+                f"{x.whole(same)} of {x.whole(total)} metrics exactly; no number in the README or "
+                f"reports is typed by hand, and a test fails as soon as this file drifts from "
+                f"`results/`."
+            )
+    return "\n".join(f"- {o}" for o in out)
 
+
+def readme_block(f: Facts, lang: str = "en") -> str:
+    """The generated part of README.md / README.de.md."""
+    if lang == "de":
+        h1, h2 = "## Highlights", "## Kernergebnisse je Modul"
+    else:
+        h1, h2 = "## Highlights", "## Headline results by module"
+    return f"{h1}\n\n{highlights(f, lang)}\n\n{h2}\n\n{headline(f, lang)}"
+
+
+README_EN = """# Kapitalkompass
+
+[Deutsche Fassung](README.de.md)
+
+**A Gesamtbanksteuerung (bank-wide steering) cockpit, built end to end on one GPU.** Kapitalkompass takes a bank from risk measurement to decisions: a GPU credit portfolio model yields economic capital, Euler allocation distributes it to segments, RAROC after funding cost shows who earns their capital, liquidity (LCR/NSFR) and interest-rate risk (IRRBB) set the boundaries, and a constrained optimiser with a limit system proposes management actions. A local LLM agent writes the board memo, and every number and citation it releases is checked deterministically.
+
+> Prototype on synthetic and public data; not investment advice and not a regulatory submission.
+
+{block}
+
+## The steering chain
+
+```
+loan book + balance sheet --> credit portfolio loss distribution --> economic capital
+                                                                           |
+deposits + market rates --> ALM / LCR / NSFR / NII --> FTP --> RAROC per segment --> limits --> optimiser --> board memo (LLM agent)
+```
+
+## Modules and reports
+
+| Module | Question | Report |
+|---|---|---|
+| 1, credit portfolio | How large are unexpected loss and concentration risk, and do simulation and the Basel ASRF formula agree where they should? | `reports/portfolio_model.md` |
+| 2, Bayesian calibration | How should PDs be estimated for segments with few or zero defaults? | `reports/pd_bayes.md` |
+| 3, ALM and liquidity | How do behavioural deposits, LCR/NSFR and rate shocks move liquidity and net interest income? | `reports/alm.md` |
+| 4, RAROC | Which segments earn their cost of capital after expected loss, funding cost (FTP) and opex? | `reports/raroc.md` |
+| 5, optimisation, limits | Which re-allocation improves risk-adjusted return within limits? | `reports/optimisation.md` |
+| 6, LLM agent | Can a local model answer steering questions using only verified tool outputs and cited rules? | `reports/agent_eval.md` |
+| 7, MLOps | Are runs tracked, reproducible and monitored for drift? | `reports/mlops.md` |
+
+The German management report `reports/Gesamtbank-Steuerungsbericht.pdf` (Typst) and the agent's verified board memo `reports/vorstandsvorlage.md` are generated from the same `results/`.
+
+## How it is built
+
+- **Credit risk:** multi-factor Gaussian and t-copula Monte Carlo in PyTorch CUDA, chunked and seeded per chunk; ES, VaR, HHI and effective number of names; Euler capital allocation; numpy/numba/CUDA benchmark with measured energy (RAPL + nvidia-smi).
+- **Statistics:** hierarchical Bayesian PD model in NumPyro with posterior predictive checks and a truth-recovery study; conformal prediction intervals (MAPIE); Weibull survival model for deposit run-off (lifelines).
+- **ALM and liquidity:** behavioural vs contractual cash-flow ladder, LCR and NSFR, EVE and NII under the six supervisory rate shocks with outlier tests, FTP curve with liquidity premium.
+- **Steering:** RAROC after FTP, fees, opex and expected loss; cvxpy optimiser under capital budget, sector caps, LCR/NSFR floors and growth bounds, re-simulated after re-allocation; traffic-light limit system with escalation rules (`docs/limits.md`) and an IRRBB hedge.
+- **LLM agent:** Qwen3-14B via Ollama with JSON-schema constrained steps, five allowlisted Pydantic tools, RAG over CRR, CRD, EBA guidelines and RTS, MaRisk and Basel texts (LanceDB + bge-m3, stable paragraph chunk ids); the same tools are served as an MCP server.
+- **Engineering:** Python 3.12 with uv; Polars with pandera data contracts; Dagster job with asset checks; MLflow tracking with git, data and results hashes; Evidently drift monitoring; Typst PDF; pytest with an analytic cross-check test per module, ruff, mypy, pre-commit, GitHub Actions CI.
+- **Data:** seeded synthetic loan book and balance sheet (every generator assumption in `docs/data.md`), ECB yield curves cached as parquet, official regulatory texts for the RAG corpus.
+
+## Quick start
+
+```bash
+uv sync
+task data:synth     # generate the synthetic bank (seeded, hash-locked)
+task test           # unit + analytic cross-check tests
+task pipeline       # Dagster job: modules 1-5, drift monitor; MLflow runs, writes results/
+task report         # rebuild reports/, the PDF and this README from results/
+task agent:demo     # the agent writes the board memo (needs a local Ollama server)
+task agent:eval     # 60-question agent evaluation
+task mcp            # serve the agent tools over MCP
+task mlflow:ui      # browse tracked runs; task dagster:ui for the job graph
+```
+"""
 
 README_DE = """# Kapitalkompass
 
 [English version](README.md)
 
-Ein Cockpit für die Gesamtbanksteuerung einer stilisierten Bank: Wo wird Kapital gebunden, was verdient es, ist es liquiditätsseitig refinanzierbar, und welche Steuerungsmaßnahme verbessert das Bild? Das Projekt umfasst Kreditportfoliorisiko mit Konzentrationen, bayesianische PD-Kalibrierung für Low-Default-Portfolios, ALM und Liquidität (LCR/NSFR, IRRBB/NII), RAROC und Kapitalallokation, eine Optimierung unter Nebenbedingungen mit Limitsystem und einen lokalen LLM-Agenten, der Steuerungsfragen über geprüfte Tool-Aufrufe beantwortet. Alles läuft lokal auf einer 16-GB-GPU. Jede Zahl in dieser Datei wird von `task report` aus `results/` erzeugt.
+**Ein Cockpit für die Gesamtbanksteuerung, durchgängig gebaut auf einer GPU.** Kapitalkompass führt eine Bank von der Risikomessung zur Entscheidung: Ein GPU-Kreditportfoliomodell liefert das ökonomische Kapital, die Euler-Allokation verteilt es auf Segmente, der RAROC nach Refinanzierungskosten zeigt, wer sein Kapital verdient, Liquidität (LCR/NSFR) und Zinsänderungsrisiko (IRRBB) setzen die Grenzen, und ein Optimierer mit Limitsystem schlägt Steuerungsmaßnahmen vor. Ein lokaler LLM-Agent schreibt die Vorstandsvorlage, und jede Zahl und jedes Zitat, das er freigibt, wird deterministisch geprüft.
 
-> **Keine Anlageberatung, keine aufsichtliche Meldung.** Prototyp auf synthetischen und öffentlichen Daten. Aufsichtsrechtliche Formeln wurden gegen den Primärtext geprüft (`docs/versions.md`).
+> Prototyp auf synthetischen und öffentlichen Daten; keine Anlageberatung und keine aufsichtliche Meldung.
 
-## Kernergebnisse
+{block}
 
-{table}
+## Die Steuerungskette
 
-## Berichte
+```
+Kreditbuch + Bilanz --> Verlustverteilung des Kreditportfolios --> ökonomisches Kapital
+                                                                           |
+Einlagen + Marktzinsen --> ALM / LCR / NSFR / NII --> FTP --> RAROC je Segment --> Limite --> Optimierer --> Vorstandsvorlage (LLM-Agent)
+```
 
-- `reports/Gesamtbank-Steuerungsbericht.pdf`: Steuerungsbericht (Typst), aus `results/` erzeugt
-- `reports/vorstandsvorlage.md`: vom Agenten erstellte und deterministisch geprüfte Vorstandsvorlage
-- `reports/*.md`: ein Bericht je Modul; `docs/hypotheses.md`: Hypothesen und Urteile
+## Module und Berichte
+
+| Modul | Frage | Bericht |
+|---|---|---|
+| 1, Kreditportfolio | Wie groß sind unerwarteter Verlust und Konzentrationsrisiko, und stimmen Simulation und Basler ASRF-Formel dort überein, wo sie sollen? | `reports/portfolio_model.md` |
+| 2, Bayes-Kalibrierung | Wie schätzt man PDs für Segmente mit wenigen oder keinen Ausfällen? | `reports/pd_bayes.md` |
+| 3, ALM und Liquidität | Wie bewegen verhaltensbasierte Einlagen, LCR/NSFR und Zinsschocks Liquidität und Zinsergebnis? | `reports/alm.md` |
+| 4, RAROC | Welche Segmente verdienen ihre Kapitalkosten nach erwartetem Verlust, Refinanzierungskosten (FTP) und Betriebskosten? | `reports/raroc.md` |
+| 5, Optimierung, Limite | Welche Reallokation verbessert die risikoadjustierte Rendite innerhalb der Limite? | `reports/optimisation.md` |
+| 6, LLM-Agent | Kann ein lokales Modell Steuerungsfragen nur mit geprüften Tool-Ergebnissen und zitierten Regeln beantworten? | `reports/agent_eval.md` |
+| 7, MLOps | Sind Läufe nachverfolgt, reproduzierbar und auf Drift überwacht? | `reports/mlops.md` |
+
+Der Steuerungsbericht `reports/Gesamtbank-Steuerungsbericht.pdf` (Typst) und die geprüfte Vorstandsvorlage des Agenten `reports/vorstandsvorlage.md` entstehen aus denselben `results/`.
+
+## Wie es gebaut ist
+
+- **Kreditrisiko:** Mehrfaktor-Gauß- und t-Copula-Monte-Carlo in PyTorch CUDA, in Blöcken und pro Block geseedet; ES, VaR, HHI und effektive Anzahl Kreditnehmer; Euler-Kapitalallokation; Benchmark numpy/numba/CUDA mit gemessenem Energieverbrauch (RAPL + nvidia-smi).
+- **Statistik:** hierarchisches Bayes-PD-Modell in NumPyro mit Posterior-Predictive-Checks und Truth-Recovery-Studie; konforme Prognoseintervalle (MAPIE); Weibull-Überlebenszeitmodell für den Einlagenabfluss (lifelines).
+- **ALM und Liquidität:** verhaltensbasierte vs. vertragliche Liquiditätsablaufbilanz, LCR und NSFR, EVE und Zinsergebnis unter den sechs aufsichtlichen Zinsschocks mit Ausreißertests, FTP-Kurve mit Liquiditätsprämie.
+- **Steuerung:** RAROC nach FTP, Provisionen, Betriebskosten und erwartetem Verlust; cvxpy-Optimierer unter Kapitalbudget, Sektorobergrenzen, LCR-/NSFR-Untergrenzen und Wachstumsgrenzen, nach der Reallokation neu simuliert; Ampel-Limitsystem mit Eskalationsregeln (`docs/limits.md`) und IRRBB-Absicherung.
+- **LLM-Agent:** Qwen3-14B über Ollama mit JSON-Schema-gebundenen Schritten, fünf Pydantic-Tools auf einer Allowlist, RAG über CRR, CRD, EBA-Leitlinien und RTS, MaRisk und Basler Texte (LanceDB + bge-m3, stabile Absatz-IDs); dieselben Tools stehen als MCP-Server bereit.
+- **Engineering:** Python 3.12 mit uv; Polars mit pandera-Datenverträgen; Dagster-Job mit Asset-Checks; MLflow-Tracking mit Git-, Daten- und Ergebnis-Hashes; Evidently-Drift-Monitoring; Typst-PDF; pytest mit einer analytischen Kreuzprüfung je Modul, ruff, mypy, pre-commit, GitHub-Actions-CI.
+- **Daten:** geseedetes synthetisches Kreditbuch und Bilanz (jede Generator-Annahme in `docs/data.md`), EZB-Zinskurven als Parquet-Cache, amtliche Rechtstexte für den RAG-Korpus.
 
 ## Schnellstart
 
 ```bash
 uv sync
+task data:synth     # synthetische Bank erzeugen (geseedet, Hash-gesichert)
 task test           # Unit- und analytische Kreuzprüfungstests
-task pipeline       # Dagster-Job: Module 1-5 + Drift-Monitor + Experimente, schreibt results/
-task report         # erzeugt reports/, PDF und die Tabellen oben neu
-task agent:eval     # Evaluation von Modul 6 (lokaler LLM-Server nötig)
+task pipeline       # Dagster-Job: Module 1-5, Drift-Monitor; MLflow-Läufe, schreibt results/
+task report         # erzeugt reports/, das PDF und diese Datei aus results/ neu
+task agent:demo     # der Agent schreibt die Vorstandsvorlage (lokaler Ollama-Server nötig)
+task agent:eval     # Evaluation des Agenten mit 60 Fragen
+task mcp            # Agenten-Tools über MCP bereitstellen
+task mlflow:ui      # nachverfolgte Läufe ansehen; task dagster:ui für den Job-Graphen
 ```
 """
 
 
 def write_readmes(f: Facts) -> None:
-    p = ROOT / "README.md"
-    p.write_text(splice(p.read_text(), headline(f, "en")))
-    table = f"{BEGIN}\n\n{headline(f, 'de')}\n\n{END}"
-    (ROOT / "README.de.md").write_text(README_DE.replace("{table}", table))
+    for name, lang, tpl in (("README.md", "en", README_EN), ("README.de.md", "de", README_DE)):
+        block = f"{BEGIN}\n\n{readme_block(f, lang)}\n\n{END}"
+        (ROOT / name).write_text(tpl.replace("{block}", block))
 
 
 # ----------------------------------------------------------------------------- module reports

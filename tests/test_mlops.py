@@ -113,12 +113,12 @@ def test_flatten_and_formatting() -> None:
 def test_readme_tables_match_results() -> None:
     """No hand-typed numbers: the generated README blocks equal what results/ produce now."""
     from kapitalkompass.report import facts
-    from kapitalkompass.report.markdown import headline
+    from kapitalkompass.report.markdown import readme_block
 
     f = facts.load()
     for name, lang in (("README.md", "en"), ("README.de.md", "de")):
         text = (ROOT / name).read_text()
-        assert headline(f, lang) in text, f"{name} is stale: run `task report`"
+        assert readme_block(f, lang) in text, f"{name} is stale: run `task report`"
     assert "TBD" not in (ROOT / "README.md").read_text()
 
 
