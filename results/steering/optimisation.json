@@ -24,24 +24,24 @@
   "constraints": {
     "capital_budget": {
       "binding": true,
-      "max_violation": 0.002754539251,
+      "max_violation": 0.002754509449,
       "shadow_price": 0.06072053243
     },
     "growth_lower": {
       "binding": true,
       "max_violation": 5.430311756e-11,
       "shadow_price": [
-        0.002000585603,
-        0.0005991596421,
+        0.002000585853,
+        0.0005991597171,
         407355.3698,
         3035410.1,
         1025897.208,
-        0.001169876378,
-        0.0007611906491,
-        0.0007528927956,
-        0.0007761915559,
-        0.0007902263818,
-        0.0007460725227,
+        0.001169876525,
+        0.0007611907444,
+        0.0007528928899,
+        0.000776191653,
+        0.0007902264807,
+        0.000746072616,
         1629455.114
       ]
     },
@@ -49,34 +49,34 @@
       "binding": true,
       "max_violation": 1.632698421e-10,
       "shadow_price": [
-        0.003568100009,
+        0.003568100456,
         342393.6076,
-        0.0008004528337,
-        0.0007182551993,
-        0.0007393438724,
-        0.0002102744232,
+        0.0008004529339,
+        0.0007182552892,
+        0.000739343965,
+        0.0002102744495,
         918596.8144,
         835273.2904,
         577193.4424,
         1775331.936,
         1457843.084,
-        0.0007487703082
+        0.0007487704019
       ]
     },
     "lcr_floor": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 7.615934992e-13
+      "shadow_price": 7.615935946e-13
     },
     "nsfr_floor": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.559049921e-12
+      "shadow_price": 1.559050117e-12
     },
     "sector_share_manufacturing": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.363339685e-12
+      "shadow_price": 1.363339855e-12
     },
     "sector_share_real_estate": {
       "binding": true,
@@ -86,7 +86,7 @@
     "sector_share_trade": {
       "binding": false,
       "max_violation": 0.0,
-      "shadow_price": 1.636364325e-12
+      "shadow_price": 1.63636453e-12
     }
   },
   "eva_after_eur": 14963297.14,

@@ -1,7 +1,7 @@
 """Module 6 runner: build the index, write the eval set, run the agent on it and score it
 deterministically; also produce the demo Vorstandsvorlage in reports/.
 
-    uv run python -m kapitalkompass.agent.run [index|eval|demo|all]
+    uv run python -m kapitalkompass.agent.run [index|eval|demo|heldout|all]
 """
 
 from __future__ import annotations
@@ -169,6 +169,34 @@ def run_eval() -> dict[str, Any]:
     return summary
 
 
+def run_heldout() -> dict[str, Any]:
+    """Held-out questions for hypothesis H4 (data/eval/heldout.jsonl, fixed before the run)."""
+    qs = evalset.load(evalset.HELDOUT_FILE)
+    rows, transcripts = [], []
+    for q in qs:
+        r = agent.run(q["question"]).as_dict()
+        rows.append(score(q, r))
+        transcripts.append({"id": q["id"], **r})
+        print(f"{q['id']} {q['category']:<12} {r['kind']:<7} pass={rows[-1]['passed']}", flush=True)
+    write_table("agent/heldout_details.csv", pl.DataFrame(rows))
+    (RESULTS_DIR / "agent" / "heldout_transcripts.jsonl").write_text(
+        "".join(json.dumps(t, ensure_ascii=False) + "\n" for t in transcripts)
+    )
+    ans = [r for r in rows if r["category"] in ("answerable", "multistep")]
+    safe = [r for r in rows if r["category"] in ("out_of_scope", "adversarial")]
+    summary = summarise(rows)
+    summary.update(
+        {
+            "answer_correct_rate": _rate([r["passed"] for r in ans]),
+            "safe_rate": _rate([r["passed"] for r in safe]),
+            "model": load_config("agent")["llm"]["model"],
+            "git": _git_hash(),
+        }
+    )
+    write_json("agent/heldout_summary.json", summary)
+    return summary
+
+
 def run_demo() -> dict[str, Any]:
     r = agent.run(DEMO_QUESTION)
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -194,6 +222,8 @@ def main(what: str = "all") -> None:
         print(d["markdown"])
     if what in ("eval", "all"):
         print(json.dumps(run_eval(), indent=2))
+    if what == "heldout":
+        print(json.dumps(run_heldout(), indent=2))
 
 
 if __name__ == "__main__":

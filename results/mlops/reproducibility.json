@@ -1,0 +1,58 @@
+{
+  "data_hash": "f1a8877189912de6",
+  "modules": {
+    "agent": {
+      "compared": false,
+      "runs_with_this_data": 0
+    },
+    "alm": {
+      "compared": true,
+      "identical_metrics": 73,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 73,
+      "results_hash_equal": true
+    },
+    "bayes": {
+      "compared": true,
+      "identical_metrics": 53,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 53,
+      "results_hash_equal": true
+    },
+    "credit": {
+      "compared": true,
+      "identical_metrics": 34,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 34,
+      "results_hash_equal": true
+    },
+    "data": {
+      "compared": true,
+      "identical_metrics": 0,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 0,
+      "results_hash_equal": true
+    },
+    "drift": {
+      "compared": true,
+      "identical_metrics": 48,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 48,
+      "results_hash_equal": true
+    },
+    "experiments": {
+      "compared": true,
+      "identical_metrics": 12,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 12,
+      "results_hash_equal": true
+    },
+    "steering": {
+      "compared": true,
+      "identical_metrics": 21,
+      "max_rel_diff": 0.0,
+      "metrics_compared": 21,
+      "results_hash_equal": false
+    }
+  }
+}

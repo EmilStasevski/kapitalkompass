@@ -1,0 +1,69 @@
+{
+  "granularity": {
+    "device": "cuda",
+    "max_addon_hhi_le_0_0015": 0.02219658764,
+    "min_addon_hhi_ge_0_003": 0.0852247736,
+    "n_hhi_ge_0_003": 3,
+    "n_hhi_le_0_0015": 3,
+    "portfolios": [
+      {
+        "addon": -0.0008584800318,
+        "hhi_name": 7.790430456e-05,
+        "large_names_share": 0.0,
+        "large_scale": 0.0,
+        "ul_asrf_eur": 195376868.3,
+        "ul_sim_eur": 195209141.2
+      },
+      {
+        "addon": 0.004324385694,
+        "hhi_name": 0.000372453602,
+        "large_names_share": 0.06446742849,
+        "large_scale": 0.5,
+        "ul_asrf_eur": 212046491.1,
+        "ul_sim_eur": 212963461.9
+      },
+      {
+        "addon": 0.02219658764,
+        "hhi_name": 0.001134299028,
+        "large_names_share": 0.1211261646,
+        "large_scale": 1.0,
+        "ul_asrf_eur": 228716113.8,
+        "ul_sim_eur": 233792831.1
+      },
+      {
+        "addon": 0.0852247736,
+        "hhi_name": 0.00346613812,
+        "large_names_share": 0.2160794538,
+        "large_scale": 2.0,
+        "ul_asrf_eur": 262055359.3,
+        "ul_sim_eur": 284388968.0
+      },
+      {
+        "addon": 0.160096918,
+        "hhi_name": 0.006303363576,
+        "large_names_share": 0.2925158483,
+        "large_scale": 3.0,
+        "ul_asrf_eur": 295394604.8,
+        "ul_sim_eur": 342686370.7
+      },
+      {
+        "addon": 0.2970521975,
+        "hhi_name": 0.01221247014,
+        "large_names_share": 0.4079682874,
+        "large_scale": 5.0,
+        "ul_asrf_eur": 362073095.8,
+        "ul_sim_eur": 469627704.6
+      }
+    ],
+    "scenarios": 1000000,
+    "spearman_hhi_addon": 1.0
+  },
+  "shrinkage": {
+    "bayes_better_share": 0.9,
+    "mean_mae_bp_bayes": 8.183489468,
+    "mean_mae_bp_naive": 14.01681163,
+    "median_mae_ratio": 0.4789096241,
+    "replications_run": 20,
+    "replications_with_low_default": 20
+  }
+}

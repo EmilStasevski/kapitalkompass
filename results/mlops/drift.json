@@ -1,0 +1,67 @@
+{
+  "batch_size": 2000,
+  "batches_per_severity": 20,
+  "column_drift_rate": {
+    "medium": {
+      "client_margin": 1.0,
+      "ead_eur": 0.0,
+      "grade": 0.0,
+      "lgd": 0.65,
+      "maturity_years": 0.05,
+      "pd": 0.0,
+      "sector": 0.0
+    },
+    "mild": {
+      "client_margin": 0.0,
+      "ead_eur": 0.0,
+      "grade": 0.0,
+      "lgd": 0.05,
+      "maturity_years": 0.0,
+      "pd": 0.0,
+      "sector": 0.0
+    },
+    "none": {
+      "client_margin": 0.0,
+      "ead_eur": 0.0,
+      "grade": 0.0,
+      "lgd": 0.0,
+      "maturity_years": 0.0,
+      "pd": 0.0,
+      "sector": 0.0
+    },
+    "strong": {
+      "client_margin": 1.0,
+      "ead_eur": 0.0,
+      "grade": 0.0,
+      "lgd": 1.0,
+      "maturity_years": 0.15,
+      "pd": 0.0,
+      "sector": 0.0
+    }
+  },
+  "detection_monotone": true,
+  "detection_rate": {
+    "medium": 0.05,
+    "mild": 0.0,
+    "none": 0.0,
+    "strong": 0.15
+  },
+  "drift_share": 0.3,
+  "exploratory_any_column_rule": {
+    "medium": 1.0,
+    "mild": 0.05,
+    "none": 0.0,
+    "strong": 1.0
+  },
+  "false_alarm_rate": 0.0,
+  "method": "Evidently DataDriftPreset: Wasserstein (normed) for numeric, Jensen-Shannon for categorical and low-cardinality columns, threshold 0.1; dataset drift if the share of drifted columns >= drift_share",
+  "reference_size": 5000,
+  "severities": {
+    "medium": 0.67,
+    "mild": 0.33,
+    "none": 0.0,
+    "strong": 1.0
+  },
+  "shocked_batches": 60,
+  "shocked_batches_flagged": 4
+}

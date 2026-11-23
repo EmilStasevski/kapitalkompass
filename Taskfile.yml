@@ -38,14 +38,24 @@ tasks:
       - uv run pytest -q -m "not llm" {{.CLI_ARGS}}
 
   pipeline:
-    desc: Modules 1-5, writes results/
+    desc: Dagster job - modules 1-5, drift monitor, hypothesis experiments; logs MLflow runs, writes results/
     cmds:
-      - task: data:synth
-      - "{{.PY}} -m kapitalkompass.credit.run"
-      - "{{.PY}} -m kapitalkompass.bayes.run"
-      - "{{.PY}} -m kapitalkompass.alm.run"
-      - "{{.PY}} -m kapitalkompass.steering.run"
-      # module steps are appended as they are built
+      - "{{.PY}} -m kapitalkompass.mlops.pipeline"
+
+  dagster:ui:
+    desc: Dagster UI for the pipeline job
+    cmds:
+      - uv run dagster dev -m kapitalkompass.mlops.pipeline
+
+  mlflow:ui:
+    desc: MLflow UI over the local run store
+    cmds:
+      - uv run mlflow ui --backend-store-uri sqlite:///mlruns/mlflow.db
+
+  mlops:repro:
+    desc: Compare the last two MLflow runs per module with the same data hash
+    cmds:
+      - "{{.PY}} -m kapitalkompass.mlops.tracking"
 
   bench:
     desc: Module 1 benchmark numpy vs numba vs torch CPU vs CUDA (stop LLM server first)
@@ -72,12 +82,22 @@ tasks:
     cmds:
       - "{{.PY}} -m kapitalkompass.agent.run eval"
 
+  agent:heldout:
+    desc: Run the 20 pre-registered held-out questions (hypothesis H4; needs Ollama)
+    cmds:
+      - "{{.PY}} -m kapitalkompass.agent.run heldout"
+
   mcp:
     desc: Serve the five agent tools over MCP (stdio)
     cmds:
       - "{{.PY}} -m kapitalkompass.agent.mcp_server"
 
   report:
-    desc: Rebuild reports/ and README tables from results/
+    desc: Rebuild README tables, README.de.md, reports/ (Markdown, figures, PDF) and docs/hypotheses.md from results/
     cmds:
-      - "echo 'report generator arrives on day 7'"
+      - "{{.PY}} -m kapitalkompass.report.run"
+
+  test:ci:
+    desc: CPU-only test subset used in CI (no GPU, no LLM, no regulatory PDFs)
+    cmds:
+      - uv run pytest -q -m "not llm and not gpu" {{.CLI_ARGS}}

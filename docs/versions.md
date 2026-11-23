@@ -54,3 +54,5 @@ remain unverified.
 | 5 | Large exposure limit (Day 6) | exposure to a client or group of connected clients ≤ 25% of Tier 1 (the internal single-name limit of 15% of CET1 is stricter) | CRR | Art. 395(1) | 2026-11-23 | `docs/limits.md` |
 | 3 | EU EVE outlier threshold (Day 6) | 15% of Tier 1 (as BCBS 368 para 88) | CRD | Art. 98(5) | 2026-11-23 | `config/alm.yaml` irrbb.eve_outlier_tier1 |
 | 3 | EU deviations to note | EU treats extremely high-quality covered bonds as Level 1 with a 7% haircut; this project follows the Basel Level 2A treatment (15%). Not verified against the EU text | — | — | not verified | — |
+
+**Day 7 (2026-11-23).** No new regulatory formulas. Module 7 tools, pinned in `uv.lock`: MLflow 3.18.0, Evidently 0.7.23, Dagster 1.13.31, typst (Python package) 0.15.2.

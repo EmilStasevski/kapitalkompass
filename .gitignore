@@ -12,3 +12,5 @@ mlartifacts/
 .env
 data/index/
 data/external/regs/*.pdf
+reports/*.html
+mlruns/

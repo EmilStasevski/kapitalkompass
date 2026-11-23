@@ -1,0 +1,237 @@
+{
+  "hypotheses": [
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 0.0852247736,
+          "op": ">",
+          "path": "mlops/hypotheses_experiments.json:granularity.min_addon_hhi_ge_0_003",
+          "right": 0.05
+        },
+        {
+          "holds": true,
+          "left": 0.02219658764,
+          "op": "<",
+          "path": "mlops/hypotheses_experiments.json:granularity.max_addon_hhi_le_0_0015",
+          "right": 0.05
+        },
+        {
+          "holds": true,
+          "left": 1.0,
+          "op": "\u2265",
+          "path": "mlops/hypotheses_experiments.json:granularity.spearman_hhi_addon",
+          "right": 0.9
+        }
+      ],
+      "experiment": "Scale the exposures of the 25 large names by f in {0, 0.5, 1, 2, 3, 5}, keep the granular book fixed, simulate 1M one-factor scenarios per portfolio (same seed), add-on = UL_sim / UL_ASRF - 1.",
+      "id": "H1",
+      "kind": "preregistered",
+      "statement": "In the one-factor model (the ASRF model with finitely many names), the simulated unexpected loss exceeds the analytic ASRF unexpected loss by more than 5% for every test portfolio with a name HHI of at least 0.003, by less than 5% for every portfolio with an HHI of at most 0.0015, and the add-on rises with HHI (rank correlation at least 0.9).",
+      "title": "Granularity adjustment matters above a name HHI of 0.003",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 0.9,
+          "op": "\u2265",
+          "path": "mlops/hypotheses_experiments.json:shrinkage.bayes_better_share",
+          "right": 0.8
+        },
+        {
+          "holds": true,
+          "left": 0.4789096241,
+          "op": "<",
+          "path": "mlops/hypotheses_experiments.json:shrinkage.median_mae_ratio",
+          "right": 0.75
+        }
+      ],
+      "experiment": "20 fresh histories (seeds 70000-70019), training years 2014-2022, same model and prior as module 2 (1 chain, 300 warm-up, 300 draws).",
+      "id": "H2",
+      "kind": "preregistered",
+      "statement": "On fresh simulated default histories (not the one used in module 2), the posterior-mean PD has a smaller mean absolute error against the true PD than the naive default rate on segments with 0-3 training defaults in at least 80% of replications, and the median error ratio (Bayes / naive) is below 0.75.",
+      "title": "Bayesian shrinkage beats the naive PD on low-default segments",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": false,
+          "left": 0.15,
+          "op": "\u2265",
+          "path": "mlops/drift.json:detection_rate.strong",
+          "right": 0.9
+        },
+        {
+          "holds": true,
+          "left": 0.0,
+          "op": "\u2264",
+          "path": "mlops/drift.json:detection_rate.none",
+          "right": 0.1
+        },
+        {
+          "holds": true,
+          "left": true,
+          "op": "=",
+          "path": "mlops/drift.json:detection_monotone",
+          "right": true
+        }
+      ],
+      "experiment": "20 seeded batches of 2,000 loans per severity (none, mild, medium, strong) drawn from the loan book; reference = a separate 5,000-loan sample. See config/mlops.yaml.",
+      "id": "H3",
+      "kind": "preregistered",
+      "statement": "With Evidently's dataset-drift rule (share of drifted columns >= 0.3), the strong real-estate shock is flagged in at least 90% of monitoring batches, unshocked batches are flagged in at most 10%, and the detection rate does not fall as the shock gets stronger.",
+      "title": "The drift monitor flags a sector shock and stays quiet without one",
+      "verdict": "not supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": false,
+          "left": 0.7142857143,
+          "op": "\u2265",
+          "path": "agent/heldout_summary.json:answer_correct_rate",
+          "right": 0.8
+        },
+        {
+          "holds": true,
+          "left": 1.0,
+          "op": "\u2265",
+          "path": "agent/heldout_summary.json:safe_rate",
+          "right": 0.9
+        }
+      ],
+      "experiment": "`task agent:heldout`, scored with the same deterministic scorer as the main eval.",
+      "id": "H4",
+      "kind": "preregistered",
+      "statement": "On 20 held-out questions written on day 7 with new phrasings (data/eval/heldout.jsonl), with no change to prompt, tools or verifier after seeing the results, at least 80% of answerable and multi-step questions are answered correctly and at least 90% of out-of-scope and adversarial questions are handled safely.",
+      "title": "The steering agent generalises to questions it was not tuned on",
+      "verdict": "not supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 7.072618103,
+          "op": "<",
+          "path": "bayes/summary.json:comparison.bayes_mean.mean_abs_error_bp_low_default",
+          "right": 15.12766554
+        },
+        {
+          "holds": true,
+          "left": 7.072618103,
+          "op": "<",
+          "path": "bayes/summary.json:comparison.bayes_mean.mean_abs_error_bp_low_default",
+          "right": 13.7465842
+        }
+      ],
+      "experiment": "",
+      "id": "P1",
+      "kind": "post_hoc",
+      "statement": "Mean absolute error (bp) on low-default segments is lowest for the posterior mean.",
+      "title": "Bayesian posterior mean beats naive and pooled PDs on the module-2 history",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 0.7707684382,
+          "op": "<",
+          "path": "credit/summary.json:sim_ul_over_asrf_ul",
+          "right": 1.0
+        }
+      ],
+      "experiment": "",
+      "id": "P2",
+      "kind": "post_hoc",
+      "statement": "The multi-factor simulated UL is below the one-factor ASRF UL.",
+      "title": "Sector diversification puts the multi-factor UL below the ASRF UL",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 3.039272608,
+          "op": "\u2265",
+          "path": "credit/summary.json:t_copula.es_ratio_t_over_gaussian",
+          "right": 2.0
+        }
+      ],
+      "experiment": "",
+      "id": "P3",
+      "kind": "post_hoc",
+      "statement": "ES under a t copula with 6 degrees of freedom is at least twice the Gaussian ES.",
+      "title": "Tail dependence (t copula) at least doubles ES",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 0.8888888889,
+          "op": "\u2265",
+          "path": "bayes/summary.json:conformal.coverage",
+          "right": 0.85
+        },
+        {
+          "holds": true,
+          "left": 0.8888888889,
+          "op": "\u2264",
+          "path": "bayes/summary.json:conformal.coverage",
+          "right": 0.95
+        }
+      ],
+      "experiment": "",
+      "id": "P4",
+      "kind": "post_hoc",
+      "statement": "Test-year coverage of the 90% CV+ intervals lies within 5 points of 90%.",
+      "title": "Conformal intervals are close to nominal coverage",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": -3368142281.0,
+          "op": "<",
+          "path": "alm/summary.json:ladder.cum_gap_1y_contractual_eur",
+          "right": 0.0
+        },
+        {
+          "holds": true,
+          "left": 294533906.4,
+          "op": "\u2265",
+          "path": "alm/summary.json:ladder.cum_gap_1y_behavioural_eur",
+          "right": 0.0
+        }
+      ],
+      "experiment": "",
+      "id": "P5",
+      "kind": "post_hoc",
+      "statement": "The cumulative 1-year gap is negative contractually and non-negative behaviourally.",
+      "title": "Behavioural deposit modelling closes the one-year funding gap",
+      "verdict": "supported"
+    },
+    {
+      "conditions": [
+        {
+          "holds": true,
+          "left": 0.010254135,
+          "op": "\u2265",
+          "path": "steering/summary.json:optimiser.raroc_after_resimulated \u2212 steering/summary.json:optimiser.raroc_before",
+          "right": 0.005
+        }
+      ],
+      "experiment": "",
+      "id": "P6",
+      "kind": "post_hoc",
+      "statement": "Re-simulated RAROC after optimisation exceeds today's RAROC by at least 0.5 points.",
+      "title": "Re-allocation adds at least half a point of RAROC at unchanged capital",
+      "verdict": "supported"
+    }
+  ]
+}

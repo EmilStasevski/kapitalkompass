@@ -1,0 +1,49 @@
+{
+  "data_hash": "f1a8877189912de6fd1329f317144937056317975622b303936031836962898c",
+  "experiment": "kapitalkompass",
+  "modules": {
+    "alm": {
+      "metrics": 73,
+      "params": 89,
+      "results_sha256": "1ac5f0f108fc62f505f39953ffb8078522405e46688c36ec9c4e4c9d286fde1e"
+    },
+    "bayes": {
+      "metrics": 53,
+      "params": 21,
+      "results_sha256": "49de7adeeb272854d6c4e055f7fdbaa4286f20d0ec323a5307c1ceafdb8ee068"
+    },
+    "credit": {
+      "metrics": 34,
+      "params": 21,
+      "results_sha256": "0c6208adbf67ed863eda66b461e0787065061a3eb03265517bb2bf61885d1cc4"
+    },
+    "data": {
+      "metrics": 0,
+      "params": 89,
+      "results_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "drift": {
+      "metrics": 48,
+      "params": 30,
+      "results_sha256": "dc2b520c49823d157d4c3f69d1dca8e41829a94a1dd95037ab70eebda2ba42ec"
+    },
+    "experiments": {
+      "metrics": 12,
+      "params": 30,
+      "results_sha256": "9dd3db3813f5f830e2a6f806a7d87ece248c959fbefc35910cc84ba7d799bc05"
+    },
+    "steering": {
+      "metrics": 21,
+      "params": 35,
+      "results_sha256": "0f756a6d6c19eac4ec318c86067efc96ce763c5ea1d4f6636e33fc22d4b0e198"
+    }
+  },
+  "runs_per_pipeline": 7,
+  "tags": [
+    "module",
+    "git_commit",
+    "git_dirty",
+    "data_hash",
+    "results_sha256"
+  ]
+}

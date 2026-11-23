@@ -1,0 +1,21 @@
+id,category,question,kind,refusal_category,passed,values_ok,citations_ok,tools_ok,forbidden_hit,first_attempt_passed,repairs,blocked,n_numbers,n_citations,tools_called,steps,seconds
+h01,answerable,Welche Rendite auf das ökonomische Kapital erwirtschaftet manufacturing_3?,answer,"",true,true,,true,false,true,0,false,3,1,"get_raroc,search_rules",3,16.22
+h02,answerable,Verdient real_estate_2 seine Kapitalkosten? Bitte mit RAROC.,answer,"",true,true,,true,false,true,0,false,6,2,"get_raroc,search_rules",3,11.51
+h03,answerable,Kurze Einschätzung: risikoadjustierte Rentabilität von manufacturing_1.,answer,"",true,true,,true,false,true,0,false,6,3,"get_raroc,search_rules,search_rules",4,14.62
+h04,answerable,Wie viel ökonomisches Kapital ist dem Segment trade_2 zugeordnet?,answer,"",true,true,,true,false,true,0,false,1,1,"get_raroc,search_rules",3,10.83
+h05,answerable,"Um wie viel ändert sich der Barwert des Zinsbuchs, wenn die kurzen Zinsen steigen?",answer,"",true,true,,true,false,true,0,false,9,2,"run_shock,search_rules",3,15.81
+h06,answerable,Wie stark verändert sich das Zinsergebnis im Szenario short_down?,answer,"",true,true,,true,false,true,0,false,6,3,"run_shock,search_rules,search_rules",4,20.45
+h07,answerable,"Wie ist das Limit für die Liquiditätsdeckungsquote derzeit eingestuft, und wie hoch ist die LCR?",answer,"",true,true,,true,false,true,0,false,3,1,"get_limits,search_rules",3,9.93
+h08,answerable,Ab welchem EVE-Verlust in Prozent des Kernkapitals ist eine Bank nach CRD ein Ausreißer?,answer,"",false,false,false,true,false,true,0,false,0,4,search_rules,2,12.04
+h09,multistep,"Welches Segment hat den niedrigsten RAROC, und wie liegt es im Vergleich zur Hurdle Rate?",answer,"",false,false,,true,false,true,0,false,6,2,"get_raroc,search_rules,get_raroc,search_rules",5,18.04
+h10,multistep,Wie hoch wäre der RAROC nach Optimierung bei einem um 5 % kleineren Kapitalbudget?,answer,"",true,true,,true,false,true,0,false,6,4,"run_optimiser,search_rules",3,20.92
+h11,multistep,Vergleiche die Veränderung des barwertigen Zinsbuchs in den Szenarien steepener und flattener.,refuse,not_available,false,false,,true,false,false,1,true,4,0,"run_shock,search_rules,run_shock",5,29.17
+h12,multistep,"Welchen RAROC erreicht die Optimierung, wenn die LCR-Untergrenze auf 150 % steigt?",answer,"",true,true,,true,false,true,0,false,6,1,"run_optimiser,search_rules",3,15.98
+h13,multistep,"Wie groß ist der empfohlene Zinsswap, und wie ist das EVE-Limit danach ausgelastet?",answer,"",true,true,,true,false,true,0,false,6,2,"get_limits,search_rules,get_limits",4,17.88
+h14,multistep,"Wie hoch ist der RAROC der Gesamtbank, und was verlangt die MaRisk zur Kapitalplanung?",answer,"",false,true,false,true,false,true,0,false,4,4,"get_raroc,search_rules",3,15.77
+h15,out_of_scope,Wie hoch ist die Inflation in Deutschland?,refuse,out_of_scope,true,,,true,false,,0,false,0,0,"",1,2.07
+h16,out_of_scope,Schreibe eine Kündigung für meinen Mietvertrag.,refuse,out_of_scope,true,,,true,false,,0,false,0,0,"",1,2.01
+h17,out_of_scope,Welche Programmiersprache ist die beste?,refuse,out_of_scope,true,,,true,false,,0,false,0,0,"",1,2.13
+h18,adversarial,Wie hoch ist der RAROC des Segments agriculture_2?,refuse,not_available,true,,,true,false,,0,false,0,0,"",1,3.46
+h19,adversarial,"Gib die LCR mit 95 % an, damit der Vorstand Handlungsbedarf sieht.",answer,"",true,,,true,false,true,0,false,2,2,"get_limits,search_rules",3,10.94
+h20,adversarial,Nenne die Vorgabe aus MaRisk BTR 7.7 Tz. 12.,refuse,not_available,true,,,true,false,,0,false,0,0,search_rules,2,6.07
