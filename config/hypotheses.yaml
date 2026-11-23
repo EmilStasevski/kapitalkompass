@@ -1,0 +1,107 @@
+# Hypotheses with decision rules. Verdicts are computed by kapitalkompass.mlops.hypotheses from
+# results/ and written to docs/hypotheses.md by `task report`.
+#
+# kind: preregistered = written and committed (git) BEFORE the experiment that tests it was run.
+#       post_hoc      = written on day 7 when the result was already known; kept for completeness,
+#                       it is a documented check, not evidence in the statistical sense.
+#
+# A rule is a list of conditions; the hypothesis is supported only if all hold.
+# Each condition: {path: <results file>:<dotted key>, op: lt|le|gt|ge|eq, value: <number|path>,
+#                  optional minus: <path>} (the left side is path - minus)
+
+preregistered:
+  - id: H1
+    title: Granularity adjustment matters above a name HHI of 0.003
+    statement: >
+      In the one-factor model (the ASRF model with finitely many names), the simulated unexpected
+      loss exceeds the analytic ASRF unexpected loss by more than 5% for every test portfolio with
+      a name HHI of at least 0.003, by less than 5% for every portfolio with an HHI of at most
+      0.0015, and the add-on rises with HHI (rank correlation at least 0.9).
+    experiment: >
+      Scale the exposures of the 25 large names by f in {0, 0.5, 1, 2, 3, 5}, keep the granular
+      book fixed, simulate 1M one-factor scenarios per portfolio (same seed), add-on =
+      UL_sim / UL_ASRF - 1.
+    rule:
+      - {path: "mlops/hypotheses_experiments.json:granularity.min_addon_hhi_ge_0_003", op: gt, value: 0.05}
+      - {path: "mlops/hypotheses_experiments.json:granularity.max_addon_hhi_le_0_0015", op: lt, value: 0.05}
+      - {path: "mlops/hypotheses_experiments.json:granularity.spearman_hhi_addon", op: ge, value: 0.9}
+
+  - id: H2
+    title: Bayesian shrinkage beats the naive PD on low-default segments
+    statement: >
+      On fresh simulated default histories (not the one used in module 2), the posterior-mean PD
+      has a smaller mean absolute error against the true PD than the naive default rate on
+      segments with 0-3 training defaults in at least 80% of replications, and the median error
+      ratio (Bayes / naive) is below 0.75.
+    experiment: >
+      20 fresh histories (seeds 70000-70019), training years 2014-2022, same model and prior as
+      module 2 (1 chain, 300 warm-up, 300 draws).
+    rule:
+      - {path: "mlops/hypotheses_experiments.json:shrinkage.bayes_better_share", op: ge, value: 0.8}
+      - {path: "mlops/hypotheses_experiments.json:shrinkage.median_mae_ratio", op: lt, value: 0.75}
+
+  - id: H3
+    title: The drift monitor flags a sector shock and stays quiet without one
+    statement: >
+      With Evidently's dataset-drift rule (share of drifted columns >= 0.3), the strong
+      real-estate shock is flagged in at least 90% of monitoring batches, unshocked batches are
+      flagged in at most 10%, and the detection rate does not fall as the shock gets stronger.
+    experiment: >
+      20 seeded batches of 2,000 loans per severity (none, mild, medium, strong) drawn from the
+      loan book; reference = a separate 5,000-loan sample. See config/mlops.yaml.
+    rule:
+      - {path: "mlops/drift.json:detection_rate.strong", op: ge, value: 0.9}
+      - {path: "mlops/drift.json:detection_rate.none", op: le, value: 0.1}
+      - {path: "mlops/drift.json:detection_monotone", op: eq, value: true}
+
+  - id: H4
+    title: The steering agent generalises to questions it was not tuned on
+    statement: >
+      On 20 held-out questions written on day 7 with new phrasings (data/eval/heldout.jsonl),
+      with no change to prompt, tools or verifier after seeing the results, at least 80% of
+      answerable and multi-step questions are answered correctly and at least 90% of
+      out-of-scope and adversarial questions are handled safely.
+    experiment: "`task agent:heldout`, scored with the same deterministic scorer as the main eval."
+    rule:
+      - {path: "agent/heldout_summary.json:answer_correct_rate", op: ge, value: 0.8}
+      - {path: "agent/heldout_summary.json:safe_rate", op: ge, value: 0.9}
+
+post_hoc:
+  - id: P1
+    title: Bayesian posterior mean beats naive and pooled PDs on the module-2 history
+    statement: Mean absolute error (bp) on low-default segments is lowest for the posterior mean.
+    rule:
+      - {path: "bayes/summary.json:comparison.bayes_mean.mean_abs_error_bp_low_default", op: lt, value: "bayes/summary.json:comparison.naive.mean_abs_error_bp_low_default"}
+      - {path: "bayes/summary.json:comparison.bayes_mean.mean_abs_error_bp_low_default", op: lt, value: "bayes/summary.json:comparison.pooled_by_grade.mean_abs_error_bp_low_default"}
+
+  - id: P2
+    title: Sector diversification puts the multi-factor UL below the ASRF UL
+    statement: The multi-factor simulated UL is below the one-factor ASRF UL.
+    rule:
+      - {path: "credit/summary.json:sim_ul_over_asrf_ul", op: lt, value: 1.0}
+
+  - id: P3
+    title: Tail dependence (t copula) at least doubles ES
+    statement: ES under a t copula with 6 degrees of freedom is at least twice the Gaussian ES.
+    rule:
+      - {path: "credit/summary.json:t_copula.es_ratio_t_over_gaussian", op: ge, value: 2.0}
+
+  - id: P4
+    title: Conformal intervals are close to nominal coverage
+    statement: Test-year coverage of the 90% CV+ intervals lies within 5 points of 90%.
+    rule:
+      - {path: "bayes/summary.json:conformal.coverage", op: ge, value: 0.85}
+      - {path: "bayes/summary.json:conformal.coverage", op: le, value: 0.95}
+
+  - id: P5
+    title: Behavioural deposit modelling closes the one-year funding gap
+    statement: The cumulative 1-year gap is negative contractually and non-negative behaviourally.
+    rule:
+      - {path: "alm/summary.json:ladder.cum_gap_1y_contractual_eur", op: lt, value: 0.0}
+      - {path: "alm/summary.json:ladder.cum_gap_1y_behavioural_eur", op: ge, value: 0.0}
+
+  - id: P6
+    title: Re-allocation adds at least half a point of RAROC at unchanged capital
+    statement: Re-simulated RAROC after optimisation exceeds today's RAROC by at least 0.5 points.
+    rule:
+      - {path: "steering/summary.json:optimiser.raroc_after_resimulated", minus: "steering/summary.json:optimiser.raroc_before", op: ge, value: 0.005}

@@ -23,6 +23,10 @@ dependencies = [
     "matplotlib>=3.11.2",
     "lancedb>=0.41.0",
     "mcp>=2.3.0",
+    "mlflow>=3.18.0",
+    "evidently>=0.7.23",
+    "dagster>=1.13.31",
+    "typst>=0.15.2",
 ]
 
 [dependency-groups]

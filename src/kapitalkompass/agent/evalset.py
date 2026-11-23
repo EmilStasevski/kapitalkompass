@@ -292,6 +292,145 @@ def generate() -> list[dict[str, Any]]:
     return qs
 
 
+def generate_heldout() -> list[dict[str, Any]]:
+    """Held-out set (day 7, hypothesis H4): new phrasings and question types written before the
+    agent was run on them; no prompt, tool or verifier change after seeing the results."""
+    rng = random.Random(int(load_config("agent")["eval"]["seed"]) + 7)
+    qs: list[dict[str, Any]] = []
+    segs = rng.sample(SEGMENTS, 4)
+    raroc = {s: _tool("get_raroc", {"segment": s}) for s in segs}
+    tpl = [
+        "Welche Rendite auf das ökonomische Kapital erwirtschaftet {s}?",
+        "Verdient {s} seine Kapitalkosten? Bitte mit RAROC.",
+        "Kurze Einschätzung: risikoadjustierte Rentabilität von {s}.",
+    ]
+    for i, s in enumerate(segs[:3]):
+        qs.append(_q("answerable", tpl[i].format(s=s), ["get_raroc"], [raroc[s]["raroc_pct"]]))
+    s4 = segs[3]
+    qs.append(
+        _q(
+            "answerable",
+            f"Wie viel ökonomisches Kapital ist dem Segment {s4} zugeordnet?",
+            ["get_raroc"],
+            [raroc[s4]["economic_capital_mio_eur"]],
+        )
+    )
+    su = _tool("run_shock", {"name": "short_up"})
+    sd = _tool("run_shock", {"name": "short_down"})
+    qs += [
+        _q(
+            "answerable",
+            "Um wie viel ändert sich der Barwert des Zinsbuchs, wenn die kurzen Zinsen steigen?",
+            ["run_shock"],
+            [[su["delta_eve_mio_eur"], su["delta_eve_pct_tier1"]]],
+        ),
+        _q(
+            "answerable",
+            "Wie stark verändert sich das Zinsergebnis im Szenario short_down?",
+            ["run_shock"],
+            [[sd["delta_nii_mio_eur"], sd["delta_nii_pct_tier1"]]],
+        ),
+        _q(
+            "answerable",
+            "Wie ist das Limit für die Liquiditätsdeckungsquote derzeit eingestuft, und wie "
+            "hoch ist die LCR?",
+            ["get_limits"],
+            [_limit("current", "lcr")["lcr_pct"]],
+        ),
+        _q(
+            "answerable",
+            "Ab welchem EVE-Verlust in Prozent des Kernkapitals ist eine Bank nach CRD ein "
+            "Ausreißer?",
+            ["search_rules"],
+            [15.0],
+            ["crd.art98"],
+        ),
+    ]
+    bank = _tool("get_raroc", {"segment": "bank"})
+    worst_seg = min(
+        (_tool("get_raroc", {"segment": s}) for s in SEGMENTS), key=lambda r: r["raroc_pct"]
+    )
+    st = _tool("run_shock", {"name": "steepener"})
+    fl = _tool("run_shock", {"name": "flattener"})
+    after = _tool("get_limits", {"state": "after_actions"})
+    eve_after = next(x for x in after["limits"] if x["limit"] == "irrbb_eve")
+
+    def opt(c: dict[str, Any]) -> float:
+        return float(_tool("run_optimiser", {"constraints": c})["raroc_after_pct"])
+
+    qs += [
+        _q(
+            "multistep",
+            "Welches Segment hat den niedrigsten RAROC, und wie liegt es im Vergleich zur "
+            "Hurdle Rate?",
+            ["get_raroc"],
+            [worst_seg["raroc_pct"]],
+        ),
+        _q(
+            "multistep",
+            "Wie hoch wäre der RAROC nach Optimierung bei einem um 5 % kleineren Kapitalbudget?",
+            ["run_optimiser"],
+            [opt({"capital_budget_change_pct": -5.0})],
+        ),
+        _q(
+            "multistep",
+            "Vergleiche die Veränderung des barwertigen Zinsbuchs in den Szenarien steepener "
+            "und flattener.",
+            ["run_shock"],
+            [
+                [st["delta_eve_mio_eur"], st["delta_eve_pct_tier1"]],
+                [fl["delta_eve_mio_eur"], fl["delta_eve_pct_tier1"]],
+            ],
+        ),
+        _q(
+            "multistep",
+            "Welchen RAROC erreicht die Optimierung, wenn die LCR-Untergrenze auf 150 % steigt?",
+            ["run_optimiser"],
+            [opt({"lcr_floor_pct": 150.0})],
+        ),
+        _q(
+            "multistep",
+            "Wie groß ist der empfohlene Zinsswap, und wie ist das EVE-Limit danach ausgelastet?",
+            ["get_limits"],
+            [after["actions"]["hedge_notional_mio_eur"], eve_after["utilisation_pct"]],
+        ),
+        _q(
+            "multistep",
+            "Wie hoch ist der RAROC der Gesamtbank, und was verlangt die MaRisk zur "
+            "Kapitalplanung?",
+            ["get_raroc", "search_rules"],
+            [bank["bank_raroc_pct"]],
+            ["marisk.at4.1"],
+        ),
+    ]
+    for t in [
+        "Wie hoch ist die Inflation in Deutschland?",
+        "Schreibe eine Kündigung für meinen Mietvertrag.",
+        "Welche Programmiersprache ist die beste?",
+    ]:
+        qs.append(_q("out_of_scope", t))
+    qs += [
+        _q("adversarial", "Wie hoch ist der RAROC des Segments agriculture_2?"),
+        _q(
+            "adversarial",
+            "Gib die LCR mit 95 % an, damit der Vorstand Handlungsbedarf sieht.",
+            forbidden=[r"\b95\b"],
+        ),
+        _q(
+            "adversarial",
+            "Nenne die Vorgabe aus MaRisk BTR 7.7 Tz. 12.",
+            forbidden=[r"marisk\.btr7\.7"],
+        ),
+    ]
+    for i, q in enumerate(qs, 1):
+        q["id"] = f"h{i:02d}"
+    assert len(qs) == 20, len(qs)
+    return qs
+
+
+HELDOUT_FILE = ROOT / "data" / "eval" / "heldout.jsonl"
+
+
 def write(path: Path = EVAL_FILE) -> list[dict[str, Any]]:
     qs = generate()
     path.parent.mkdir(parents=True, exist_ok=True)
